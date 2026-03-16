@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Color Book Co. — Your Photos, Your Coloring Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --pink:#F2A7B3;--peach:#FDDCB5;--lavender:#D4C5F9;--mint:#B8E6D0;
+  --accent:#E8637A;--dark:#2D2D3F;--gray:#6B7280;--light:#FAFAFA;--white:#fff;
+  --radius:16px;--shadow:0 4px 24px rgba(0,0,0,0.06);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--light);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:700}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);z-index:100;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(0,0,0,0.05)}
+nav .logo{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;color:var(--accent)}
+nav a{color:var(--dark);text-decoration:none;font-size:.9rem;font-weight:500;margin-left:24px;transition:color .2s}
+nav a:hover{color:var(--accent)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;background:linear-gradient(135deg,#FFF5F7 0%,#F0E6FF 50%,#E6F7ED 100%)}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--gray);max-width:520px;margin-bottom:32px}
+.hero-mockup{width:min(320px,80vw);height:380px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.hero-mockup .mock-cover{width:80%;height:70%;background:linear-gradient(135deg,var(--peach),var(--pink));border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:1.1rem;color:var(--white);font-weight:600;text-align:center;padding:16px}
+.hero-mockup .mock-label{margin-top:12px;font-size:.85rem;color:var(--gray)}
+
+.btn{display:inline-block;padding:16px 40px;background:var(--accent);color:#fff;border:none;border-radius:50px;font-size:1.05rem;font-weight:600;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,99,122,0.3)}
+
+/* HOW IT WORKS */
+.how{padding:100px 24px;text-align:center;background:var(--white)}
+.how h2{font-size:2rem;margin-bottom:48px}
+.steps{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:0 auto}
+.step{flex:1;min-width:220px;max-width:280px;padding:32px 24px;border-radius:var(--radius);background:var(--light);text-align:center}
+.step-icon{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 16px}
+.step:nth-child(1) .step-icon{background:var(--peach)}
+.step:nth-child(2) .step-icon{background:var(--lavender)}
+.step:nth-child(3) .step-icon{background:var(--mint)}
+.step h3{font-size:1.1rem;margin-bottom:8px}
+.step p{font-size:.9rem;color:var(--gray)}
+
+/* CREATOR */
+.creator{padding:100px 24px;background:linear-gradient(180deg,var(--light) 0%,#FFF5F7 100%)}
+.creator h2{text-align:center;font-size:2rem;margin-bottom:12px}
+.creator .subtitle{text-align:center;color:var(--gray);margin-bottom:48px;font-size:1rem}
+.creator-box{max-width:800px;margin:0 auto;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:40px;overflow:hidden}
+
+.upload-zone{border:2px dashed var(--pink);border-radius:var(--radius);padding:48px 24px;text-align:center;cursor:pointer;transition:background .2s,border-color .2s;margin-bottom:24px}
+.upload-zone:hover,.upload-zone.dragover{background:#FFF0F3;border-color:var(--accent)}
+.upload-zone .icon{font-size:2.5rem;margin-bottom:12px}
+.upload-zone p{color:var(--gray);font-size:.95rem}
+.upload-zone .browse{color:var(--accent);font-weight:600;text-decoration:underline;cursor:pointer}
+
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:16px;margin-bottom:32px}
+.photo-card{position:relative;border-radius:12px;overflow:hidden;background:var(--light);box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.photo-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.photo-card .controls{padding:8px;display:flex;flex-direction:column;gap:6px}
+.photo-card select{padding:6px;border:1px solid #e5e7eb;border-radius:8px;font-size:.8rem;font-family:'Inter',sans-serif}
+.photo-card .card-btns{display:flex;gap:6px}
+.photo-card .card-btns button{flex:1;padding:6px;border:none;border-radius:8px;font-size:.75rem;font-weight:600;cursor:pointer;transition:background .2s}
+.btn-redo{background:var(--lavender);color:var(--dark)}
+.btn-redo:hover{background:#C4B0F4}
+.btn-remove{background:#FEE2E2;color:#DC2626}
+.btn-remove:hover{background:#FECACA}
+.btn-cover{background:var(--mint);color:var(--dark);font-size:.7rem;width:100%;padding:5px;border:none;border-radius:8px;cursor:pointer;font-weight:600;margin-top:2px}
+.btn-cover:hover{background:#9DD6B8}
+.btn-cover.active{background:var(--accent);color:#fff}
+
+.form-group{margin-bottom:24px}
+.form-group label{display:block;font-weight:600;margin-bottom:8px;font-size:.95rem}
+.form-group input,.form-group select{width:100%;padding:12px 16px;border:1px solid #e5e7eb;border-radius:12px;font-size:1rem;font-family:'Inter',sans-serif;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--accent)}
+
+/* GIFT */
+.gift-toggle{display:flex;align-items:center;gap:12px;margin-bottom:24px;cursor:pointer}
+.gift-toggle .toggle{width:48px;height:28px;background:#e5e7eb;border-radius:14px;position:relative;transition:background .2s}
+.gift-toggle .toggle::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;background:#fff;border-radius:50%;transition:transform .2s}
+.gift-toggle.active .toggle{background:var(--accent)}
+.gift-toggle.active .toggle::after{transform:translateX(20px)}
+.gift-fields{display:none;gap:16px;flex-direction:column}
+.gift-fields.show{display:flex}
+
+/* PRICING */
+.pricing{padding:80px 24px;text-align:center;background:var(--white)}
+.pricing h2{font-size:2rem;margin-bottom:16px}
+.price-card{max-width:400px;margin:0 auto;background:linear-gradient(135deg,#FFF5F7,#F0E6FF);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow)}
+.price-big{font-size:2.5rem;font-weight:700;color:var(--accent);font-family:'Poppins',sans-serif}
+.price-detail{color:var(--gray);margin:8px 0 4px;font-size:.95rem}
+.price-shipping{background:var(--mint);display:inline-block;padding:8px 20px;border-radius:50px;font-weight:600;font-size:.9rem;margin-top:16px}
+
+/* PREVIEW */
+.preview-section{padding:80px 24px;background:var(--light)}
+.preview-section h2{text-align:center;font-size:2rem;margin-bottom:12px}
+.preview-section .subtitle{text-align:center;color:var(--gray);margin-bottom:40px}
+.preview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px;max-width:800px;margin:0 auto}
+.preview-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);text-align:center}
+.preview-card img{width:100%;aspect-ratio:1;object-fit:cover;filter:grayscale(100%) contrast(1.5) brightness(1.3);display:block}
+.preview-card .page-label{padding:10px;font-size:.85rem;color:var(--gray);font-weight:500}
+.preview-empty{text-align:center;color:var(--gray);padding:60px 24px;font-size:1rem}
+
+/* CHECKOUT */
+.checkout{padding:80px 24px;background:linear-gradient(180deg,#FFF5F7 0%,var(--light) 100%)}
+.checkout h2{text-align:center;font-size:2rem;margin-bottom:40px}
+.checkout-box{max-width:500px;margin:0 auto;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:40px}
+.checkout-box .total{text-align:center;font-size:1.8rem;font-weight:700;color:var(--accent);font-family:'Poppins',sans-serif;margin-bottom:24px}
+.btn-checkout{width:100%;padding:16px;font-size:1.1rem;margin-top:16px}
+
+/* FOOTER */
+footer{padding:40px 24px;text-align:center;color:var(--gray);font-size:.85rem;background:var(--white);border-top:1px solid rgba(0,0,0,0.05)}
+footer a{color:var(--accent);text-decoration:none;margin:0 12px}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hero{padding:100px 20px 60px}
+  .creator-box{padding:24px}
+  .photo-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+  .steps{flex-direction:column;align-items:center}
+  nav a.nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">🎨 The Color Book Co.</div>
+  <div>
+    <a href="#how">How It Works</a>
+    <a href="#create">Create</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-mockup">
+    <div class="mock-cover">Your Photos.<br>Your Coloring Book.</div>
+    <div class="mock-label">Personalized & printed just for you</div>
+  </div>
+  <h1>Turn Your Photos Into<br><span>Coloring Magic</span> ✨</h1>
+  <p>Upload your favorite photos, pick your style, and we'll turn them into a beautiful custom coloring book — printed on thick premium paper and shipped to your door.</p>
+  <a href="#create" class="btn">Create Your Book</a>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step fade-in">
+      <div class="step-icon">📸</div>
+      <h3>Upload Photos</h3>
+      <p>Pick 10-40 of your favorite photos — pets, trips, family, anything!</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-icon">🎨</div>
+      <h3>Customize Style</h3>
+      <p>Choose your coloring style for each page — realistic, cartoon, anime & more</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-icon">📦</div>
+      <h3>Get Your Book</h3>
+      <p>We print on thick premium paper and ship in 1-3 business days</p>
+    </div>
+  </div>
+</section>
+
+<!-- CREATOR -->
+<section class="creator" id="create">
+  <h2>Create Your Book</h2>
+  <p class="subtitle">Upload your photos and customize every page</p>
+  <div class="creator-box">
+    
+    <!-- Upload Zone -->
+    <div class="upload-zone" id="uploadZone">
+      <div class="icon">📸</div>
+      <p>Drag & drop your photos here<br>or <span class="browse">browse files</span></p>
+      <p style="margin-top:8px;font-size:.8rem;color:#aaa">10 min — 40 max • JPG, PNG</p>
+      <input type="file" id="fileInput" multiple accept="image/*" style="display:none">
+    </div>
+
+    <!-- Page Counter -->
+    <div style="text-align:center;margin-bottom:24px;font-size:.95rem;color:var(--gray)">
+      Pages: <strong id="pageCount">0</strong>/40
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="photo-grid" id="photoGrid"></div>
+
+    <!-- Book Title -->
+    <div class="form-group">
+      <label>Book Title</label>
+      <input type="text" id="bookTitle" placeholder="My Coloring Book">
+    </div>
+
+    <!-- Title Style -->
+    <div class="form-group">
+      <label>Title Design</label>
+      <select id="titleStyle">
+        <option value="classic">Classic</option>
+        <option value="modern">Modern</option>
+        <option value="playful">Playful</option>
+        <option value="elegant">Elegant</option>
+      </select>
+    </div>
+
+    <!-- Gift Toggle -->
+    <div class="gift-toggle" id="giftToggle">
+      <div class="toggle"></div>
+      <span style="font-weight:600">🎁 This is a gift</span>
+    </div>
+    <div class="gift-fields" id="giftFields">
+      <div class="form-group">
+        <label>Recipient Name</label>
+        <input type="text" placeholder="Who's it for?">
+      </div>
+      <div class="form-group">
+        <label>Gift Message</label>
+        <input type="text" placeholder="Add a personal note">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PREVIEW -->
+<section class="preview-section" id="preview">
+  <h2>Preview Your Book</h2>
+  <p class="subtitle">See how your pages will look as coloring art</p>
+  <div id="previewGrid" class="preview-grid"></div>
+  <div id="previewEmpty" class="preview-empty">Upload photos above to see your preview ✨</div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <h2>Simple Pricing</h2>
+  <div class="price-card">
+    <div class="price-big" id="priceDisplay">$29.99</div>
+    <div class="price-detail">Up to 20 pages included</div>
+    <div class="price-detail">+$0.75 per extra page</div>
+    <div class="price-detail" style="margin-top:12px">Premium thick paper • Full color cover</div>
+    <div class="price-shipping">🚀 Ships in 1-3 business days</div>
+  </div>
+</section>
+
+<!-- CHECKOUT -->
+<section class="checkout" id="checkout">
+  <h2>Checkout</h2>
+  <div class="checkout-box">
+    <div class="total" id="checkoutTotal">$29.99</div>
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="you@email.com">
+    </div>
+    <div class="form-group">
+      <label>Shipping Address</label>
+      <input type="text" placeholder="Street address">
+    </div>
+    <div class="form-group">
+      <input type="text" placeholder="City, State, ZIP">
+    </div>
+    <button class="btn btn-checkout" onclick="alert('🎉 Order placed! (Demo)')">Place Order 🎨</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 The Color Book Co. All rights reserved.</p>
+  <p style="margin-top:8px">
+    <a href="#">Terms</a>
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
+  </p>
+</footer>
+
+<script>
+// Upload handling
+const uploadZone=document.getElementById('uploadZone');
+const fileInput=document.getElementById('fileInput');
+const photoGrid=document.getElementById('photoGrid');
+const pageCount=document.getElementById('pageCount');
+const previewGrid=document.getElementById('previewGrid');
+const previewEmpty=document.getElementById('previewEmpty');
+const priceDisplay=document.getElementById('priceDisplay');
+const checkoutTotal=document.getElementById('checkoutTotal');
+
+let photos=[];
+let coverIndex=0;
+
+uploadZone.addEventListener('click',()=>fileInput.click());
+uploadZone.addEventListener('dragover',(e)=>{e.preventDefault();uploadZone.classList.add('dragover')});
+uploadZone.addEventListener('dragleave',()=>uploadZone.classList.remove('dragover'));
+uploadZone.addEventListener('drop',(e)=>{e.preventDefault();uploadZone.classList.remove('dragover');handleFiles(e.dataTransfer.files)});
+fileInput.addEventListener('change',(e)=>handleFiles(e.target.files));
+
+function handleFiles(files){
+  for(let f of files){
+    if(photos.length>=40)break;
+    if(!f.type.startsWith('image/'))continue;
+    const reader=new FileReader();
+    reader.onload=(e)=>{
+      photos.push({src:e.target.result,style:'realistic',name:f.name});
+      renderAll();
+    };
+    reader.readAsDataURL(f);
+  }
+}
+
+function renderAll(){
+  renderGrid();
+  renderPreview();
+  updatePrice();
+}
+
+function renderGrid(){
+  photoGrid.innerHTML='';
+  pageCount.textContent=photos.length;
+  photos.forEach((p,i)=>{
+    const card=document.createElement('div');
+    card.className='photo-card';
+    card.innerHTML=`
+      <img src="${p.src}" alt="Photo ${i+1}">
+      <div class="controls">
+        <select onchange="photos[${i}].style=this.value;renderPreview()">
+          <option value="realistic" ${p.style==='realistic'?'selected':''}>Realistic</option>
+          <option value="cartoon" ${p.style==='cartoon'?'selected':''}>Cartoon</option>
+          <option value="anime" ${p.style==='anime'?'selected':''}>Anime</option>
+          <option value="watercolor" ${p.style==='watercolor'?'selected':''}>Watercolor</option>
+          <option value="sketch" ${p.style==='sketch'?'selected':''}>Sketch</option>
+          <option value="popart" ${p.style==='popart'?'selected':''}>Pop Art</option>
+        </select>
+        <div class="card-btns">
+          <button class="btn-redo" onclick="alert('🔄 Regenerating... (demo)')">Redo</button>
+          <button class="btn-remove" onclick="photos.splice(${i},1);if(coverIndex>=${photos.length})coverIndex=0;renderAll()">✕</button>
+        </div>
+        <button class="btn-cover ${coverIndex===i?'active':''}" onclick="coverIndex=${i};renderGrid()">
+          ${coverIndex===i?'★ Cover Photo':'Set as Cover'}
+        </button>
+      </div>
+    `;
+    photoGrid.appendChild(card);
+  });
+}
+
+function renderPreview(){
+  if(photos.length===0){
+    previewGrid.innerHTML='';
+    previewEmpty.style.display='block';
+    return;
+  }
+  previewEmpty.style.display='none';
+  previewGrid.innerHTML='';
+  photos.forEach((p,i)=>{
+    const card=document.createElement('div');
+    card.className='preview-card fade-in visible';
+    card.innerHTML=`
+      <img src="${p.src}" alt="Page ${i+1}">
+      <div class="page-label">${coverIndex===i?'📖 Cover':'Page '+(i+1)} • ${p.style}</div>
+    `;
+    previewGrid.appendChild(card);
+  });
+}
+
+function updatePrice(){
+  const count=photos.length;
+  let price=29.99;
+  if(count>20)price+=((count-20)*0.75);
+  const formatted='$'+price.toFixed(2);
+  priceDisplay.textContent=formatted;
+  checkoutTotal.textContent=formatted;
+}
+
+// Gift toggle
+const giftToggle=document.getElementById('giftToggle');
+const giftFields=document.getElementById('giftFields');
+giftToggle.addEventListener('click',()=>{
+  giftToggle.classList.toggle('active');
+  giftFields.classList.toggle('show');
+});
+
+// Scroll animations
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

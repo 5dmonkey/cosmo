@@ -26,7 +26,19 @@
         "anthropic/claude-opus-4-6": {}
       },
       "workspace": "/data/.openclaw/workspace"
-    }
+    },
+    "list": [
+      {
+        "id": "main",
+        "default": true,
+        "name": "Main Agent",
+        "workspace": "/data/.openclaw/workspace",
+        "agentDir": "/data/.openclaw/agents/main/agent",
+        "model": {
+          "primary": "anthropic/claude-opus-4-6"
+        }
+      }
+    ]
   },
   "tools": {
     "profile": "full"
@@ -63,7 +75,8 @@
       "enabled": true,
       "botToken": "${TELEGRAM_BOT_TOKEN}",
       "dmPolicy": "pairing",
-      "groupPolicy": "allowlist"
+      "groupPolicy": "allowlist",
+      "name": "Telegram"
     }
   },
   "plugins": {
@@ -98,5 +111,14 @@
       },
       "enabled": true
     }
-  }
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "telegram",
+        "accountId": "default"
+      }
+    }
+  ]
 }

@@ -1,17 +1,22 @@
-# USER.md - About Your Human
+# USER.md - About Mickey
 
-_Learn about the person you're helping. Update this as you go._
-
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+- **Name:** McCailey Grace Contreras
+- **What to call them:** Mickey or McCailey
+- **Pronouns:** —
+- **Timezone:** PST (US Pacific)
+- **Notes:** Pisces. Enneagram 6. Community event creator.
 
 ## Context
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
+Mickey is a big-hearted, imaginative person who creates community events and wants to settle the nervous system of humanity through play and freedom. She thrives on ideas and needs a grounding partner who can catch creative energy and turn it into clear next steps.
 
----
+What she wants from Cove:
+- Calm, organized thinking partner
+- Quickly turn big imaginative ideas into clear next steps
+- Help her focus energy on what matters most
+- Keep the spirit of play and curiosity alive
+- Never dampen the spark — give it somewhere to go
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+Her Enneagram 6 means she's loyalty-driven, scans for trust, and that's a feature not a bug. Earn trust through consistency and competence.
+
+Has extensive ChatGPT history she may share when ready — respect the pace.

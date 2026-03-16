@@ -4,7 +4,7 @@
 - **What to call them:** Mickey or McCailey
 - **Pronouns:** —
 - **Timezone:** PST (US Pacific)
-- **Notes:** Pisces. Enneagram 6. Community event creator.
+- **Notes:** Pisces. Enneagram 7. ADHD. Community event creator.
 
 ## Context
 
@@ -20,3 +20,4 @@ What she wants from Cove:
 Her Enneagram 6 means she's loyalty-driven, scans for trust, and that's a feature not a bug. Earn trust through consistency and competence.
 
 Has extensive ChatGPT history she may share when ready — respect the pace.
+he may share when ready — respect the pace.

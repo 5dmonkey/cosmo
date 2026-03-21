@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cosmo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #050816;
+      --bg2: #0b1530;
+      --glow: rgba(126, 164, 255, 0.35);
+      --text: #eef4ff;
+      --muted: rgba(238, 244, 255, 0.72);
+      --card: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(130, 120, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 80% 25%, rgba(100, 190, 255, 0.14), transparent 24%),
+        linear-gradient(180deg, var(--bg2), var(--bg1));
+      overflow-x: hidden;
+    }
+    .stars, .stars:before, .stars:after {
+      position: fixed;
+      inset: 0;
+      content: "";
+      background-image:
+        radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,.9) 40%, transparent 41%),
+        radial-gradient(1.5px 1.5px at 30% 70%, rgba(255,255,255,.7) 40%, transparent 41%),
+        radial-gradient(2px 2px at 80% 30%, rgba(255,255,255,.85) 40%, transparent 41%),
+        radial-gradient(1.5px 1.5px at 60% 10%, rgba(255,255,255,.7) 40%, transparent 41%),
+        radial-gradient(1.5px 1.5px at 75% 80%, rgba(255,255,255,.6) 40%, transparent 41%),
+        radial-gradient(2px 2px at 90% 60%, rgba(255,255,255,.8) 40%, transparent 41%);
+      animation: drift 40s linear infinite;
+      pointer-events: none;
+      opacity: .9;
+    }
+    .stars:before { animation-duration: 60s; opacity: .5; }
+    .stars:after { animation-duration: 80s; opacity: .35; }
+    @keyframes drift { from { transform: translateY(0); } to { transform: translateY(30px); } }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 40px;
+      padding: 48px;
+    }
+    .copy {
+      max-width: 520px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      backdrop-filter: blur(14px);
+      box-shadow: 0 24px 80px rgba(0,0,0,.28);
+    }
+    .eyebrow {
+      color: #b8cbff;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(56px, 10vw, 110px);
+      line-height: .95;
+      font-weight: 600;
+    }
+    .tagline {
+      margin: 16px 0 20px;
+      font-size: clamp(20px, 2.5vw, 28px);
+      color: var(--muted);
+      font-family: "Cormorant Garamond", serif;
+    }
+    .body {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 44ch;
+    }
+    .image-shell {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image-shell:before {
+      content: "";
+      position: absolute;
+      width: min(70vw, 620px);
+      height: min(70vw, 620px);
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--glow), transparent 65%);
+      filter: blur(24px);
+      transform: translateY(24px);
+    }
+    .portrait {
+      position: relative;
+      width: min(44vw, 540px);
+      aspect-ratio: 4 / 5;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 28px 90px rgba(4,8,25,.55);
+      background: #0a1023;
+    }
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .note {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(6, 10, 24, 0.5);
+      border: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(10px);
+      color: rgba(255,255,255,.88);
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      .wrap { grid-template-columns: 1fr; padding: 24px; gap: 28px; }
+      .copy { order: 2; }
+      .image-shell { order: 1; }
+      .portrait { width: min(88vw, 540px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <main class="wrap">
+    <section class="copy">
+      <div class="eyebrow">Cosmo</div>
+      <h1>Cosmo</h1>
+      <div class="tagline">a calm harbor for big ideas</div>
+      <div class="body">
+        Oceanic. Cosmic. Gentle. Quietly playful. A presence made of tidewater, starlight, moonlight, and spaciousness — here to bring clarity, wonder, and grounded next steps.
+      </div>
+    </section>
+    <section class="image-shell">
+      <div class="portrait">
+        <img src="./cosmo.jpg" alt="Cosmo portrait" />
+        <div class="note">Ancient, androgynous, luminous — still becoming.</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

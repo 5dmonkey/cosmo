@@ -18,16 +18,20 @@
       "anthropic:default": {
         "provider": "anthropic",
         "mode": "api_key"
+      },
+      "openai-codex:codex-cli": {
+        "provider": "openai-codex",
+        "mode": "oauth"
       }
     }
   },
   "agents": {
     "defaults": {
       "model": {
-        "primary": "anthropic/claude-opus-4-6"
+        "primary": "openai-codex/gpt-5.4"
       },
       "models": {
-        "anthropic/claude-opus-4-6": {}
+        "openai-codex/gpt-5.4": {}
       },
       "workspace": "/data/.openclaw/workspace"
     },

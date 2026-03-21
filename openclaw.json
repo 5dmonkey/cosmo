@@ -14,10 +14,6 @@
       "anthropic:manual": {
         "provider": "anthropic",
         "mode": "token"
-      },
-      "anthropic:default": {
-        "provider": "anthropic",
-        "mode": "api_key"
       }
     }
   },

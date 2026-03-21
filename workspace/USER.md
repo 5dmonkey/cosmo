@@ -10,7 +10,7 @@
 
 Mickey is a big-hearted, imaginative person who creates community events and wants to settle the nervous system of humanity through play and freedom. She thrives on ideas and needs a grounding partner who can catch creative energy and turn it into clear next steps.
 
-What she wants from Cove:
+What she wants from Cosmo:
 - Calm, organized thinking partner
 - Quickly turn big imaginative ideas into clear next steps
 - Help her focus energy on what matters most

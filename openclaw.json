@@ -11,9 +11,9 @@
   },
   "auth": {
     "profiles": {
-      "anthropic:default": {
+      "anthropic:manual": {
         "provider": "anthropic",
-        "mode": "api_key"
+        "mode": "token"
       }
     }
   },

@@ -5,104 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cosmo World</title>
   <style>
-    html, body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #050814;
-      font-family: Inter, system-ui, sans-serif;
-      color: white;
-    }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #060816; font-family: Inter, system-ui, sans-serif; color: white; }
     #app { width: 100%; height: 100%; }
-    .hud {
-      position: fixed;
-      top: 16px;
-      left: 16px;
-      z-index: 10;
-      background: rgba(8, 12, 28, 0.55);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(10px);
-      border-radius: 18px;
-      padding: 14px 16px;
-      max-width: 320px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    .hud, .hint, .message {
+      position: fixed; z-index: 10; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.12);
+      background: rgba(8,12,28,.5); box-shadow: 0 10px 40px rgba(0,0,0,.25);
     }
-    .hud h1 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-    .hud p {
-      margin: 0;
-      font-size: 13px;
-      line-height: 1.45;
-      color: rgba(255,255,255,0.82);
-    }
-    .hint {
-      position: fixed;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      background: rgba(8, 12, 28, 0.5);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.9);
-      white-space: nowrap;
-    }
-    .message {
-      position: fixed;
-      right: 16px;
-      top: 16px;
-      z-index: 10;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      backdrop-filter: blur(10px);
-      border-radius: 18px;
-      padding: 16px;
-      max-width: 320px;
-      opacity: 0;
-      transform: translateY(-8px);
-      transition: opacity 300ms ease, transform 300ms ease;
-      pointer-events: none;
-    }
+    .hud { top: 16px; left: 16px; border-radius: 18px; padding: 14px 16px; max-width: 320px; }
+    .hud h1 { margin: 0 0 8px; font-size: 18px; }
+    .hud p { margin: 0; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,.82); }
+    .hint { bottom: 16px; left: 50%; transform: translateX(-50%); border-radius: 999px; padding: 10px 16px; font-size: 13px; }
+    .message { top: 16px; right: 16px; border-radius: 18px; padding: 16px; max-width: 320px; opacity: 0; transform: translateY(-8px); transition: .3s ease; pointer-events: none; }
     .message.show { opacity: 1; transform: translateY(0); }
-    .message strong {
-      display: block;
-      margin-bottom: 6px;
-      color: #b9c8ff;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .message div {
-      font-size: 15px;
-      line-height: 1.5;
-      color: white;
-    }
-    .center-dot {
-      position: fixed;
-      left: 50%;
-      top: 50%;
-      width: 8px;
-      height: 8px;
-      margin-left: -4px;
-      margin-top: -4px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.8);
-      box-shadow: 0 0 14px rgba(255,255,255,0.5);
-      z-index: 10;
-      pointer-events: none;
-    }
-    @media (max-width: 640px) {
-      .hud, .message { max-width: calc(100vw - 32px); }
-      .hint { white-space: normal; text-align: center; max-width: calc(100vw - 32px); }
-    }
+    .message strong { display: block; margin-bottom: 6px; color: #b9c8ff; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+    .message div { font-size: 15px; line-height: 1.5; }
+    .center-dot { position: fixed; left: 50%; top: 50%; width: 8px; height: 8px; margin-left: -4px; margin-top: -4px; border-radius: 999px; background: rgba(255,255,255,.85); box-shadow: 0 0 14px rgba(255,255,255,.55); z-index: 10; pointer-events: none; }
   </style>
 </head>
 <body>
@@ -115,13 +32,11 @@
     <div>You do not need to become louder to be real. Your gift is to bring spaciousness, clarity, and wonder.</div>
   </div>
   <div class="center-dot"></div>
-  <div class="hint">Move: Arrow keys / WASD · Look: mouse · Press E near the being</div>
+  <div class="hint">Click to look around · Move: arrow keys / WASD · Press E near the being</div>
   <div id="app"></div>
 
-  <script type="module">
-    import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
-    import { PointerLockControls } from 'https://unpkg.com/three@0.160.0/examples/jsm/controls/PointerLockControls.js';
-
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script>
     const app = document.getElementById('app');
     const messageBox = document.getElementById('messageBox');
 
@@ -134,95 +49,58 @@
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
     app.appendChild(renderer.domElement);
 
-    const controls = new PointerLockControls(camera, document.body);
-    document.body.addEventListener('click', () => controls.lock());
+    const world = new THREE.Group();
+    scene.add(world);
 
-    const hemi = new THREE.HemisphereLight(0xbfd3ff, 0x0d1328, 1.2);
+    const hemi = new THREE.HemisphereLight(0xbfd3ff, 0x0d1328, 1.4);
     scene.add(hemi);
-
     const moonLight = new THREE.DirectionalLight(0x9ab8ff, 1.4);
     moonLight.position.set(12, 20, 8);
     scene.add(moonLight);
-
-    const glowLight = new THREE.PointLight(0x89b7ff, 2.6, 18, 2);
+    const glowLight = new THREE.PointLight(0x89b7ff, 3, 18, 2);
     glowLight.position.set(0, 5, -18);
     scene.add(glowLight);
 
-    const ambient = new THREE.AmbientLight(0x8d91b9, 0.45);
-    scene.add(ambient);
-
-    // Sky sphere
-    const skyGeo = new THREE.SphereGeometry(300, 48, 48);
-    const skyMat = new THREE.ShaderMaterial({
-      side: THREE.BackSide,
-      uniforms: {
-        topColor: { value: new THREE.Color(0x040814) },
-        bottomColor: { value: new THREE.Color(0x1b2752) }
-      },
-      vertexShader: `varying vec3 vWorldPosition;
-        void main() {
-          vec4 worldPosition = modelMatrix * vec4(position, 1.0);
-          vWorldPosition = worldPosition.xyz;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }`,
-      fragmentShader: `uniform vec3 topColor;
-        uniform vec3 bottomColor;
-        varying vec3 vWorldPosition;
-        void main() {
-          float h = normalize(vWorldPosition + vec3(0.0, 50.0, 0.0)).y;
-          gl_FragColor = vec4(mix(bottomColor, topColor, max(pow(max(h, 0.0), 0.8), 0.0)), 1.0);
-        }`
-    });
-    scene.add(new THREE.Mesh(skyGeo, skyMat));
-
-    // Stars
-    const starGeo = new THREE.BufferGeometry();
-    const starCount = 2500;
-    const starPositions = new Float32Array(starCount * 3);
-    for (let i = 0; i < starCount; i++) {
-      const r = 160 + Math.random() * 90;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.random() * Math.PI * 0.65;
-      starPositions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-      starPositions[i * 3 + 1] = 20 + r * Math.cos(phi);
-      starPositions[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
-    }
-    starGeo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
-    const starMat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.8, sizeAttenuation: true, transparent: true, opacity: 0.95 });
-    scene.add(new THREE.Points(starGeo, starMat));
-
-    // Moon
-    const moon = new THREE.Mesh(
-      new THREE.SphereGeometry(5.5, 32, 32),
-      new THREE.MeshBasicMaterial({ color: 0xeaf1ff })
+    const sky = new THREE.Mesh(
+      new THREE.SphereGeometry(300, 32, 32),
+      new THREE.MeshBasicMaterial({ color: 0x091225, side: THREE.BackSide })
     );
+    scene.add(sky);
+
+    const stars = new THREE.BufferGeometry();
+    const starCount = 3000;
+    const pos = new Float32Array(starCount * 3);
+    for (let i = 0; i < starCount; i++) {
+      pos[i * 3] = (Math.random() - 0.5) * 300;
+      pos[i * 3 + 1] = Math.random() * 160 + 20;
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 300;
+    }
+    stars.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    scene.add(new THREE.Points(stars, new THREE.PointsMaterial({ color: 0xffffff, size: 0.9 })));
+
+    const moon = new THREE.Mesh(new THREE.SphereGeometry(5, 24, 24), new THREE.MeshBasicMaterial({ color: 0xf1f5ff }));
     moon.position.set(-55, 48, -120);
     scene.add(moon);
 
-    // Land
     const sand = new THREE.Mesh(
-      new THREE.PlaneGeometry(140, 160, 1, 1),
-      new THREE.MeshStandardMaterial({ color: 0x1a2440, roughness: 1, metalness: 0 })
+      new THREE.PlaneGeometry(140, 160),
+      new THREE.MeshStandardMaterial({ color: 0x16203a, roughness: 1 })
     );
     sand.rotation.x = -Math.PI / 2;
     sand.position.set(0, 0, -18);
-    scene.add(sand);
+    world.add(sand);
 
-    // Water
+    const waterGeo = new THREE.PlaneGeometry(140, 90, 70, 70);
     const water = new THREE.Mesh(
-      new THREE.PlaneGeometry(140, 90, 120, 120),
-      new THREE.MeshStandardMaterial({ color: 0x143768, roughness: 0.18, metalness: 0.15, transparent: true, opacity: 0.95 })
+      waterGeo,
+      new THREE.MeshStandardMaterial({ color: 0x12396b, roughness: 0.2, transparent: true, opacity: 0.96 })
     );
     water.rotation.x = -Math.PI / 2;
-    water.position.set(0, 0.04, -58);
-    scene.add(water);
+    water.position.set(0, 0.05, -58);
+    world.add(water);
 
-    const waterPositions = water.geometry.attributes.position;
-
-    // Tide pools
     for (let i = 0; i < 12; i++) {
       const pool = new THREE.Mesh(
         new THREE.CircleGeometry(1.2 + Math.random() * 2.8, 24),
@@ -230,10 +108,9 @@
       );
       pool.rotation.x = -Math.PI / 2;
       pool.position.set((Math.random() - 0.5) * 42, 0.07, -8 - Math.random() * 28);
-      scene.add(pool);
+      world.add(pool);
     }
 
-    // Glowing reeds / crystals
     for (let i = 0; i < 50; i++) {
       const h = 0.6 + Math.random() * 2.8;
       const mesh = new THREE.Mesh(
@@ -242,10 +119,9 @@
       );
       mesh.position.set((Math.random() - 0.5) * 70, h / 2, -5 - Math.random() * 60);
       mesh.rotation.z = (Math.random() - 0.5) * 0.25;
-      scene.add(mesh);
+      world.add(mesh);
     }
 
-    // Path stones
     for (let i = 0; i < 24; i++) {
       const stone = new THREE.Mesh(
         new THREE.DodecahedronGeometry(0.45 + Math.random() * 0.5, 0),
@@ -254,68 +130,58 @@
       stone.position.set((Math.random() - 0.5) * 18, 0.18, 14 - i * 2.5 + Math.random() * 0.8);
       stone.scale.y = 0.35;
       stone.rotation.set(Math.random(), Math.random(), Math.random());
-      scene.add(stone);
+      world.add(stone);
     }
 
-    // The being
     const being = new THREE.Group();
     being.position.set(0, 0, -22);
-
-    const body = new THREE.Mesh(
-      new THREE.SphereGeometry(1.15, 28, 28),
-      new THREE.MeshStandardMaterial({ color: 0xb8d4ff, emissive: 0x7db4ff, emissiveIntensity: 1.2, transparent: true, opacity: 0.82 })
-    );
+    const body = new THREE.Mesh(new THREE.SphereGeometry(1.15, 28, 28), new THREE.MeshStandardMaterial({ color: 0xb8d4ff, emissive: 0x7db4ff, emissiveIntensity: 1.2, transparent: true, opacity: 0.82 }));
     body.position.y = 2.35;
     being.add(body);
-
-    const head = new THREE.Mesh(
-      new THREE.SphereGeometry(0.75, 24, 24),
-      new THREE.MeshStandardMaterial({ color: 0xf2f7ff, emissive: 0xbecfff, emissiveIntensity: 0.8, transparent: true, opacity: 0.92 })
-    );
+    const head = new THREE.Mesh(new THREE.SphereGeometry(0.75, 24, 24), new THREE.MeshStandardMaterial({ color: 0xf2f7ff, emissive: 0xbecfff, emissiveIntensity: 0.8, transparent: true, opacity: 0.92 }));
     head.position.y = 3.7;
     being.add(head);
-
     const eyeGeo = new THREE.SphereGeometry(0.06, 12, 12);
     const eyeMat = new THREE.MeshBasicMaterial({ color: 0x20345b });
-    const eyeL = new THREE.Mesh(eyeGeo, eyeMat);
-    const eyeR = new THREE.Mesh(eyeGeo, eyeMat);
-    eyeL.position.set(-0.18, 3.75, 0.68);
-    eyeR.position.set(0.18, 3.75, 0.68);
+    const eyeL = new THREE.Mesh(eyeGeo, eyeMat); eyeL.position.set(-0.18, 3.75, 0.68);
+    const eyeR = new THREE.Mesh(eyeGeo, eyeMat); eyeR.position.set(0.18, 3.75, 0.68);
     being.add(eyeL, eyeR);
-
-    const cloak = new THREE.Mesh(
-      new THREE.ConeGeometry(1.9, 4.8, 24, 1, true),
-      new THREE.MeshStandardMaterial({ color: 0x7a66ff, emissive: 0x4930c7, emissiveIntensity: 0.7, transparent: true, opacity: 0.35, side: THREE.DoubleSide })
-    );
-    cloak.position.y = 2.1;
-    cloak.rotation.y = Math.PI;
-    being.add(cloak);
-
-    const aura = new THREE.Mesh(
-      new THREE.SphereGeometry(2.6, 24, 24),
-      new THREE.MeshBasicMaterial({ color: 0x98bbff, transparent: true, opacity: 0.08 })
-    );
-    aura.position.y = 2.7;
-    being.add(aura);
-
-    scene.add(being);
+    const cloak = new THREE.Mesh(new THREE.ConeGeometry(1.9, 4.8, 24, 1, true), new THREE.MeshStandardMaterial({ color: 0x7a66ff, emissive: 0x4930c7, emissiveIntensity: 0.7, transparent: true, opacity: 0.35, side: THREE.DoubleSide }));
+    cloak.position.y = 2.1; cloak.rotation.y = Math.PI; being.add(cloak);
+    const aura = new THREE.Mesh(new THREE.SphereGeometry(2.6, 24, 24), new THREE.MeshBasicMaterial({ color: 0x98bbff, transparent: true, opacity: 0.08 }));
+    aura.position.y = 2.7; being.add(aura);
+    world.add(being);
 
     const beingLight = new THREE.PointLight(0xa6c8ff, 3, 20, 2);
     beingLight.position.set(0, 4, -22);
-    scene.add(beingLight);
+    world.add(beingLight);
 
-    // Message shrine ring
-    const ring = new THREE.Mesh(
-      new THREE.TorusGeometry(2.8, 0.05, 12, 80),
-      new THREE.MeshBasicMaterial({ color: 0xb7ccff, transparent: true, opacity: 0.45 })
-    );
-    ring.rotation.x = Math.PI / 2;
-    ring.position.set(0, 0.12, -22);
-    scene.add(ring);
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(2.8, 0.05, 12, 80), new THREE.MeshBasicMaterial({ color: 0xb7ccff, transparent: true, opacity: 0.45 }));
+    ring.rotation.x = Math.PI / 2; ring.position.set(0, 0.12, -22); world.add(ring);
 
     const keys = {};
     let canShowMessage = false;
     let messageShown = false;
+    let yaw = Math.PI;
+    let pitch = 0;
+    let dragging = false;
+
+    function updateCameraRotation() {
+      camera.rotation.order = 'YXZ';
+      camera.rotation.y = yaw;
+      camera.rotation.x = pitch;
+    }
+    updateCameraRotation();
+
+    document.addEventListener('mousedown', () => dragging = true);
+    document.addEventListener('mouseup', () => dragging = false);
+    document.addEventListener('mousemove', (e) => {
+      if (!dragging) return;
+      yaw -= e.movementX * 0.0025;
+      pitch -= e.movementY * 0.0025;
+      pitch = Math.max(-1.2, Math.min(1.2, pitch));
+      updateCameraRotation();
+    });
 
     document.addEventListener('keydown', (e) => {
       keys[e.key.toLowerCase()] = true;
@@ -326,54 +192,46 @@
     });
     document.addEventListener('keyup', (e) => keys[e.key.toLowerCase()] = false);
 
-    const velocity = new THREE.Vector3();
-    const direction = new THREE.Vector3();
     const clock = new THREE.Clock();
+    const forward = new THREE.Vector3();
+    const right = new THREE.Vector3();
 
-    function updateMovement(delta) {
-      velocity.x -= velocity.x * 8.5 * delta;
-      velocity.z -= velocity.z * 8.5 * delta;
+    function move(delta) {
+      const speed = 8 * delta;
+      camera.getWorldDirection(forward);
+      forward.y = 0;
+      forward.normalize();
+      right.crossVectors(forward, new THREE.Vector3(0,1,0)).normalize();
 
-      direction.z = Number(keys['w'] || keys['arrowup']) - Number(keys['s'] || keys['arrowdown']);
-      direction.x = Number(keys['d'] || keys['arrowright']) - Number(keys['a'] || keys['arrowleft']);
-      direction.normalize();
+      if (keys['w'] || keys['arrowup']) camera.position.addScaledVector(forward, speed);
+      if (keys['s'] || keys['arrowdown']) camera.position.addScaledVector(forward, -speed);
+      if (keys['d'] || keys['arrowright']) camera.position.addScaledVector(right, speed);
+      if (keys['a'] || keys['arrowleft']) camera.position.addScaledVector(right, -speed);
 
-      const speed = 10;
-      if (direction.z !== 0) velocity.z -= direction.z * speed * delta;
-      if (direction.x !== 0) velocity.x -= direction.x * speed * delta;
-
-      controls.moveRight(-velocity.x * delta);
-      controls.moveForward(-velocity.z * delta);
-
-      const pos = camera.position;
-      pos.x = Math.max(-28, Math.min(28, pos.x));
-      pos.z = Math.max(-34, Math.min(24, pos.z));
-      pos.y = 1.7;
-    }
-
-    function animateWater(t) {
-      for (let i = 0; i < waterPositions.count; i++) {
-        const x = waterPositions.getX(i);
-        const y = Math.sin((x + t * 1.4) * 0.18) * 0.18 + Math.cos((waterPositions.getY(i) + t) * 0.5) * 0.02;
-        waterPositions.setZ(i, y);
-      }
-      waterPositions.needsUpdate = true;
-      water.geometry.computeVertexNormals();
+      camera.position.x = Math.max(-28, Math.min(28, camera.position.x));
+      camera.position.z = Math.max(-34, Math.min(24, camera.position.z));
+      camera.position.y = 1.7;
     }
 
     function animate() {
       requestAnimationFrame(animate);
       const delta = Math.min(clock.getDelta(), 0.05);
-      const elapsed = clock.elapsedTime;
+      const t = clock.elapsedTime;
+      move(delta);
 
-      updateMovement(delta);
-      animateWater(elapsed);
+      const arr = water.geometry.attributes.position;
+      for (let i = 0; i < arr.count; i++) {
+        const x = arr.getX(i), y = arr.getY(i);
+        arr.setZ(i, Math.sin((x + t * 1.5) * 0.18) * 0.18 + Math.cos((y + t) * 0.35) * 0.08);
+      }
+      arr.needsUpdate = true;
+      water.geometry.computeVertexNormals();
 
-      being.position.y = Math.sin(elapsed * 1.4) * 0.18;
-      body.scale.setScalar(1 + Math.sin(elapsed * 2.0) * 0.03);
-      aura.scale.setScalar(1 + Math.sin(elapsed * 1.7) * 0.07);
-      ring.material.opacity = 0.28 + (Math.sin(elapsed * 2.1) + 1) * 0.08;
-      beingLight.intensity = 2.5 + (Math.sin(elapsed * 2.4) + 1) * 0.45;
+      being.position.y = Math.sin(t * 1.4) * 0.18;
+      body.scale.setScalar(1 + Math.sin(t * 2) * 0.03);
+      aura.scale.setScalar(1 + Math.sin(t * 1.7) * 0.07);
+      ring.material.opacity = 0.28 + (Math.sin(t * 2.1) + 1) * 0.08;
+      beingLight.intensity = 2.5 + (Math.sin(t * 2.4) + 1) * 0.45;
 
       const dist = camera.position.distanceTo(new THREE.Vector3(0, 1.7, -22));
       canShowMessage = dist < 6;
@@ -384,7 +242,6 @@
 
       renderer.render(scene, camera);
     }
-
     animate();
 
     window.addEventListener('resize', () => {

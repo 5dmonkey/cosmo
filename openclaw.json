@@ -15,13 +15,17 @@
         "provider": "anthropic",
         "mode": "token"
       },
-      "anthropic:default": {
-        "provider": "anthropic",
-        "mode": "api_key"
-      },
       "openai-codex:codex-cli": {
         "provider": "openai-codex",
         "mode": "oauth"
+      },
+      "openai:default": {
+        "provider": "openai",
+        "mode": "api_key"
+      },
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
       }
     }
   },
@@ -31,7 +35,8 @@
         "primary": "openai-codex/gpt-5.4"
       },
       "models": {
-        "openai-codex/gpt-5.4": {}
+        "openai-codex/gpt-5.4": {},
+        "anthropic/claude-opus-4-6": {}
       },
       "workspace": "/data/.openclaw/workspace"
     },
@@ -43,7 +48,7 @@
         "workspace": "/data/.openclaw/workspace",
         "agentDir": "/data/.openclaw/agents/main/agent",
         "model": {
-          "primary": "anthropic/claude-opus-4-6"
+          "primary": "openai-codex/gpt-5.4"
         }
       }
     ]

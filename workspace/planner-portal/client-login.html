@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell form-shell">
+    <div class="login-card">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <span>Studio Portal</span>
+      </a>
+      <div style="margin-top: 26px;">
+        <div class="eyebrow">Client access</div>
+        <h1 class="page-title">Enter your wedding portal.</h1>
+        <p class="lead">A chapter-based space for your planning materials, snapshots, and next decisions—quietly designed around your celebration.</p>
+      </div>
+      <form action="client-portal.html" style="margin-top: 30px;">
+        <div class="form-group">
+          <label for="client-email">Email</label>
+          <input id="client-email" type="email" placeholder="rose@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="client-code">Wedding code</label>
+          <input id="client-code" type="text" placeholder="ROSE-KYLE-2026" />
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px;">
+          <button class="btn" type="submit">Open Portal</button>
+          <a class="ghost-btn" href="index.html">Back</a>
+        </div>
+        <div class="form-note muted">Prototype preview</div>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

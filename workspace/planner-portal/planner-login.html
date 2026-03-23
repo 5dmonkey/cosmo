@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planner Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell form-shell">
+    <div class="login-card">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <span>Studio Portal</span>
+      </a>
+      <div style="margin-top: 26px;">
+        <div class="eyebrow">Planner access</div>
+        <h1 class="page-title">Sign in to the coordinator dashboard.</h1>
+        <p class="lead">A minimal workspace for managing wedding progress, vendor rhythm, and the week ahead.</p>
+      </div>
+      <form action="dashboard.html" style="margin-top: 30px;">
+        <div class="form-group">
+          <label for="planner-email">Email</label>
+          <input id="planner-email" type="email" placeholder="hello@studioplanner.com" />
+        </div>
+        <div class="form-group">
+          <label for="planner-password">Password</label>
+          <input id="planner-password" type="password" placeholder="••••••••" />
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px;">
+          <button class="btn" type="submit">Enter Dashboard</button>
+          <a class="ghost-btn" href="index.html">Back</a>
+        </div>
+        <div class="form-note muted">Prototype preview</div>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planner Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <div class="dashboard-layout container">
+      <aside class="sidebar" data-sidebar>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">S</span>
+            <span>Studio Portal</span>
+          </a>
+          <button class="icon-btn mobile-toggle" data-sidebar-toggle aria-label="Toggle menu">☰</button>
+        </div>
+        <nav>
+          <a class="nav-link active" href="dashboard.html"><span>Overview</span><span>01</span></a>
+          <a class="nav-link" href="wedding-detail.html"><span>Weddings</span><span>04</span></a>
+          <a class="nav-link" href="#vendor-replies"><span>Vendors</span><span>12</span></a>
+          <a class="nav-link" href="#inquiries"><span>Inquiries</span><span>07</span></a>
+          <a class="nav-link" href="#tasks"><span>Tasks</span><span>09</span></a>
+        </nav>
+        <div class="sidebar-meta">
+          <div class="overline">This week</div>
+          <h3 style="margin-top:10px; font-size:2rem;">4 site visits<br/>2 proposal sends</h3>
+          <p class="small" style="margin-top:12px;">Balanced visibility for the studio, without eclipsing each wedding's own identity.</p>
+        </div>
+        <div class="sidebar-footer small">Coordinator preview · March 2026</div>
+      </aside>
+
+      <main class="dashboard-main">
+        <section class="dashboard-panel dashboard-heading">
+          <div class="panel-header">
+            <div>
+              <div class="eyebrow">Planner dashboard</div>
+              <h1>Held with calm.<br/>Moving with clarity.</h1>
+            </div>
+            <a class="ghost-btn" href="planner-login.html">Switch account</a>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-label">Active Weddings</div>
+              <div class="metric-value">12</div>
+              <p class="metric-sub">4 in active design, 2 entering finalizing</p>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Pending Inquiries</div>
+              <div class="metric-value">7</div>
+              <p class="metric-sub">3 require proposal edits today</p>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Vendor Outreach</div>
+              <div class="metric-value">18</div>
+              <p class="metric-sub">Awaiting availability across floral + photo</p>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">This Week</div>
+              <div class="metric-value">9</div>
+              <p class="metric-sub">Meetings, fittings, tastings, site visits</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-panel">
+          <div class="panel-header">
+            <div>
+              <div class="overline">Wedding portfolio</div>
+              <h2 class="section-title">Current weddings</h2>
+            </div>
+            <div class="tab-bar">
+              <button class="tab-btn active" data-filter-button="all">All</button>
+              <button class="tab-btn" data-filter-button="planning">Planning</button>
+              <button class="tab-btn" data-filter-button="booked">Booked</button>
+              <button class="tab-btn" data-filter-button="finalizing">Finalizing</button>
+            </div>
+          </div>
+          <div class="wedding-list">
+            <a class="wedding-row surface-hover" href="wedding-detail.html" data-filter-item="planning">
+              <div>
+                <strong>Rose Lebow & Kyle Montgomery</strong>
+                <p class="small">September 18, 2026 · Meadow House · 142 guests</p>
+              </div>
+              <div class="small muted">Lead coordinator: Mickey</div>
+              <div><span class="pill status-planning">Planning</span></div>
+              <div class="small inline-link">Open file</div>
+            </a>
+            <div class="wedding-row" data-filter-item="booked">
+              <div>
+                <strong>Amelia & Jonah</strong>
+                <p class="small">June 05, 2026 · The Conservatory · 110 guests</p>
+              </div>
+              <div class="small muted">Lead coordinator: Elise</div>
+              <div><span class="pill status-booked">Booked</span></div>
+              <div class="small">Floral locked</div>
+            </div>
+            <div class="wedding-row" data-filter-item="inquiry">
+              <div>
+                <strong>Siena & Marco</strong>
+                <p class="small">October 02, 2026 · Coastal Estate · 160 guests</p>
+              </div>
+              <div class="small muted">Proposal draft due</div>
+              <div><span class="pill status-inquiry">Inquiry</span></div>
+              <div class="small">Awaiting call</div>
+            </div>
+            <div class="wedding-row" data-filter-item="finalizing">
+              <div>
+                <strong>Naomi & Theo</strong>
+                <p class="small">April 24, 2026 · Black Oak Hall · 96 guests</p>
+              </div>
+              <div class="small muted">Lead coordinator: Maya</div>
+              <div><span class="pill status-finalizing">Finalizing</span></div>
+              <div class="small">Seating proof</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="two-col">
+          <div class="dashboard-panel" id="vendor-replies">
+            <div class="panel-header">
+              <div>
+                <div class="overline">Recent vendor replies</div>
+                <h2 class="section-title">Incoming notes</h2>
+              </div>
+            </div>
+            <div class="reply-list">
+              <div class="reply-item">
+                <strong>Lark Film Studio</strong>
+                <p class="small">Available for Rose & Kyle's date. Holding 48 hours pending moodboard review.</p>
+              </div>
+              <div class="reply-item">
+                <strong>Meadow House Catering</strong>
+                <p class="small">Updated tasting window sent for Naomi & Theo. Vegetarian late-night option added.</p>
+              </div>
+              <div class="reply-item">
+                <strong>North Room Florals</strong>
+                <p class="small">Waitlist cleared for Amelia & Jonah. Revised stem costs incoming tomorrow.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-panel" id="inquiries">
+            <div class="panel-header">
+              <div>
+                <div class="overline">Inquiry tracker</div>
+                <h2 class="section-title">Warm leads</h2>
+              </div>
+            </div>
+            <div class="reply-list">
+              <div class="reply-item">
+                <strong>Harper & Jules</strong>
+                <p class="small">Discovery call Tuesday · 120 guests · Napa</p>
+              </div>
+              <div class="reply-item">
+                <strong>Celeste & Adrian</strong>
+                <p class="small">Proposal viewed twice · waiting on partial planning package decision</p>
+              </div>
+              <div class="reply-item">
+                <strong>Siena & Marco</strong>
+                <p class="small">Venue shortlist ready · budget adjustment requested</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-panel" id="tasks">
+          <div class="panel-header">
+            <div>
+              <div class="overline">Studio tasks</div>
+              <h2 class="section-title">Today & next</h2>
+            </div>
+          </div>
+          <div class="three-col task-list">
+            <div class="task-item">
+              <strong>Rose & Kyle</strong>
+              <p class="small">Finalize photography shortlist and prep client portal chapter note.</p>
+            </div>
+            <div class="task-item">
+              <strong>Naomi & Theo</strong>
+              <p class="small">Approve guest shuttle timeline before Thursday's production meeting.</p>
+            </div>
+            <div class="task-item">
+              <strong>Studio admin</strong>
+              <p class="small">Review inquiry template edits and update welcome guide language.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

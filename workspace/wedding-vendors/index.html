@@ -74,7 +74,7 @@
       border-radius: 24px; overflow: hidden; min-height: 240px; position: relative;
       background:
         linear-gradient(180deg, rgba(35, 26, 21, 0.05), rgba(35,26,21,0.22)),
-        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80') center/cover;
+        url('https://i.pinimg.com/200x/08/af/4f/08af4f29c2fd14bc717097775d39a31a.jpg') center/cover;
     }
     .mood-caption {
       position: absolute; left: 18px; right: 18px; bottom: 18px; color: white;
@@ -160,6 +160,23 @@
     }
     .footer-box p { margin: 0; color: var(--muted); line-height: 1.7; }
     .link-list { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .pinterest-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+    }
+    .pin {
+      aspect-ratio: 1 / 1.2; border-radius: 18px; background-size: cover; background-position: center; border: 1px solid rgba(255,255,255,.35);
+    }
+    .rsvp-shell { margin-top: 54px; }
+    .rsvp-grid { display: grid; gap: 14px; }
+    .guest-row {
+      display: grid; grid-template-columns: 1.3fr .9fr; gap: 12px; align-items: center;
+      padding: 14px; border-radius: 18px; background: rgba(255,255,255,.6); border: 1px solid var(--line);
+    }
+    .guest-row input, .guest-row select {
+      width: 100%; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); background: white; font: inherit; color: var(--ink);
+    }
+    .rsvp-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
     @media (max-width: 1100px) {
       .hero, .vendor-card { grid-template-columns: 1fr; }
       .category-grid { grid-template-columns: repeat(2, 1fr); }
@@ -212,6 +229,12 @@
           <div><strong>Planning lens</strong>Understated elegance over overproduction.</div>
           <div><strong>Inspiration board</strong><a href="https://pin.it/4R5woRFj6" target="_blank" rel="noopener noreferrer">Open Pinterest inspiration</a></div>
         </div>
+        <div class="pinterest-strip">
+          <div class="pin" style="background-image:url(https://i.pinimg.com/200x/08/af/4f/08af4f29c2fd14bc717097775d39a31a.jpg)"></div>
+          <div class="pin" style="background-image:url(https://i.pinimg.com/200x/e0/1b/f2/e01bf2d82acae9f630e551cce8524264.jpg)"></div>
+          <div class="pin" style="background-image:url(https://i.pinimg.com/200x/a7/90/ec/a790ecfca47defd27243ee100f79451c.jpg)"></div>
+          <div class="pin" style="background-image:url(https://i.pinimg.com/200x/92/be/10/92be10f22a8e01bfa8e1ec21ef980143.jpg)"></div>
+        </div>
       </div>
     </section>
 
@@ -229,7 +252,7 @@
           <div>
             <div class="eyebrow">Category One</div>
             <h2>Florals</h2>
-            <p>Think single stems, loose clusters, and soft romance — enough to shape the ceremony beautifully without tipping into “big wedding production.”</p>
+            <p>Think single stems, loose clusters, and soft romance — enough to shape your ceremony beautifully without tipping into “big wedding production.”</p>
           </div>
           <div class="mini-note">Focus: calla lilies, tulips, soft pinks and creams, warm glow, minimal arrangements.</div>
         </div>
@@ -255,7 +278,7 @@
               <div class="rationale"><span class="label">Why they fit</span>A practical, elegant floral lane for a ceremony setup that wants to feel elevated but not fussy.</div>
               <div class="photo-idea"><span class="label">Photo ideas</span>Classic aisle flowers, low ceremony arrangements, cream florals against natural greenery.</div>
               <div class="actions">
-                <a class="btn primary" href="https://srhogue.com" target="_blank" rel="noopener noreferrer">Visit website</a>
+                <a class="btn primary" href="https://www.hoguefloral.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                 <a class="btn" href="#home">Back to top</a>
               </div>
             </div>
@@ -265,7 +288,7 @@
           <article class="vendor-card" data-gallery='["https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=1200&q=80","https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=900&q=80","https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=900&q=80"]'>
             <div>
               <div class="vendor-top"><h3>Ella &amp; Louis</h3><div class="price">$$</div></div>
-              <div class="why">A lovely third floral option that still feels artistic and romantic, but stays intimate and unfussy. A nice fit if they want softness with a little charm and personality.</div>
+              <div class="why">A lovely third floral option that still feels artistic and romantic, but stays intimate and unfussy. A nice fit if you want softness with a little charm and personality.</div>
               <div class="rationale"><span class="label">Why they fit</span>A strong choice for keeping the ceremony florals warm, tasteful, and lightly design-minded without overproducing the space.</div>
               <div class="photo-idea"><span class="label">Photo ideas</span>Garden-style bouquet texture, airy centerpieces, soft blush-and-cream floral details.</div>
               <div class="actions">
@@ -285,7 +308,7 @@
           <div>
             <div class="eyebrow">Category Two</div>
             <h2>Photography</h2>
-            <p>The right photographer here should hold intimacy well — less about spectacle, more about warmth, emotion, and the quiet beauty of a family-led ceremony at home.</p>
+            <p>The right photographer here should hold intimacy well — less about spectacle, more about warmth, emotion, and the quiet beauty of your family-led ceremony at home.</p>
           </div>
           <div class="mini-note">Priority: emotional fit + aesthetic fit + realistic budget lane.</div>
         </div>
@@ -321,8 +344,8 @@
           <article class="vendor-card" data-gallery='["https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=1200&q=80","https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80","https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"]'>
             <div>
               <div class="vendor-top"><h3>James &amp; Jess</h3><div class="price">$$$</div></div>
-              <div class="why">This is the more premium benchmark in the set — polished, romantic, and elevated. Helpful as a comparison point if they want to see what a more luxe photography lane looks like.</div>
-              <div class="rationale"><span class="label">Why they fit</span>Best as the aspirational option: beautiful, refined, and likely the highest spend of the three.</div>
+              <div class="why">This is the more premium benchmark in the set — polished, romantic, and elevated. Helpful as a comparison point if you want to see what a more luxe photography lane looks like.</div>
+              <div class="rationale"><span class="label">Why they fit</span>Best as the aspirational option: beautiful, refined, and likely the highest spend of the three choices.</div>
               <div class="photo-idea"><span class="label">Photo ideas</span>Editorial couple portraits, romantic tablescape-style details, polished ceremony storytelling.</div>
               <div class="actions">
                 <a class="btn primary" href="https://jamesandjess.com" target="_blank" rel="noopener noreferrer">Visit website</a>
@@ -341,7 +364,7 @@
           <div>
             <div class="eyebrow">Category Three</div>
             <h2>Hair &amp; Makeup</h2>
-            <p>This beauty direction wants to feel polished, natural, and calm — enough structure for the photos, but nothing too overdone or “bridal” in a heavy-handed way.</p>
+            <p>This beauty direction wants to feel polished, natural, and calm — enough structure for your photos, but nothing too overdone or “bridal” in a heavy-handed way.</p>
           </div>
           <div class="mini-note">Bride + others. Best fit is clean skin, soft texture, understated romance.</div>
         </div>
@@ -377,7 +400,7 @@
           <article class="vendor-card" data-gallery='["https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80","https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80","https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80"]'>
             <div>
               <div class="vendor-top"><h3>TEAM Hair &amp; Makeup</h3><div class="price">$$$</div></div>
-              <div class="why">A polished, widely used Santa Barbara beauty team if they want a more premium and streamlined service experience.</div>
+              <div class="why">A polished, widely used Santa Barbara beauty team if you want a more premium and streamlined service experience.</div>
               <div class="rationale"><span class="label">Why they fit</span>Best as the elevated comparison option: reliable, natural glam, and well-suited to a multi-person beauty morning.</div>
               <div class="photo-idea"><span class="label">Photo ideas</span>Refined bridal prep, natural glam beauty, polished group beauty styling.</div>
               <div class="actions">
@@ -397,7 +420,7 @@
           <div>
             <div class="eyebrow">Category Four</div>
             <h2>Ceremony Seating / Rentals</h2>
-            <p>This is not a full rentals conversation — just the few pieces that make the at-home ceremony feel intentional, comfortable, and visually coherent before everyone heads to Lucky’s.</p>
+            <p>This is not a full rentals conversation — just the few pieces that make your at-home ceremony feel intentional, comfortable, and visually coherent before everyone heads to Lucky’s.</p>
           </div>
           <div class="mini-note">Think chairs + a few simple design details only.</div>
         </div>
@@ -419,8 +442,8 @@
           <article class="vendor-card" data-gallery='["https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&fit=crop&w=1200&q=80","https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80","https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80"]'>
             <div>
               <div class="vendor-top"><h3>Theoni Collection</h3><div class="price">$$$</div></div>
-              <div class="why">This is the design-forward option if they want to make the ceremony details feel especially beautiful and considered.</div>
-              <div class="rationale"><span class="label">Why they fit</span>Best for a more elevated visual lane, if they want to lean into statement details in a small, controlled way.</div>
+              <div class="why">This is the design-forward option if you want to make the ceremony details feel especially beautiful and considered.</div>
+              <div class="rationale"><span class="label">Why they fit</span>Best for a more elevated visual lane, if you want to lean into statement details in a small, controlled way.</div>
               <div class="photo-idea"><span class="label">Photo ideas</span>Architectural chairs, sculptural ceremony vignettes, artful textures in a home setting.</div>
               <div class="actions">
                 <a class="btn primary" href="http://theonicollection.com" target="_blank" rel="noopener noreferrer">Visit website</a>
@@ -433,7 +456,7 @@
           <article class="vendor-card" data-gallery='["https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80","https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80","https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80"]'>
             <div>
               <div class="vendor-top"><h3>La Tavola</h3><div class="price">$$$</div></div>
-              <div class="why">Not necessary for the ceremony scope as-is, but worth including as an inspiration-forward resource if they later want a custom textile moment or a very intentional design detail.</div>
+              <div class="why">Not necessary for the ceremony scope as-is, but worth including as an inspiration-forward resource if you later want a custom textile moment or a very intentional design detail.</div>
               <div class="rationale"><span class="label">Why they fit</span>More future-facing inspiration than immediate need — included thoughtfully, not as a push.</div>
               <div class="photo-idea"><span class="label">Photo ideas</span>Fabric swatches, subtle textile layering, intimate tabletop inspiration for future use.</div>
               <div class="actions">
@@ -453,7 +476,7 @@
           <div>
             <div class="eyebrow">Category Five</div>
             <h2>Post-Ceremony Toast / Bites</h2>
-            <p>The sweet spot here is a little celebratory pause after the ceremony — champagne, caviar, or light bites that feel refined and easy before everyone transitions to dinner.</p>
+            <p>The sweet spot here is a little celebratory pause after your ceremony — champagne, caviar, or light bites that feel refined and easy before everyone transitions to dinner.</p>
           </div>
           <div class="mini-note">Not full catering. Just a polished exhale between ceremony and Lucky’s.</div>
         </div>
@@ -474,12 +497,12 @@
 
           <article class="vendor-card" data-gallery='["https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1200&q=80","https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80","https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"]'>
             <div>
-              <div class="vendor-top"><h3>Season’s Catering</h3><div class="price">$$</div></div>
-              <div class="why">A strong second option for a light bite moment with polished service — enough structure to feel cared for, without turning this into a second event.</div>
-              <div class="rationale"><span class="label">Why they fit</span>Useful if they want a little more food presence while staying small-scale and composed.</div>
-              <div class="photo-idea"><span class="label">Photo ideas</span>Elegant small plates, polished server moments, champagne-and-canapé setup.</div>
+              <div class="vendor-top"><h3>Homemade by Haley Shea</h3><div class="price">$$</div></div>
+              <div class="why">A warm, elevated option for a light bite moment that feels personal, nourishing, and beautifully scaled for an intimate guest count.</div>
+              <div class="rationale"><span class="label">Why they fit</span>A lovely fit if you want the toast-and-bites moment to feel thoughtful, abundant, and still very relaxed.</div>
+              <div class="photo-idea"><span class="label">Photo ideas</span>Beautiful family-style textures, artful grazing details, and a cozy-chic hosting feel.</div>
               <div class="actions">
-                <a class="btn primary" href="https://www.seasonscateringca.com" target="_blank" rel="noopener noreferrer">Visit website</a>
+                <a class="btn primary" href="https://homemadebyhaleyshea.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                 <a class="btn" href="#home">Back to top</a>
               </div>
             </div>
@@ -489,7 +512,7 @@
           <article class="vendor-card" data-gallery='["https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80","https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80","https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80"]'>
             <div>
               <div class="vendor-top"><h3>Poe &amp; Co</h3><div class="price">$$$</div></div>
-              <div class="why">A more premium-feeling option if they want the post-ceremony toast moment to lean chic, design-forward, and a little fashion-y.</div>
+              <div class="why">A more premium-feeling option if you want the post-ceremony toast moment to lean chic, design-forward, and a little fashion-y.</div>
               <div class="rationale"><span class="label">Why they fit</span>A strong premium comparison point for a stylish champagne-and-bites interlude before dinner.</div>
               <div class="photo-idea"><span class="label">Photo ideas</span>Design-forward bites, chic passed sips, and an elevated small-hosting moment.</div>
               <div class="actions">
@@ -503,9 +526,32 @@
       </div>
     </section>
 
+    <section class="rsvp-shell">
+      <div class="section-shell">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Guest List</div>
+            <h2>Guest list + RSVP snapshot</h2>
+            <p>A simple place for you to start tracking who’s in, who can’t make it, and who still needs a reply. You can edit these names directly in the page.</p>
+          </div>
+          <div class="mini-note">Tip: keep this lightweight here, then move final tracking into your master planning doc if needed.</div>
+        </div>
+        <div class="rsvp-grid" id="rsvpGrid">
+          <div class="guest-row"><input value="Rose Lebow" /><select><option selected>Attending</option><option>Can't Go</option><option>Pending</option></select></div>
+          <div class="guest-row"><input value="Kyle Montgomery" /><select><option selected>Attending</option><option>Can't Go</option><option>Pending</option></select></div>
+          <div class="guest-row"><input placeholder="Add guest name" /><select><option selected>Pending</option><option>Attending</option><option>Can't Go</option></select></div>
+          <div class="guest-row"><input placeholder="Add guest name" /><select><option selected>Pending</option><option>Attending</option><option>Can't Go</option></select></div>
+        </div>
+        <div class="rsvp-actions">
+          <button class="btn" type="button" id="addGuestBtn">Add guest</button>
+          <button class="btn primary" type="button" id="saveGuestBtn">Save in this browser</button>
+        </div>
+      </div>
+    </section>
+
     <div class="footer-box">
       <h2>Notes for next pass</h2>
-      <p><strong>Links verified:</strong> Aivy Florals, S.R. Hogue &amp; Co, Katie Edwards, Carly Otness, James &amp; Jess, Samara Beauty, Chi Beauty Artistry, TEAM Hair &amp; Makeup, Town &amp; Country, Theoni Collection, La Tavola, Duo Events, Season’s Catering, Poe &amp; Co.</p>
+      <p><strong>Links verified:</strong> Aivy Florals, S.R. Hogue &amp; Co, Katie Edwards, Carly Otness, James &amp; Jess, Samara Beauty, Chi Beauty Artistry, TEAM Hair &amp; Makeup, Town &amp; Country, Theoni Collection, La Tavola, Duo Events, Homemade by Haley Shea, Poe &amp; Co.</p>
       <p><strong>One note:</strong> S.R. Hogue currently appears to have a minimal/under-construction web presence, but the link does resolve. Poe &amp; Co redirects in a slightly unusual way, though the domain is active.</p>
       <p><strong>UI direction:</strong> keep it airy, editorial, romantic, and highly readable. Think premium invitation suite meets stylish planning deck — soft light, warm neutrals, gentle blush, intentional spacing, very little clutter.</p>
       <div class="link-list">
@@ -532,6 +578,37 @@
         thumbs.appendChild(btn);
       });
     });
+
+    const rsvpGrid = document.getElementById('rsvpGrid');
+    const addGuestBtn = document.getElementById('addGuestBtn');
+    const saveGuestBtn = document.getElementById('saveGuestBtn');
+
+    function serializeGuests() {
+      return Array.from(document.querySelectorAll('.guest-row')).map(row => ({
+        name: row.querySelector('input').value,
+        status: row.querySelector('select').value
+      }));
+    }
+    function renderGuestRow(name = '', status = 'Pending') {
+      const row = document.createElement('div');
+      row.className = 'guest-row';
+      row.innerHTML = `<input placeholder="Add guest name" value="${name.replace(/"/g,'&quot;')}" /><select><option ${status==='Pending'?'selected':''}>Pending</option><option ${status==='Attending'?'selected':''}>Attending</option><option ${status==="Can't Go"?'selected':''}>Can't Go</option></select>`;
+      rsvpGrid.appendChild(row);
+    }
+    addGuestBtn?.addEventListener('click', () => renderGuestRow());
+    saveGuestBtn?.addEventListener('click', () => {
+      localStorage.setItem('rk_guest_list', JSON.stringify(serializeGuests()));
+      saveGuestBtn.textContent = 'Saved';
+      setTimeout(() => saveGuestBtn.textContent = 'Save in this browser', 1200);
+    });
+    try {
+      const saved = JSON.parse(localStorage.getItem('rk_guest_list') || 'null');
+      if (saved && Array.isArray(saved) && saved.length) {
+        rsvpGrid.innerHTML = '';
+        saved.forEach(g => renderGuestRow(g.name || '', g.status || 'Pending'));
+      }
+    } catch (e) {}
+
   </script>
 </body>
 </html>/html>

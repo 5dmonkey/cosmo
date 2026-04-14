@@ -143,8 +143,6 @@
     }
     .btn.primary { background: #2f2622; color: white; border-color: #2f2622; }
     .btn.placeholder { background: #f5ebe7; color: #8a7165; }
-    .btn.favorite { background: white; }
-    .btn.favorite.active { background: #2f2622; color: white; }
     .status-pill { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:#2f2622; color:white; font-size:12px; text-transform:uppercase; letter-spacing:.12em; }
     .gallery {
       border-radius: 24px; padding: 12px; display: grid; gap: 10px;
@@ -267,19 +265,6 @@
               <div class="rationale"><span class="label">Why they fit</span>This keeps the floral direction simple, romantic, and grounded in the overall feeling you’re creating.</div>
               <div class="actions">
                 <a class="btn primary" href="https://www.hoguefloral.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
-                <button class="btn favorite" type="button" data-favorite="florals-sr-hogue">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="photography-katie-edwards">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="photography-carly-otness">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="photography-james-jess">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="beauty-samara-beauty">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="beauty-chi-beauty">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="beauty-team-hmu">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="rentals-town-country">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="rentals-theoni">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="rentals-la-tavola">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="bites-duo-events">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="bites-haley-shea">☆ Star</button>
-                <button class="btn favorite" type="button" data-favorite="bites-poe-co">☆ Star</button>
                 <a class="btn" href="#home">Back to top</a>
               </div>
             </div>
@@ -532,21 +517,6 @@
         thumbs.appendChild(btn);
       });
     });
-
-
-    document.querySelectorAll('[data-favorite]').forEach(btn => {
-      const key = 'rk_fav_' + btn.dataset.favorite;
-      const sync = () => {
-        const active = localStorage.getItem(key) === '1';
-        btn.classList.toggle('active', active);
-        btn.textContent = active ? '★ Starred' : '☆ Star';
-      };
-      sync();
-      btn.addEventListener('click', () => {
-        const active = localStorage.getItem(key) === '1';
-        localStorage.setItem(key, active ? '0' : '1');
-        sync();
-      });
     });
 
     const rsvpGrid = document.getElementById('rsvpGrid');

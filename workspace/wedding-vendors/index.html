@@ -482,17 +482,22 @@
       const main = card.querySelector('.gallery-main');
       const thumbs = card.querySelector('.thumbs');
       if (!gallery.length || !main || !thumbs) return;
-      const setImage = (url) => main.style.backgroundImage = `url(${url})`;
+
+      const setImage = (url) => {
+        main.style.backgroundImage = `url('${url}')`;
+        main.style.backgroundSize = 'cover';
+        main.style.backgroundPosition = 'center';
+      };
+
       setImage(gallery[0]);
       gallery.forEach((url, index) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.style.backgroundImage = `url(${url})`;
+        btn.style.backgroundImage = `url('${url}')`;
         btn.setAttribute('aria-label', `View image ${index + 1}`);
         btn.addEventListener('click', () => setImage(url));
         thumbs.appendChild(btn);
       });
-    });
     });
 
     const rsvpGrid = document.getElementById('rsvpGrid');
@@ -505,18 +510,22 @@
         status: row.querySelector('select').value
       }));
     }
+
     function renderGuestRow(name = '', status = 'Pending') {
       const row = document.createElement('div');
       row.className = 'guest-row';
       row.innerHTML = `<input placeholder="Add guest name" value="${name.replace(/"/g,'&quot;')}" /><select><option ${status==='Pending'?'selected':''}>Pending</option><option ${status==='Attending'?'selected':''}>Attending</option><option ${status==="Can't Go"?'selected':''}>Can't Go</option></select>`;
       rsvpGrid.appendChild(row);
     }
+
     addGuestBtn?.addEventListener('click', () => renderGuestRow());
+
     saveGuestBtn?.addEventListener('click', () => {
       localStorage.setItem('rk_guest_list', JSON.stringify(serializeGuests()));
       saveGuestBtn.textContent = 'Saved';
       setTimeout(() => saveGuestBtn.textContent = 'Save in this browser', 1200);
     });
+
     try {
       const saved = JSON.parse(localStorage.getItem('rk_guest_list') || 'null');
       if (saved && Array.isArray(saved) && saved.length) {
@@ -524,44 +533,6 @@
         saved.forEach(g => renderGuestRow(g.name || '', g.status || 'Pending'));
       }
     } catch (e) {}
-
-  </script>
-</body>
-</html>/html> g.status || 'Pending'));
-      }
-    } catch (e) {}
-
-  </script>
-</body>
-</html>/html> || '', g.status || 'Pending'));
-      }
-    } catch (e) {}
-
-  </script>
-</body>
-</html>/html>dy>
-</html>/html>Pending'));
-      }
-    } catch (e) {}
-
-  </script>
-</body>
-</html>/html> || '', g.status || 'Pending'));
-      }
-    } catch (e) {}
-
-  </script>
-</body>
-</html>/html>Pending'));
-      }
-    } catch (e) {}
-
-  </script>
-</body>
-</html>/html> || '', g.status || 'Pending'));
-      }
-    } catch (e) {}
-
   </script>
 </body>
 </html>/html>

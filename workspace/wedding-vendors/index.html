@@ -161,6 +161,11 @@
     }
     .footer-box p { margin: 0; color: var(--muted); line-height: 1.7; }
     .link-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .comparison-wrap { overflow-x: auto; margin-top: 14px; }
+    .comparison-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .comparison-table th, .comparison-table td { text-align: left; vertical-align: top; padding: 12px 10px; border-top: 1px solid var(--line); }
+    .comparison-table th { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+    .table-note { color: var(--muted); font-size: 12px; }
 
     .pinterest-strip {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
@@ -325,22 +330,63 @@
           <div class="mini-note">Bride + others. Current beauty options are being refined.</div>
         </div>
         <div class="vendors">
-          
-
-          <article class="vendor-card" data-gallery='["https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=1200&q=80","https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=80","https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80"]'>
+          <div class="vendor-card" style="grid-template-columns:1fr;">
             <div>
-              <div class="vendor-top"><h3>Chi Beauty Artistry</h3><div class="price">$$</div></div>
-              <div class="why">A grounded comparison point if you want something simpler and more budget-conscious while still feeling polished and natural.</div>
-              <div class="rationale"><span class="label">Why they fit</span>Typical quote range shared: about $500 for the bride and $300 per additional person.</div>
+              <div class="vendor-top"><h3>Quick comparison</h3><div class="price">2 options</div></div>
+              <div class="rationale"><span class="label">At a glance</span>Two stronger-fit options remain for Rose to compare side by side.</div>
+              <div class="comparison-wrap">
+                <table class="comparison-table">
+                  <thead>
+                    <tr>
+                      <th>Artist</th>
+                      <th>Bridal HMU</th>
+                      <th>Preview / Trial</th>
+                      <th>Bridal Party</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Marla &amp; Co</td>
+                      <td>$1,695</td>
+                      <td>$695</td>
+                      <td>$395/person<br><span class="table-note">$225 hair or makeup only</span></td>
+                    </tr>
+                    <tr>
+                      <td>TEAM Hair &amp; Makeup</td>
+                      <td>$895–$950<br><span class="table-note">Plan 1</span></td>
+                      <td>$595</td>
+                      <td>Hair $205 / Makeup $220</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <article class="vendor-card" data-gallery='["./assets/marla-approved.jpg","./assets/marla-approved.jpg","./assets/marla-approved.jpg"]'>
+            <div>
+              <div class="vendor-top"><h3>Marla &amp; Co</h3><div class="price">$$$</div></div>
+              <div class="why">The more luxury, concierge-style option — especially strong if Rose wants a highly supported, elevated beauty experience.</div>
+              <div class="rationale"><span class="label">Highlights</span>Bridal preview $695 · Wedding day bridal hair &amp; makeup $1,695 · Auxiliary event bridal HMU $1,295 · Extended coverage $350/hr · Bridal party hair &amp; makeup $395/person.</div>
               <div class="actions">
-                <a class="btn primary" href="https://www.chibeautyartistry.com/" target="_blank" rel="noopener noreferrer">Visit website</a>
                 <a class="btn" href="#home">Back to top</a>
               </div>
             </div>
             <div class="gallery"><div class="gallery-main"></div><div class="thumbs"></div></div>
           </article>
 
-          
+          <article class="vendor-card" data-gallery='["./assets/team-approved.jpg","./assets/team-approved.jpg","./assets/team-approved.jpg"]'>
+            <div>
+              <div class="vendor-top"><h3>TEAM Hair &amp; Makeup</h3><div class="price">$$</div></div>
+              <div class="why">A more flexible and budget-aware comparison point, with multiple bridal plans and clear à la carte pricing for others.</div>
+              <div class="rationale"><span class="label">Highlights</span>Bridal plans from $895–$950, $1,200 with touch-ups, or $2,100 including rehearsal dinner services · Bridal HMU trial $595 · Bridesmaids hair $205 / makeup $220 · Mothers hair $195 / makeup $205.</div>
+              <div class="actions">
+                <a class="btn primary" href="https://teamhairandmakeup.com" target="_blank" rel="noopener noreferrer">Visit website</a>
+                <a class="btn" href="#home">Back to top</a>
+              </div>
+            </div>
+            <div class="gallery"><div class="gallery-main"></div><div class="thumbs"></div></div>
+          </article>
         </div>
       </div>
     </section>

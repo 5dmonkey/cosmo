@@ -2,9 +2,9 @@
 :root {
   --bg: #f6efe4;
   --paper: rgba(252, 248, 241, 0.78);
-  --ink: #2b241e;
-  --muted: #706861;
-  --line: rgba(98, 84, 72, 0.10);
+  --ink: #342b24;
+  --muted: #84766a;
+  --line: rgba(90, 74, 62, 0.10);
   --soft: rgba(255,255,255,0.56);
 }
 * { box-sizing: border-box; }
@@ -43,20 +43,20 @@ body::after {
   min-height: 100vh;
   max-width: 760px;
   margin: 0 auto;
-  padding: 66px 28px 44px;
+  padding: 44px 24px 24px;
   display: flex;
   flex-direction: column;
 }
 .intro {
-  margin-bottom: 56px;
-  padding-left: 10px;
-  max-width: 520px;
+  margin-bottom: 24px;
+  padding-left: 6px;
+  max-width: 500px;
 }
 .eyebrow {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(4.4rem, 13vw, 7.4rem);
-  line-height: 1.03;
+  font-size: clamp(3.55rem, 11vw, 6rem);
+  line-height: .99;
   letter-spacing: -0.045em;
   max-width: 7.4ch;
 }
@@ -65,23 +65,23 @@ body::after {
   font-style: italic;
 }
 .intro-copy {
-  margin: 34px 0 0;
-  max-width: 22rem;
+  margin: 16px 0 0;
+  max-width: 21rem;
   color: var(--muted);
   font-size: 1rem;
-  line-height: 1.9;
+  line-height: 1.65;
   font-weight: 400;
 }
 .signature {
-  margin: 10px 0 0 2px;
+  margin: 6px 0 0 2px;
   font-family: "Parisienne", cursive;
-  font-size: 1.15rem;
-  color: #8d7b6e;
+  font-size: .98rem;
+  color: #8b7768;
 }
 .stack {
   display: grid;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 12px;
+  margin-top: 12px;
 }
 .card {
   background: rgba(255, 252, 247, 0.46);
@@ -97,36 +97,36 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 12px;
   background: transparent;
   border: 0;
-  padding: 34px 30px;
+  padding: 24px 24px;
   border-radius: 0;
   cursor: pointer;
 }
 .card-toggle:hover { background: transparent; transform: none; }
 .card-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.15rem, 6vw, 3.2rem);
-  line-height: 1.02;
+  font-size: clamp(1.85rem, 5.4vw, 2.65rem);
+  line-height: 1.0;
   text-align: left;
   max-width: 9ch;
 }
-.card-plus {
+ .card-plus {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2.9rem;
+  font-size: 2.15rem;
   line-height: 1;
-  color: #7f7368;
+  color: #8a7a6c;
   transition: transform 180ms ease;
   font-weight: 400;
 }
 .card-toggle[aria-expanded="true"] .card-plus { transform: rotate(45deg); }
-.form.collapsible { display: none; padding: 0 30px 32px; }
+.form.collapsible { display: none; padding: 0 24px 22px; }
 .form.collapsible.open { display: grid; }
 .form { gap: 14px; }
 label { display: grid; gap: 7px; }
 label span {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: .12em;
@@ -136,7 +136,7 @@ input, textarea {
   border: 1px solid rgba(98, 84, 72, 0.12);
   background: rgba(255,255,255,0.52);
   border-radius: 18px;
-  padding: 15px 16px;
+  padding: 12px 14px;
   font: inherit;
   color: var(--ink);
   outline: none;
@@ -144,43 +144,43 @@ input, textarea {
 textarea { resize: vertical; min-height: 124px; }
 button[type="submit"] {
   justify-self: start;
-  border: 1px solid rgba(98, 84, 72, 0.12);
-  background: rgba(255,255,255,0.24);
+  border: 1px solid rgba(98, 84, 72, 0.10);
+  background: rgba(255,255,255,0.22);
   color: var(--ink);
   border-radius: 999px;
-  padding: 14px 22px;
-  min-width: 250px;
+  padding: 10px 20px;
+  min-width: 230px;
   font: inherit;
   cursor: pointer;
 }
 .thank-you {
-  min-height: 1.2em;
-  margin: 4px 0 0;
+  min-height: 1.1em;
+  margin: 2px 0 0;
   font-size: 14px;
   color: var(--muted);
 }
 .hidden { display: none; }
 .footer-note {
   margin-top: auto;
-  padding: 64px 8px 10px;
+  padding: 18px 8px 6px;
   text-align: center;
   color: var(--muted);
 }
 .footer-note p {
   margin: 0;
-  font-size: 11px;
-  letter-spacing: .22em;
+  font-size: 9px;
+  letter-spacing: .18em;
   text-transform: uppercase;
   line-height: 1.8;
 }
 .footer-mark {
-  margin-top: 10px;
+  margin-top: 6px;
   font-family: "Parisienne", cursive;
   font-size: 2rem;
   color: #84796d;
 }
 @media (min-width: 860px) {
-  .page { max-width: 860px; padding: 96px 40px 60px; }
-  .eyebrow { font-size: 7rem; }
-  .intro-copy { max-width: 24rem; font-size: 1.02rem; }
+  .page { max-width: 860px; padding: 72px 36px 34px; }
+  .eyebrow { font-size: 6rem; }
+  .intro-copy { max-width: 23rem; font-size: .98rem; }
 }

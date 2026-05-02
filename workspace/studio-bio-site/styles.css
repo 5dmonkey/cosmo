@@ -1,0 +1,98 @@
+:root {
+  --bg: #fbf7f2;
+  --paper: rgba(255, 252, 248, 0.82);
+  --ink: #2d2722;
+  --muted: #746b63;
+  --line: rgba(68, 54, 44, 0.12);
+  --soft: rgba(255,255,255,0.72);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: Inter, sans-serif;
+  background: radial-gradient(circle at top left, rgba(201, 182, 165, 0.12), transparent 30%), linear-gradient(180deg, #fdfaf7, var(--bg));
+  color: var(--ink);
+}
+.page {
+  min-height: 100vh;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 20px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.intro { margin-bottom: 28px; }
+.eyebrow {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+.stack {
+  display: grid;
+  gap: 18px;
+}
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 26px 22px;
+  backdrop-filter: blur(10px);
+}
+.card-copy { margin-bottom: 18px; }
+h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.form { display: grid; gap: 14px; }
+label { display: grid; gap: 7px; }
+label span {
+  font-size: 13px;
+  color: var(--muted);
+}
+input, textarea {
+  width: 100%;
+  border: 1px solid rgba(68, 54, 44, 0.14);
+  background: var(--soft);
+  border-radius: 18px;
+  padding: 15px 16px;
+  font: inherit;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+textarea { resize: vertical; min-height: 124px; }
+input:focus, textarea:focus {
+  border-color: rgba(68, 54, 44, 0.28);
+  background: #fffdfb;
+}
+button {
+  justify-self: start;
+  border: 1px solid rgba(68, 54, 44, 0.16);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 11px 16px;
+  font: inherit;
+  cursor: pointer;
+  transition: background 120ms ease, transform 120ms ease;
+}
+button:hover { background: rgba(255,255,255,0.65); transform: translateY(-1px); }
+.thank-you {
+  min-height: 1.2em;
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.hidden { display: none; }
+@media (min-width: 860px) {
+  .page { max-width: 1080px; }
+  .stack { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .card { padding: 32px 28px; }
+}

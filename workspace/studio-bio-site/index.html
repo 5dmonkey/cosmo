@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio McCailey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">For gatherings, collaborations, and what’s next</p>
+    </section>
+
+    <section class="stack">
+      <article class="card">
+        <div class="card-copy">
+          <h1>Be invited to future gatherings</h1>
+        </div>
+        <form name="future-gatherings" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form" data-success-form>
+          <input type="hidden" name="form-name" value="future-gatherings" />
+          <input type="hidden" name="subject" value="Future Gatherings Interest" />
+          <p class="hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            <span>City</span>
+            <input type="text" name="city" />
+          </label>
+          <button type="submit">Be invited</button>
+          <p class="thank-you" aria-live="polite"></p>
+        </form>
+      </article>
+
+      <article class="card">
+        <div class="card-copy">
+          <h1>Inquire about working together</h1>
+        </div>
+        <form name="work-together" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form" data-success-form>
+          <input type="hidden" name="form-name" value="work-together" />
+          <input type="hidden" name="subject" value="Work Together Inquiry" />
+          <p class="hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            <span>What are you envisioning?</span>
+            <textarea name="vision" rows="5" required></textarea>
+          </label>
+          <button type="submit">Inquire</button>
+          <p class="thank-you" aria-live="polite"></p>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

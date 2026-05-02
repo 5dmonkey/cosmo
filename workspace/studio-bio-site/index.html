@@ -16,11 +16,12 @@
     </section>
 
     <section class="stack">
-      <article class="card">
-        <div class="card-copy">
-          <h1>Be invited to future gatherings</h1>
-        </div>
-        <form name="future-gatherings" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form" data-success-form>
+      <article class="card card-collapsible">
+        <button class="card-toggle" type="button" aria-expanded="false">
+          <span class="card-title">Be invited to future gatherings</span>
+          <span class="card-plus">+</span>
+        </button>
+        <form name="future-gatherings" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form collapsible" data-success-form>
           <input type="hidden" name="form-name" value="future-gatherings" />
           <input type="hidden" name="subject" value="Future Gatherings Interest" />
           <p class="hidden">
@@ -43,11 +44,12 @@
         </form>
       </article>
 
-      <article class="card">
-        <div class="card-copy">
-          <h1>Inquire about working together</h1>
-        </div>
-        <form name="work-together" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form" data-success-form>
+      <article class="card card-collapsible">
+        <button class="card-toggle" type="button" aria-expanded="false">
+          <span class="card-title">Inquire about working together</span>
+          <span class="card-plus">+</span>
+        </button>
+        <form name="work-together" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form collapsible" data-success-form>
           <input type="hidden" name="form-name" value="work-together" />
           <input type="hidden" name="subject" value="Work Together Inquiry" />
           <p class="hidden">

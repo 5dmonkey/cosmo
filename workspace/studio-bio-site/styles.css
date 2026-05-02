@@ -5,6 +5,7 @@
   --muted: #746b63;
   --line: rgba(68, 54, 44, 0.12);
   --soft: rgba(255,255,255,0.72);
+  --accent-sans: 'Arial', 'Helvetica Neue', sans-serif;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; min-height: 100%; }
@@ -17,22 +18,31 @@ body {
   min-height: 100vh;
   max-width: 760px;
   margin: 0 auto;
-  padding: 56px 20px 72px;
+  padding: 68px 22px 86px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.intro { margin-bottom: 28px; }
+.intro { margin-bottom: 40px; padding-left: 6px; max-width: 640px; }
 .eyebrow {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.7;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.35rem, 7vw, 3.6rem);
+  line-height: 1.02;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.intro-copy {
+  margin: 18px 0 0;
+  max-width: 36rem;
   color: var(--muted);
-  letter-spacing: 0.01em;
+  font-family: var(--accent-sans);
+  font-size: 15px;
+  line-height: 1.8;
 }
 .stack {
   display: grid;
-  gap: 18px;
+  gap: 24px;
 }
 .card {
   background: var(--paper);
@@ -43,7 +53,8 @@ body {
 }
 .card-copy { margin-bottom: 18px; }
 
-.card-collapsible { padding: 18px 20px 20px; }
+.card-collapsible { padding: 20px 20px 22px; }
+.card:nth-child(2) { margin-left: 18px; }
 .card-toggle {
   width: 100%;
   display: flex;
@@ -58,9 +69,10 @@ body {
 .card-toggle:hover { background: transparent; transform: none; }
 .card-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.9rem, 4.5vw, 2.45rem);
-  line-height: 1.02;
+  font-size: clamp(1.85rem, 4.5vw, 2.35rem);
+  line-height: 1.06;
   text-align: left;
+  max-width: 12ch;
 }
 .card-plus {
   font-size: 30px;
@@ -83,8 +95,11 @@ h1 {
 .form { display: grid; gap: 14px; }
 label { display: grid; gap: 7px; }
 label span {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-family: var(--accent-sans);
 }
 input, textarea {
   width: 100%;
@@ -112,6 +127,7 @@ button {
   font: inherit;
   cursor: pointer;
   transition: background 120ms ease, transform 120ms ease;
+  font-family: var(--accent-sans);
 }
 button:hover { background: rgba(255,255,255,0.65); transform: translateY(-1px); }
 .thank-you {
@@ -122,7 +138,11 @@ button:hover { background: rgba(255,255,255,0.65); transform: translateY(-1px); 
 }
 .hidden { display: none; }
 @media (min-width: 860px) {
-  .page { max-width: 1080px; }
-  .stack { grid-template-columns: 1fr 1fr; gap: 22px; }
-  .card { padding: 32px 28px; }
+  .page { max-width: 1080px; padding: 84px 34px 96px; }
+  .stack { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .card { padding: 34px 30px; }
+  .card:nth-child(2) { margin-left: 34px; }
+}
+@media (max-width: 640px) {
+  .card:nth-child(2) { margin-left: 0; }
 }

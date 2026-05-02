@@ -81,7 +81,7 @@ body::after {
 .stack {
   display: grid;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 22px;
 }
 .card {
   background: rgba(255, 252, 247, 0.46);

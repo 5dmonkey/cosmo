@@ -55,10 +55,10 @@ body::after {
 .eyebrow {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 9.6vw, 4.8rem);
+  font-size: clamp(3.2rem, 10.2vw, 5rem);
   line-height: .95;
   letter-spacing: -0.045em;
-  max-width: 7.4ch;
+  max-width: 10.8ch;
 }
 .eyebrow em { font-style: italic; }
 .eyebrow em {

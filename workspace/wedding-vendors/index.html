@@ -167,6 +167,13 @@
     .comparison-table th { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
     .table-note { color: var(--muted); font-size: 12px; }
 
+    .details-toggle { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 14px; }
+    details { border-top: 1px solid var(--line); padding-top: 12px; }
+    summary { cursor: pointer; list-style: none; font-weight: 600; color: var(--ink); }
+    summary::-webkit-details-marker { display: none; }
+    .detail-list { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+    .detail-list li { margin-bottom: 8px; }
+
     .pinterest-strip {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
     }
@@ -327,21 +334,21 @@
             <h2>Hair &amp; Makeup</h2>
             <p>This beauty direction wants to feel polished, natural, and calm — enough structure for your photos, but nothing too overdone or “bridal” in a heavy-handed way.</p>
           </div>
-          <div class="mini-note">Bride + others. Current beauty options are being refined.</div>
+          <div class="mini-note">A quick compare first, then open details only if you want them.</div>
         </div>
         <div class="vendors">
           <div class="vendor-card" style="grid-template-columns:1fr;">
             <div>
               <div class="vendor-top"><h3>Quick comparison</h3><div class="price">2 options</div></div>
-              <div class="rationale"><span class="label">At a glance</span>Two stronger-fit options remain for Rose to compare side by side.</div>
               <div class="comparison-wrap">
                 <table class="comparison-table">
                   <thead>
                     <tr>
                       <th>Artist</th>
                       <th>Bridal HMU</th>
-                      <th>Preview / Trial</th>
+                      <th>Trial</th>
                       <th>Bridal Party</th>
+                      <th>Best for</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -350,12 +357,14 @@
                       <td>$1,695</td>
                       <td>$695</td>
                       <td>$395/person<br><span class="table-note">$225 hair or makeup only</span></td>
+                      <td>More luxury support + concierge feel</td>
                     </tr>
                     <tr>
                       <td>TEAM Hair &amp; Makeup</td>
                       <td>$895–$950<br><span class="table-note">Plan 1</span></td>
                       <td>$595</td>
                       <td>Hair $205 / Makeup $220</td>
+                      <td>More flexible pricing + scalable options</td>
                     </tr>
                   </tbody>
                 </table>
@@ -363,11 +372,24 @@
             </div>
           </div>
 
-          <article class="vendor-card" data-gallery='["./assets/marla-approved.jpg","./assets/marla-approved.jpg","./assets/marla-approved.jpg"]'>
+          <article class="vendor-card" data-gallery='["./assets/marla-approved.jpg"]'>
             <div>
               <div class="vendor-top"><h3>Marla &amp; Co</h3><div class="price">$$$</div></div>
-              <div class="why">The more luxury, concierge-style option — especially strong if Rose wants a highly supported, elevated beauty experience.</div>
-              <div class="rationale"><span class="label">Highlights</span>Bridal preview $695 · Wedding day bridal hair &amp; makeup $1,695 · Auxiliary event bridal HMU $1,295 · Extended coverage $350/hr · Bridal party hair &amp; makeup $395/person.</div>
+              <div class="why">Best if Rose wants a highly supported, elevated bridal beauty experience with a more concierge feel.</div>
+              <div class="details-toggle">
+                <details>
+                  <summary>View details</summary>
+                  <ul class="detail-list">
+                    <li><strong>Bridal Hair &amp; Makeup Preview:</strong> $695</li>
+                    <li><strong>Wedding Day Bridal Hair &amp; Makeup:</strong> $1,695</li>
+                    <li><strong>Auxiliary Event Bridal Hair &amp; Makeup:</strong> $1,295</li>
+                    <li><strong>Extended Coverage / Look Change:</strong> $350/hr</li>
+                    <li><strong>Bridal Party Hair &amp; Makeup:</strong> $395 per person</li>
+                    <li><strong>Hair or makeup only:</strong> $225</li>
+                    <li><strong>Notable includes:</strong> preview session, prep guidance, veil placement, extensions install + cut, lip touch-up, waterproof/humidity-resistant products</li>
+                  </ul>
+                </details>
+              </div>
               <div class="actions">
                 <a class="btn" href="#home">Back to top</a>
               </div>
@@ -375,11 +397,26 @@
             <div class="gallery"><div class="gallery-main"></div><div class="thumbs"></div></div>
           </article>
 
-          <article class="vendor-card" data-gallery='["./assets/team-approved.jpg","./assets/team-approved.jpg","./assets/team-approved.jpg"]'>
+          <article class="vendor-card" data-gallery='["./assets/team-approved.jpg"]'>
             <div>
               <div class="vendor-top"><h3>TEAM Hair &amp; Makeup</h3><div class="price">$$</div></div>
-              <div class="why">A more flexible and budget-aware comparison point, with multiple bridal plans and clear à la carte pricing for others.</div>
-              <div class="rationale"><span class="label">Highlights</span>Bridal plans from $895–$950, $1,200 with touch-ups, or $2,100 including rehearsal dinner services · Bridal HMU trial $595 · Bridesmaids hair $205 / makeup $220 · Mothers hair $195 / makeup $205.</div>
+              <div class="why">Best if Rose wants more flexibility, clearer à la carte structure, and a more budget-aware comparison point.</div>
+              <div class="details-toggle">
+                <details>
+                  <summary>View details</summary>
+                  <ul class="detail-list">
+                    <li><strong>Bridal Plan 1:</strong> $895–$950</li>
+                    <li><strong>Bridal Plan 2 with touch-ups:</strong> $1,200</li>
+                    <li><strong>Bridal Plan 3 with touch-ups + rehearsal dinner:</strong> $2,100</li>
+                    <li><strong>Bridal HMU Trial:</strong> $595</li>
+                    <li><strong>Hair-only or makeup-only trial:</strong> $395</li>
+                    <li><strong>Bridesmaids:</strong> Hair $205 / Makeup $220</li>
+                    <li><strong>MOB/MOG:</strong> Hair $195 / Makeup $205</li>
+                    <li><strong>Groom / Groomsmen:</strong> Hair $125 / Light makeup $95</li>
+                    <li><strong>Notable includes:</strong> optional beauty zoom, skincare prep, custom lashes, anti-frizz hair treatment, veil placement, travel to you</li>
+                  </ul>
+                </details>
+              </div>
               <div class="actions">
                 <a class="btn primary" href="https://teamhairandmakeup.com" target="_blank" rel="noopener noreferrer">Visit website</a>
                 <a class="btn" href="#home">Back to top</a>

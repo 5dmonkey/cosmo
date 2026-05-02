@@ -42,6 +42,36 @@ body {
   backdrop-filter: blur(10px);
 }
 .card-copy { margin-bottom: 18px; }
+
+.card-collapsible { padding: 18px 20px 20px; }
+.card-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: transparent;
+  border: 0;
+  padding: 4px 0;
+  border-radius: 0;
+}
+.card-toggle:hover { background: transparent; transform: none; }
+.card-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.9rem, 4.5vw, 2.45rem);
+  line-height: 1.02;
+  text-align: left;
+}
+.card-plus {
+  font-size: 30px;
+  line-height: 1;
+  color: var(--muted);
+  transition: transform 160ms ease;
+}
+.card-toggle[aria-expanded="true"] .card-plus { transform: rotate(45deg); }
+.collapsible { display: none; padding-top: 14px; }
+.collapsible.open { display: grid; }
+
 h1 {
   margin: 0;
   font-family: "Cormorant Garamond", serif;

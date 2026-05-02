@@ -69,8 +69,8 @@ body {
   transition: transform 160ms ease;
 }
 .card-toggle[aria-expanded="true"] .card-plus { transform: rotate(45deg); }
-.collapsible { display: none; padding-top: 14px; }
-.collapsible.open { display: grid; }
+.form.collapsible { display: none; padding-top: 14px; }
+.form.collapsible.open { display: grid; }
 
 h1 {
   margin: 0;

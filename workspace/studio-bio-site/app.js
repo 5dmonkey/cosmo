@@ -11,6 +11,9 @@ document.querySelectorAll('.card-toggle').forEach((button) => {
     const form = button.parentElement.querySelector('.collapsible');
     const isOpen = button.getAttribute('aria-expanded') === 'true';
     button.setAttribute('aria-expanded', String(!isOpen));
-    form?.classList.toggle('open', !isOpen);
+    if (form) {
+      form.hidden = isOpen;
+      form.classList.toggle('open', !isOpen);
+    }
   });
 });

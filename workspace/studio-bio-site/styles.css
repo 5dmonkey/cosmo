@@ -73,7 +73,7 @@ body::after {
   font-weight: 400;
 }
 .signature {
-  margin: 4px 0 0 2px;
+  margin: 4px 0 18px 2px;
   font-family: "Parisienne", cursive;
   font-size: .9rem;
   color: #8b7768;

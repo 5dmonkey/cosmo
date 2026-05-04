@@ -8,38 +8,136 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#f6efe4;--ink:#342b24;--muted:#84766a;--line:rgba(90,74,62,.10)}
-    *{box-sizing:border-box} html,body{margin:0;min-height:100%}
+    :root{
+      --bg:#f6efe4;
+      --ink:#342b24;
+      --muted:#84766a;
+      --petal-a:rgba(205,136,135,.42);
+      --petal-b:rgba(223,178,139,.38);
+      --petal-c:rgba(191,144,175,.34);
+      --petal-d:rgba(216,196,126,.30);
+      --center:rgba(128,103,80,.28);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%}
     body{
       font-family:Inter,sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(circle at 18% 8%, rgba(255,255,255,0.45), transparent 22%),
-        radial-gradient(circle at 85% 18%, rgba(214,202,184,0.28), transparent 18%),
+        radial-gradient(circle at 18% 8%, rgba(255,255,255,.45), transparent 22%),
+        radial-gradient(circle at 85% 18%, rgba(214,202,184,.28), transparent 18%),
         linear-gradient(180deg,#f8f1e7,var(--bg));
-      display:flex;align-items:center;justify-content:center;padding:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      overflow:hidden;
     }
     body::before{
-      content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.14;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
     }
     .card{
-      position:relative;z-index:1;max-width:560px;width:100%;
-      background:rgba(255,252,247,.55);
-      border:1px solid rgba(90,74,62,.10);
-      border-radius:34px;padding:54px 34px 34px;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.35);
+      position:relative;
+      z-index:1;
+      width:min(100%,560px);
+      text-align:center;
+      padding:36px 28px 24px;
+      border-radius:34px;
+      background:rgba(255,252,247,.42);
+      border:1px solid rgba(90,74,62,.08);
       backdrop-filter:blur(10px);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.35);
     }
-    .spark{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-    h1{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(3.2rem,10vw,5.2rem);line-height:.95;letter-spacing:-.04em;max-width:7ch}
-    p{margin:16px 0 0;max-width:24rem;color:var(--muted);line-height:1.75;font-size:1rem}
-    .sig{margin-top:10px;font-family:"Parisienne",cursive;font-size:1.05rem;color:#8b7768}
-    a{display:inline-flex;align-items:center;justify-content:center;margin-top:28px;color:var(--ink);text-decoration:none;border:1px solid rgba(90,74,62,.10);border-radius:999px;padding:12px 18px;background:rgba(255,255,255,.26)}
+    .flower-wrap{
+      position:relative;
+      width:220px;
+      height:220px;
+      margin:0 auto 20px;
+      display:grid;
+      place-items:center;
+    }
+    .flower{
+      position:relative;
+      width:160px;
+      height:160px;
+      animation: drift 8s ease-in-out infinite;
+    }
+    .petal{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:54px;
+      height:92px;
+      margin-left:-27px;
+      margin-top:-82px;
+      border-radius:60% 60% 70% 70%/70% 70% 40% 40%;
+      transform-origin:50% 90%;
+      filter:blur(.2px);
+      opacity:0;
+      animation: bloom 1.5s ease forwards;
+    }
+    .petal:nth-child(1){background:var(--petal-a);transform:rotate(0deg) scale(.2);animation-delay:.08s}
+    .petal:nth-child(2){background:var(--petal-b);transform:rotate(45deg) scale(.2);animation-delay:.18s}
+    .petal:nth-child(3){background:var(--petal-c);transform:rotate(90deg) scale(.2);animation-delay:.28s}
+    .petal:nth-child(4){background:var(--petal-d);transform:rotate(135deg) scale(.2);animation-delay:.38s}
+    .petal:nth-child(5){background:var(--petal-a);transform:rotate(180deg) scale(.2);animation-delay:.48s}
+    .petal:nth-child(6){background:var(--petal-b);transform:rotate(225deg) scale(.2);animation-delay:.58s}
+    .petal:nth-child(7){background:var(--petal-c);transform:rotate(270deg) scale(.2);animation-delay:.68s}
+    .petal:nth-child(8){background:var(--petal-d);transform:rotate(315deg) scale(.2);animation-delay:.78s}
+    .center{
+      position:absolute;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:radial-gradient(circle at 35% 35%, rgba(255,255,255,.55), transparent 35%), var(--center);
+      box-shadow:0 0 18px rgba(167,134,101,.16);
+      animation: appear 1.8s ease forwards .9s;
+      opacity:0;
+    }
+    .halo{
+      position:absolute;
+      width:178px;
+      height:178px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(255,255,255,.38), rgba(255,255,255,0) 68%);
+      opacity:0;
+      animation: glow 3s ease forwards 1.2s;
+    }
+    .spark{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+    h1{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,10vw,5rem);line-height:.95;letter-spacing:-.04em}
+    p{margin:14px auto 0;max-width:20rem;color:var(--muted);line-height:1.75;font-size:1rem}
+    .sig{margin-top:8px;font-family:"Parisienne",cursive;font-size:1.05rem;color:#8b7768}
+    a{display:inline-flex;align-items:center;justify-content:center;margin-top:24px;color:var(--ink);text-decoration:none;border:1px solid rgba(90,74,62,.10);border-radius:999px;padding:12px 18px;background:rgba(255,255,255,.24)}
+    @keyframes bloom{
+      0%{opacity:0;transform:translateY(12px) rotate(var(--r,0deg)) scale(.2)}
+      100%{opacity:1;transform:translateY(0) rotate(var(--r,0deg)) scale(1)}
+    }
+    @keyframes appear{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+    @keyframes glow{0%{opacity:0;transform:scale(.6)}100%{opacity:1;transform:scale(1.08)}}
+    @keyframes drift{0%,100%{transform:rotate(-2deg) scale(1)}50%{transform:rotate(2deg) scale(1.02)}}
   </style>
 </head>
 <body>
   <main class="card">
+    <div class="flower-wrap" aria-hidden="true">
+      <div class="halo"></div>
+      <div class="flower">
+        <div class="petal" style="--r:0deg"></div>
+        <div class="petal" style="--r:45deg"></div>
+        <div class="petal" style="--r:90deg"></div>
+        <div class="petal" style="--r:135deg"></div>
+        <div class="petal" style="--r:180deg"></div>
+        <div class="petal" style="--r:225deg"></div>
+        <div class="petal" style="--r:270deg"></div>
+        <div class="petal" style="--r:315deg"></div>
+        <div class="center"></div>
+      </div>
+    </div>
     <div class="spark">Received with care</div>
     <h1>Thank you.</h1>
     <p>Your note is here. I’ll be in touch soon.</p>

@@ -12,11 +12,13 @@
       --bg:#f6efe4;
       --ink:#342b24;
       --muted:#84766a;
-      --petal-a:rgba(205,136,135,.42);
-      --petal-b:rgba(223,178,139,.38);
-      --petal-c:rgba(191,144,175,.34);
-      --petal-d:rgba(216,196,126,.30);
-      --center:rgba(128,103,80,.28);
+      --stem:#6f8b62;
+      --lily-pink:#d6508e;
+      --lily-deep:#9a2e6c;
+      --lily-soft:#f2d8de;
+      --lily-cream:#f4efe8;
+      --stamen:#b86a2d;
+      --stamen-deep:#8f4e19;
     }
     *{box-sizing:border-box}
     html,body{margin:0;min-height:100%}
@@ -38,104 +40,167 @@
       position:fixed;
       inset:0;
       pointer-events:none;
-      opacity:.14;
+      opacity:.12;
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
     }
     .card{
       position:relative;
       z-index:1;
-      width:min(100%,560px);
+      width:min(100%,620px);
       text-align:center;
-      padding:36px 28px 24px;
+      padding:26px 26px 24px;
       border-radius:34px;
-      background:rgba(255,252,247,.42);
+      background:rgba(255,252,247,.44);
       border:1px solid rgba(90,74,62,.08);
-      backdrop-filter:blur(10px);
       box-shadow:inset 0 1px 0 rgba(255,255,255,.35);
+      backdrop-filter:blur(10px);
     }
-    .flower-wrap{
+    .flower-scene{
       position:relative;
-      width:220px;
-      height:220px;
-      margin:0 auto 20px;
-      display:grid;
-      place-items:center;
+      width:100%;
+      height:330px;
+      margin:0 auto 10px;
+      overflow:hidden;
     }
     .flower{
-      position:relative;
-      width:160px;
-      height:160px;
-      animation: drift 8s ease-in-out infinite;
+      position:absolute;
+      transform-origin:center bottom;
+      animation: float 6s ease-in-out infinite;
+    }
+    .flower.top{ width:210px; height:210px; right:38px; top:0; animation-delay:.2s; }
+    .flower.bottom{ width:230px; height:230px; left:56px; bottom:8px; animation-delay:.5s; }
+    .stem{
+      position:absolute;
+      width:8px;
+      height:110px;
+      background:linear-gradient(180deg,#86a072,var(--stem));
+      border-radius:999px;
+      left:50%;
+      bottom:10px;
+      transform:translateX(-50%) rotate(8deg);
+      opacity:.7;
+    }
+    .flower.bottom .stem{height:96px; transform:translateX(-50%) rotate(-10deg);}
+    .bud{
+      position:absolute;
+      left:50%;
+      top:58%;
+      width:34px;
+      height:70px;
+      margin-left:-17px;
+      margin-top:-35px;
+      background:linear-gradient(180deg,var(--lily-soft),var(--lily-pink));
+      border-radius:50% 50% 44% 44% / 28% 28% 72% 72%;
+      transform-origin:center 80%;
+      animation: budFade 4.2s ease forwards;
+      box-shadow:0 0 18px rgba(214,80,142,.14);
     }
     .petal{
       position:absolute;
       left:50%;
       top:50%;
-      width:54px;
-      height:92px;
-      margin-left:-27px;
-      margin-top:-82px;
-      border-radius:60% 60% 70% 70%/70% 70% 40% 40%;
-      transform-origin:50% 90%;
-      filter:blur(.2px);
+      width:62px;
+      height:118px;
+      margin-left:-31px;
+      margin-top:-86px;
+      border-radius:58% 58% 70% 70% / 62% 62% 42% 42%;
+      transform-origin:50% 82%;
       opacity:0;
-      animation: bloom 1.5s ease forwards;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.18), 0 0 20px rgba(214,80,142,.10);
+      animation: bloom 4.2s cubic-bezier(.2,.8,.15,1) forwards;
     }
-    .petal:nth-child(1){background:var(--petal-a);transform:rotate(0deg) scale(.2);animation-delay:.08s}
-    .petal:nth-child(2){background:var(--petal-b);transform:rotate(45deg) scale(.2);animation-delay:.18s}
-    .petal:nth-child(3){background:var(--petal-c);transform:rotate(90deg) scale(.2);animation-delay:.28s}
-    .petal:nth-child(4){background:var(--petal-d);transform:rotate(135deg) scale(.2);animation-delay:.38s}
-    .petal:nth-child(5){background:var(--petal-a);transform:rotate(180deg) scale(.2);animation-delay:.48s}
-    .petal:nth-child(6){background:var(--petal-b);transform:rotate(225deg) scale(.2);animation-delay:.58s}
-    .petal:nth-child(7){background:var(--petal-c);transform:rotate(270deg) scale(.2);animation-delay:.68s}
-    .petal:nth-child(8){background:var(--petal-d);transform:rotate(315deg) scale(.2);animation-delay:.78s}
+    .top .petal{ background:linear-gradient(180deg,var(--lily-soft) 0%, #ee84b5 18%, var(--lily-pink) 48%, var(--lily-deep) 100%); }
+    .bottom .petal{ background:linear-gradient(180deg,#fbefe2 0%, #f0d5e0 20%, #caa2cd 55%, #9d7bb2 100%); }
+    .p1{ transform:rotate(0deg) scale(.15);} .p2{ transform:rotate(60deg) scale(.15);} .p3{ transform:rotate(120deg) scale(.15);} .p4{ transform:rotate(180deg) scale(.15);} .p5{ transform:rotate(240deg) scale(.15);} .p6{ transform:rotate(300deg) scale(.15);}    
+    .p1{ animation-delay:.25s } .p2{ animation-delay:.45s } .p3{ animation-delay:.65s } .p4{ animation-delay:.85s } .p5{ animation-delay:1.05s } .p6{ animation-delay:1.25s }
+    .specks{
+      position:absolute; inset:0; opacity:0; animation: appear 1.6s ease forwards 1.6s;
+      background-image:
+        radial-gradient(circle at 48% 28%, rgba(65,30,52,.38) 0 1.2px, transparent 1.4px),
+        radial-gradient(circle at 42% 38%, rgba(65,30,52,.33) 0 1px, transparent 1.2px),
+        radial-gradient(circle at 57% 42%, rgba(65,30,52,.3) 0 1.1px, transparent 1.3px),
+        radial-gradient(circle at 36% 50%, rgba(65,30,52,.25) 0 1px, transparent 1.2px),
+        radial-gradient(circle at 62% 54%, rgba(65,30,52,.22) 0 1px, transparent 1.2px),
+        radial-gradient(circle at 46% 60%, rgba(65,30,52,.25) 0 1.1px, transparent 1.3px),
+        radial-gradient(circle at 55% 66%, rgba(65,30,52,.22) 0 1px, transparent 1.2px);
+      background-size:100% 100%;
+    }
     .center{
       position:absolute;
-      width:42px;
-      height:42px;
+      left:50%; top:50%;
+      width:26px; height:26px;
+      margin-left:-13px; margin-top:-8px;
       border-radius:50%;
-      background:radial-gradient(circle at 35% 35%, rgba(255,255,255,.55), transparent 35%), var(--center);
-      box-shadow:0 0 18px rgba(167,134,101,.16);
-      animation: appear 1.8s ease forwards .9s;
+      background:radial-gradient(circle at 35% 35%, rgba(255,255,255,.45), transparent 35%), rgba(241,230,216,.95);
+      box-shadow:0 0 14px rgba(255,255,255,.4);
       opacity:0;
+      animation: appear 1.2s ease forwards 1.65s;
     }
-    .halo{
+    .stamen{
       position:absolute;
-      width:178px;
-      height:178px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(255,255,255,.38), rgba(255,255,255,0) 68%);
+      left:50%; top:50%;
+      width:5px; height:70px;
+      margin-left:-2.5px; margin-top:-55px;
+      transform-origin:50% 85%;
+      background:linear-gradient(180deg,#f0e3b7,var(--stamen));
+      border-radius:999px;
       opacity:0;
-      animation: glow 3s ease forwards 1.2s;
+      animation: stamenGrow 1.2s ease forwards 1.7s;
+    }
+    .st1{ transform:rotate(-28deg) scaleY(.2); }
+    .st2{ transform:rotate(-10deg) scaleY(.2); }
+    .st3{ transform:rotate(10deg) scaleY(.2); }
+    .st4{ transform:rotate(28deg) scaleY(.2); }
+    .st5{ transform:rotate(52deg) scaleY(.2); }
+    .stamen::after{
+      content:"";
+      position:absolute;
+      top:-8px; left:50%;
+      width:18px; height:8px;
+      margin-left:-9px;
+      border-radius:999px;
+      background:linear-gradient(180deg,var(--stamen),var(--stamen-deep));
     }
     .spark{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
     h1{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(3rem,10vw,5rem);line-height:.95;letter-spacing:-.04em}
     p{margin:14px auto 0;max-width:20rem;color:var(--muted);line-height:1.75;font-size:1rem}
     .sig{margin-top:8px;font-family:"Parisienne",cursive;font-size:1.05rem;color:#8b7768}
     a{display:inline-flex;align-items:center;justify-content:center;margin-top:24px;color:var(--ink);text-decoration:none;border:1px solid rgba(90,74,62,.10);border-radius:999px;padding:12px 18px;background:rgba(255,255,255,.24)}
-    @keyframes bloom{
-      0%{opacity:0;transform:translateY(12px) rotate(var(--r,0deg)) scale(.2)}
-      100%{opacity:1;transform:translateY(0) rotate(var(--r,0deg)) scale(1)}
-    }
-    @keyframes appear{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
-    @keyframes glow{0%{opacity:0;transform:scale(.6)}100%{opacity:1;transform:scale(1.08)}}
-    @keyframes drift{0%,100%{transform:rotate(-2deg) scale(1)}50%{transform:rotate(2deg) scale(1.02)}}
+    @keyframes budFade{0%,28%{opacity:1;transform:scale(.9)}55%{opacity:.45;transform:scale(.7)}100%{opacity:0;transform:scale(.45)}}
+    @keyframes bloom{0%{opacity:0;filter:blur(4px)}25%{opacity:.8}100%{opacity:1;filter:blur(0px);transform:translateY(0) rotate(var(--rot)) scale(1)}}
+    @keyframes stamenGrow{from{opacity:0}to{opacity:1}}
+    @keyframes appear{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
   </style>
 </head>
 <body>
   <main class="card">
-    <div class="flower-wrap" aria-hidden="true">
-      <div class="halo"></div>
-      <div class="flower">
-        <div class="petal" style="--r:0deg"></div>
-        <div class="petal" style="--r:45deg"></div>
-        <div class="petal" style="--r:90deg"></div>
-        <div class="petal" style="--r:135deg"></div>
-        <div class="petal" style="--r:180deg"></div>
-        <div class="petal" style="--r:225deg"></div>
-        <div class="petal" style="--r:270deg"></div>
-        <div class="petal" style="--r:315deg"></div>
+    <div class="flower-scene" aria-hidden="true">
+      <div class="flower top">
+        <div class="stem"></div>
+        <div class="bud"></div>
+        <div class="petal p1" style="--rot:0deg"></div>
+        <div class="petal p2" style="--rot:60deg"></div>
+        <div class="petal p3" style="--rot:120deg"></div>
+        <div class="petal p4" style="--rot:180deg"></div>
+        <div class="petal p5" style="--rot:240deg"></div>
+        <div class="petal p6" style="--rot:300deg"></div>
+        <div class="specks"></div>
         <div class="center"></div>
+        <div class="stamen st1"></div><div class="stamen st2"></div><div class="stamen st3"></div><div class="stamen st4"></div><div class="stamen st5"></div>
+      </div>
+      <div class="flower bottom">
+        <div class="stem"></div>
+        <div class="bud"></div>
+        <div class="petal p1" style="--rot:10deg"></div>
+        <div class="petal p2" style="--rot:70deg"></div>
+        <div class="petal p3" style="--rot:130deg"></div>
+        <div class="petal p4" style="--rot:190deg"></div>
+        <div class="petal p5" style="--rot:250deg"></div>
+        <div class="petal p6" style="--rot:310deg"></div>
+        <div class="specks"></div>
+        <div class="center"></div>
+        <div class="stamen st1"></div><div class="stamen st2"></div><div class="stamen st3"></div><div class="stamen st4"></div><div class="stamen st5"></div>
       </div>
     </div>
     <div class="spark">Received with care</div>

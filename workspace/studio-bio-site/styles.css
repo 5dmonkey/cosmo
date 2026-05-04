@@ -180,12 +180,12 @@ button[type="submit"] {
   color: #84796d;
 }
 @media (min-width: 860px) {
-  .page { max-width: 860px; padding: 72px 36px 34px; }
-  .eyebrow { font-size: 6rem; }
-  .intro-copy { max-width: 25rem; font-size: 1.08rem; }
-  .signature { font-size: 1.08rem; }
-  .card-title { font-size: 2.35rem; }
-  .footer-note p { font-size: 9px; }
+  .page { max-width: 900px; padding: 72px 40px 34px; }
+  .eyebrow { font-size: 6.4rem; }
+  .intro-copy { max-width: 26rem; font-size: 1.16rem; }
+  .signature { font-size: 1.14rem; }
+  .card-title { font-size: 2.65rem; }
+  .footer-note p { font-size: 10px; }
 }
 
 body, p, h1, h2, h3, span, button, a, a:visited, a:hover, a:active, .card-title, .eyebrow, .intro-copy, .signature, .footer-note, .footer-mark { color: var(--ink) !important; }

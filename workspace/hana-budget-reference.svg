@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2280" viewBox="0 0 1600 2280">
+  <style>
+    .bg { fill:#f7f2ec; }
+    .paper { fill:#fffdf9; stroke:#d8cdc5; stroke-width:2; }
+    .eyebrow { font: 500 20px Arial, sans-serif; letter-spacing: 3px; fill:#75675f; }
+    .title { font: 600 56px Georgia, 'Times New Roman', serif; fill:#2f2722; }
+    .body { font: 28px Georgia, 'Times New Roman', serif; fill:#75675f; }
+    .note { font: 24px Arial, sans-serif; fill:#75675f; }
+    .th { font: 700 20px Arial, sans-serif; letter-spacing: 2px; fill:#2f2722; }
+    .cell { font: 24px Arial, sans-serif; fill:#2f2722; }
+    .range { font: 700 24px Arial, sans-serif; fill:#2f2722; }
+    .foot { font: 20px Arial, sans-serif; fill:#75675f; }
+    .header { fill:#f3e8df; stroke:#d8cdc5; stroke-width:1; }
+    .line { stroke:#d8cdc5; stroke-width:1; }
+    .note-box { fill:#fbf6f1; stroke:#d8cdc5; stroke-width:1; }
+  </style>
+  <rect class="bg" x="0" y="0" width="1600" height="2280"/>
+  <rect class="paper" x="40" y="40" rx="24" ry="24" width="1520" height="2200"/>
+
+  <text class="eyebrow" x="110" y="130">REFERENCE ATTACHMENT</text>
+  <text class="title" x="110" y="210">Sample Montecito / Santa Barbara</text>
+  <text class="title" x="110" y="274">Wedding Budget Ranges</text>
+
+  <text class="body" x="110" y="350">A general planning reference based on comparable Santa Barbara and Montecito events.</text>
+  <text class="body" x="110" y="390">Actual totals vary depending on guest count, private home logistics, vendor level,</text>
+  <text class="body" x="110" y="430">design scope, rentals, parking/transportation, and service expectations.</text>
+
+  <rect class="note-box" x="110" y="485" rx="18" ry="18" width="1380" height="96"/>
+  <text class="note" x="132" y="525">This is intended as a general guide only. It does not reflect any one private client budget</text>
+  <text class="note" x="132" y="558">and has been anonymized to protect prior client confidentiality.</text>
+
+  <rect class="header" x="110" y="630" width="1380" height="58" rx="10" ry="10"/>
+  <text class="th" x="128" y="666">CATEGORY</text>
+  <text class="th" x="505" y="666">TYPICAL RANGE</text>
+  <text class="th" x="760" y="666">GENERAL NOTES</text>
+
+  <!-- grid -->
+  <g>
+    <rect x="110" y="688" width="1380" height="116" fill="none" class="line"/>
+    <line class="line" x1="470" y1="688" x2="470" y2="804"/>
+    <line class="line" x1="720" y1="688" x2="720" y2="804"/>
+    <text class="cell" x="128" y="724">Planning / Coordination</text>
+    <text class="range" x="488" y="724">$12,000–$25,000+</text>
+    <text class="cell" x="738" y="724">Varies by level of planning support, design involvement,</text>
+    <text class="cell" x="738" y="756">production complexity, and event weekend scope.</text>
+
+    <rect x="110" y="804" width="1380" height="144" fill="none" class="line"/>
+    <line class="line" x1="470" y1="804" x2="470" y2="948"/>
+    <line class="line" x1="720" y1="804" x2="720" y2="948"/>
+    <text class="cell" x="128" y="840">Catering + Bar</text>
+    <text class="range" x="488" y="840">$20,000–$45,000+</text>
+    <text class="cell" x="738" y="840">Private home events often require more staffing, kitchen support,</text>
+    <text class="cell" x="738" y="872">rentals, bar setup, and service labor than venue-based weddings.</text>
+
+    <rect x="110" y="948" width="1380" height="144" fill="none" class="line"/>
+    <line class="line" x1="470" y1="948" x2="470" y2="1092"/>
+    <line class="line" x1="720" y1="948" x2="720" y2="1092"/>
+    <text class="cell" x="128" y="984">Rentals</text>
+    <text class="range" x="488" y="984">$8,000–$20,000+</text>
+    <text class="cell" x="738" y="984">Tables, chairs, linens, tabletop, bars, lounge, kitchen equipment,</text>
+    <text class="cell" x="738" y="1016">tenting, heaters, and installation can add up quickly.</text>
+
+    <rect x="110" y="1092" width="1380" height="116" fill="none" class="line"/>
+    <line class="line" x1="470" y1="1092" x2="470" y2="1208"/>
+    <line class="line" x1="720" y1="1092" x2="720" y2="1208"/>
+    <text class="cell" x="128" y="1128">Florals</text>
+    <text class="range" x="488" y="1128">$6,000–$20,000+</text>
+    <text class="cell" x="738" y="1128">Driven by ceremony design, table count, flower choice, installation</text>
+    <text class="cell" x="738" y="1160">work, repurposing, and labor.</text>
+
+    <rect x="110" y="1208" width="1380" height="116" fill="none" class="line"/>
+    <line class="line" x1="470" y1="1208" x2="470" y2="1324"/>
+    <line class="line" x1="720" y1="1208" x2="720" y2="1324"/>
+    <text class="cell" x="128" y="1244">Photography</text>
+    <text class="range" x="488" y="1244">$5,000–$15,000+</text>
+    <text class="cell" x="738" y="1244">Coverage hours, second shooter, film, rehearsal coverage, and</text>
+    <text class="cell" x="738" y="1276">deliverables all affect pricing.</text>
+
+    <rect x="110" y="1324" width="1380" height="116" fill="none" class="line"/>
+    <line class="line" x1="470" y1="1324" x2="470" y2="1440"/>
+    <line class="line" x1="720" y1="1324" x2="720" y2="1440"/>
+    <text class="cell" x="128" y="1360">Music / Entertainment</text>
+    <text class="range" x="488" y="1360">$4,000–$15,000+</text>
+    <text class="cell" x="738" y="1360">Ranges vary widely between a DJ, live ceremony musicians, and</text>
+    <text class="cell" x="738" y="1392">full band production.</text>
+
+    <rect x="110" y="1440" width="1380" height="144" fill="none" class="line"/>
+    <line class="line" x1="470" y1="1440" x2="470" y2="1584"/>
+    <line class="line" x1="720" y1="1440" x2="720" y2="1584"/>
+    <text class="cell" x="128" y="1476">Lighting / Production</text>
+    <text class="range" x="488" y="1476">$5,000–$15,000+</text>
+    <text class="cell" x="738" y="1476">Often needed at private homes for ambiance, safety, band support,</text>
+    <text class="cell" x="738" y="1508">dining areas, pathways, restrooms, and power.</text>
+
+    <rect x="110" y="1584" width="1380" height="116" fill="none" class="line"/>
+    <line class="line" x1="470" y1="1584" x2="470" y2="1700"/>
+    <line class="line" x1="720" y1="1584" x2="720" y2="1700"/>
+    <text class="cell" x="128" y="1620">Hair + Makeup</text>
+    <text class="range" x="488" y="1620">$1,500–$5,000+</text>
+    <text class="cell" x="738" y="1620">Depends on bridal services, trial(s), number of additional people,</text>
+    <text class="cell" x="738" y="1652">touch-up time, and travel.</text>
+
+    <rect x="110" y="1700" width="1380" height="144" fill="none" class="line"/>
+    <line class="line" x1="470" y1="1700" x2="470" y2="1844"/>
+    <line class="line" x1="720" y1="1700" x2="720" y2="1844"/>
+    <text class="cell" x="128" y="1736">Transportation / Valet / Parking</text>
+    <text class="range" x="488" y="1736">$2,000–$8,000+</text>
+    <text class="cell" x="738" y="1736">Especially relevant for private homes in Montecito where parking,</text>
+    <text class="cell" x="738" y="1768">guest flow, neighborhood considerations, and shuttling may need</text>
+    <text class="cell" x="738" y="1800">to be managed.</text>
+
+    <rect x="110" y="1844" width="1380" height="116" fill="none" class="line"/>
+    <line class="line" x1="470" y1="1844" x2="470" y2="1960"/>
+    <line class="line" x1="720" y1="1844" x2="720" y2="1960"/>
+    <text class="cell" x="128" y="1880">Cake / Desserts</text>
+    <text class="range" x="488" y="1880">$800–$3,500+</text>
+    <text class="cell" x="738" y="1880">Final cost depends on cake size, design, delivery, setup, and</text>
+    <text class="cell" x="738" y="1912">whether additional desserts are included.</text>
+
+    <rect x="110" y="1960" width="1380" height="144" fill="none" class="line"/>
+    <line class="line" x1="470" y1="1960" x2="470" y2="2104"/>
+    <line class="line" x1="720" y1="1960" x2="720" y2="2104"/>
+    <text class="cell" x="128" y="1996">Staffing / Additional Event Support</text>
+    <text class="range" x="488" y="1996">$1,500–$6,000+</text>
+    <text class="cell" x="738" y="1996">May include event assistants, production support, setup crews,</text>
+    <text class="cell" x="738" y="2028">hospitality support, or added coordination staffing depending on scope.</text>
+  </g>
+
+  <text class="foot" x="110" y="2158">Prepared as a general educational reference for budget planning purposes.</text>
+  <text class="foot" x="110" y="2188">Final budgets are always shaped by actual guest count, venue conditions, rentals, service style, and aesthetic direction.</text>
+</svg>

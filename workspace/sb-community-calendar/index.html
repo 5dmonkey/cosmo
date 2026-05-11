@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santa Barbara Community Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <div class="topbar">
+        <button class="icon-btn" aria-label="Menu">☰</button>
+        <div class="topbar-right">
+          <button class="icon-btn" aria-label="Search">⌕</button>
+          <div class="avatar"></div>
+        </div>
+      </div>
+      <div class="hero-copy">
+        <h1>Santa Barbara</h1>
+        <p>Community Calendar</p>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="filters">
+        <button class="chip chip-active">Today</button>
+        <button class="chip">This Week</button>
+        <button class="chip">This Month</button>
+        <button class="chip chip-icon">⎚</button>
+      </section>
+
+      <section class="calendar-card">
+        <div class="calendar-head">
+          <button class="nav-arrow">‹</button>
+          <h2>May 2025</h2>
+          <button class="nav-arrow">›</button>
+        </div>
+        <div class="weekday-row">
+          <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+        </div>
+        <div class="calendar-grid">
+          <div class="day muted">27</div>
+          <div class="day muted">28</div>
+          <div class="day muted">29</div>
+          <div class="day muted">30</div>
+          <div class="day">1</div>
+          <div class="day">2</div>
+          <div class="day day-image"><span>3</span><div class="thumb glow-purple"></div></div>
+
+          <div class="day event-dot">4</div>
+          <div class="day day-image"><span>5</span><div class="thumb glow-red"></div></div>
+          <div class="day day-image"><span>6</span><div class="thumb glow-purple"></div></div>
+          <div class="day">7</div>
+          <div class="day">8</div>
+          <div class="day">9</div>
+          <div class="day day-image"><span>10</span><div class="thumb glow-blue"></div></div>
+
+          <div class="day is-today">11</div>
+          <div class="day">12</div>
+          <div class="day">13</div>
+          <div class="day">14</div>
+          <div class="day day-image"><span>15</span><div class="thumb glow-gold"></div></div>
+          <div class="day">16</div>
+          <div class="day day-image"><span>17</span><div class="thumb glow-sunset"></div></div>
+
+          <div class="day day-image"><span>18</span><div class="thumb glow-gray"></div></div>
+          <div class="day">19</div>
+          <div class="day">20</div>
+          <div class="day">21</div>
+          <div class="day">22</div>
+          <div class="day">23</div>
+          <div class="day">24</div>
+
+          <div class="day">25</div>
+          <div class="day day-image"><span>26</span><div class="thumb glow-ocean"></div></div>
+          <div class="day">27</div>
+          <div class="day day-image"><span>28</span><div class="thumb glow-orange"></div></div>
+          <div class="day">29</div>
+          <div class="day">30</div>
+          <div class="day day-image"><span>31</span><div class="thumb glow-pink"></div></div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-headline">
+          <h3>✨ Featured This Month</h3>
+          <a href="#">View All</a>
+        </div>
+        <div class="card-row">
+          <article class="event-card card-solstice">
+            <span class="badge gold">FEATURED</span>
+            <div class="event-info">
+              <h4>The Summer Solstice Festival</h4>
+              <p>May 20–22 · Lake Cachuma</p>
+            </div>
+          </article>
+          <article class="event-card card-xavier">
+            <span class="badge purple">FEATURED</span>
+            <div class="event-info">
+              <h4>Xavier Rudd Live</h4>
+              <p>May 28 · SOhO</p>
+            </div>
+          </article>
+          <article class="event-card card-beach">
+            <span class="badge gold">FEATURED</span>
+            <div class="event-info">
+              <h4>Beach Yoga &amp; Brunch</h4>
+              <p>May 17 · Leadbetter Beach</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block bottom-pad">
+        <div class="section-headline">
+          <h3>🔥 Recommended For You</h3>
+          <a href="#">See All</a>
+        </div>
+        <div class="mini-grid">
+          <article class="mini-card"><strong>Art Walk</strong><span>Funk Zone · Tonight</span></article>
+          <article class="mini-card"><strong>Sound Bath</strong><span>Montecito · Wed</span></article>
+          <article class="mini-card"><strong>Farmers Market</strong><span>Downtown · Sat</span></article>
+          <article class="mini-card"><strong>Open Mic</strong><span>Upper State · Thu</span></article>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a class="nav-item active" href="#"><span>☷</span><small>Calendar</small></a>
+      <a class="nav-item" href="#"><span>⌕</span><small>Explore</small></a>
+      <a class="nav-item" href="#"><span>♡</span><small>For You</small></a>
+      <a class="nav-item" href="#"><span>◌</span><small>Community</small></a>
+      <a class="nav-item" href="#"><span>◠</span><small>Me</small></a>
+    </nav>
+  </div>
+</body>
+</html>

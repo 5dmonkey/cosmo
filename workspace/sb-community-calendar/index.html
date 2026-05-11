@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="app-shell">
-    <header class="hero">
+  <div class="app-shell app-shell-home">
+    <header class="hero hero-compact">
       <div class="topbar">
         <button class="icon-btn" aria-label="Menu">☰</button>
         <div class="topbar-right">
@@ -19,47 +19,41 @@
           <div class="avatar"></div>
         </div>
       </div>
-      <div class="hero-copy">
+      <div class="hero-copy hero-copy-compact">
         <h1>Santa Barbara</h1>
         <p>Community Calendar</p>
       </div>
     </header>
 
-    <main class="content">
-      <section class="view-switcher" aria-label="Calendar view switcher">
+    <main class="content content-compact">
+      <section class="view-switcher view-switcher-compact" aria-label="Calendar view switcher">
         <button class="view-pill is-active" data-view-target="today"><span>☼</span>Today</button>
-        <button class="view-pill" data-view-target="week"><span>◫</span>Week</button>
-        <button class="view-pill" data-view-target="month"><span>◻</span>Month</button>
+        <button class="view-pill" data-view-target="week">This Week</button>
+        <button class="view-pill" data-view-target="month">This Month</button>
+        <button class="view-pill filter-pill">⌁</button>
       </section>
 
-      <section class="calendar-card">
-        <div class="calendar-head">
+      <section class="calendar-card calendar-card-home">
+        <div class="calendar-head calendar-head-home">
           <button class="nav-arrow" id="calendarPrev" aria-label="Previous period">‹</button>
           <h2 id="calendarTitle">Today</h2>
           <button class="nav-arrow" id="calendarNext" aria-label="Next period">›</button>
         </div>
 
-        <div class="calendar-panel is-visible" data-view="today">
-          <div class="today-stack">
+        <div class="calendar-panel" data-view="today">
+          <div class="today-stack compact-stack">
             <a class="today-feature main-feature detail-link" href="./event-farmers-market.html">
-              <div class="today-time">This Morning</div>
+              <div class="today-time">Today</div>
               <div class="today-copy">
                 <h3>Santa Barbara Farmers Market</h3>
-                <p>Old Town · seasonal produce, flowers, pastries, local makers</p>
+                <p>Old Town · local produce, flowers, pastries</p>
               </div>
             </a>
             <a class="today-feature soft-feature detail-link" href="./event-1st-thursday.html">
-              <div class="today-time">Tonight</div>
+              <div class="today-time">Later This Week</div>
               <div class="today-copy">
                 <h3>1st Thursday Art Walk</h3>
-                <p>Downtown · galleries, music, open doors, evening culture</p>
-              </div>
-            </a>
-            <a class="today-feature glow-feature detail-link" href="./event-summer-solstice.html">
-              <div class="today-time">Coming Up</div>
-              <div class="today-copy">
-                <h3>Summer Solstice Celebration</h3>
-                <p>Parade week energy building across Santa Barbara</p>
+                <p>Downtown galleries + open doors</p>
               </div>
             </a>
           </div>
@@ -76,46 +70,44 @@
               <div class="week-col-head"><span>FRI</span><strong>15</strong></div>
               <div class="week-col-head"><span>SAT</span><strong>16</strong></div>
             </div>
-            <div class="week-grid">
+            <div class="week-grid week-grid-home">
               <div class="week-col"></div>
-              <div class="week-col is-today-col"><div class="week-event lavender">Silent morning by the water</div></div>
-              <div class="week-col"><div class="week-event orange">SB Farmers Market</div></div>
+              <div class="week-col is-today-col"><div class="week-event lavender">Sunset walk</div></div>
+              <div class="week-col"><div class="week-event orange">Farmers Market</div></div>
               <div class="week-col"></div>
               <div class="week-col"></div>
-              <div class="week-col"><div class="week-event rose">1st Thursday Art Walk</div></div>
-              <div class="week-col"><div class="week-event gold">Solstice Workshop Opening</div></div>
+              <div class="week-col"><div class="week-event rose">Art Walk</div></div>
+              <div class="week-col"><div class="week-event gold">Solstice</div></div>
             </div>
           </div>
         </div>
 
-        <div class="calendar-panel" data-view="month">
-          <div class="weekday-row">
+        <div class="calendar-panel is-visible" data-view="month">
+          <div class="weekday-row weekday-row-home">
             <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
           </div>
-          <div class="calendar-grid compact">
-            <div class="day muted">26</div>
+          <div class="calendar-grid compact home-grid">
             <div class="day muted">27</div>
             <div class="day muted">28</div>
             <div class="day muted">29</div>
             <div class="day muted">30</div>
             <div class="day">1</div>
-            <div class="day day-image"><span>2</span><div class="thumb farmers-thumb"></div></div>
-            <div class="day day-image"><span>3</span><div class="thumb art-thumb"></div></div>
-            <div class="day">4</div>
-            <div class="day">5</div>
-            <div class="day">6</div>
+            <div class="day">2</div>
+            <a class="day day-image detail-link" href="./event-summer-solstice.html"><span>3</span><div class="thumb solstice-thumb"></div></a>
+            <div class="day event-dot">4</div>
+            <a class="day day-image detail-link" href="./event-farmers-market.html"><span>5</span><div class="thumb farmers-thumb"></div></a>
+            <a class="day day-image detail-link" href="./event-1st-thursday.html"><span>6</span><div class="thumb art-thumb"></div></a>
             <div class="day">7</div>
             <div class="day">8</div>
             <div class="day">9</div>
-            <div class="day">10</div>
+            <a class="day day-image detail-link" href="./event-farmers-market.html"><span>10</span><div class="thumb evening-thumb"></div></a>
             <div class="day is-today">11</div>
             <div class="day">12</div>
             <div class="day">13</div>
             <div class="day">14</div>
-            <div class="day">15</div>
-            <div class="day day-image"><span>16</span><div class="thumb solstice-thumb"></div></div>
-            <div class="day">17</div>
-            <div class="day">18</div>
+            <a class="day day-image detail-link" href="./event-1st-thursday.html"><span>15</span><div class="thumb art-thumb"></div></a>
+            <a class="day day-image detail-link" href="./event-summer-solstice.html"><span>16</span><div class="thumb solstice-thumb"></div></a>
+            <a class="day day-image detail-link" href="./event-farmers-market.html"><span>18</span><div class="thumb farmers-thumb"></div></a>
             <div class="day">19</div>
             <div class="day">20</div>
             <div class="day">21</div>
@@ -123,54 +115,54 @@
             <div class="day">23</div>
             <div class="day">24</div>
             <div class="day">25</div>
-            <div class="day">26</div>
+            <a class="day day-image detail-link" href="./event-farmers-market.html"><span>26</span><div class="thumb farmers-thumb"></div></a>
             <div class="day">27</div>
-            <div class="day">28</div>
+            <a class="day day-image detail-link" href="./event-summer-solstice.html"><span>28</span><div class="thumb food-thumb"></div></a>
             <div class="day">29</div>
             <div class="day">30</div>
+            <a class="day day-image detail-link" href="./event-summer-solstice.html"><span>31</span><div class="thumb sunset-thumb"></div></a>
           </div>
         </div>
       </section>
 
-      <section class="section-block tight">
+      <section class="section-block tight section-home">
         <div class="section-headline">
           <h3>✨ Featured Events</h3>
           <a href="#">View All</a>
         </div>
-        <div class="card-row card-row-2">
+        <div class="card-row card-row-home">
           <a class="event-card photo-card farmers-card detail-link" href="./event-farmers-market.html">
+            <div class="mini-badge">FEATURED</div>
             <div class="event-info">
               <h4>Santa Barbara Farmers Market</h4>
-              <p>Official weekly markets in Downtown SB, Old Town, Montecito + more</p>
+              <p>May 3 · 8:30 AM</p>
+              <small>Downtown Santa Barbara</small>
             </div>
           </a>
           <a class="event-card photo-card artwalk-card detail-link" href="./event-1st-thursday.html">
+            <div class="mini-badge">FEATURED</div>
             <div class="event-info">
               <h4>1st Thursday Art Walk</h4>
-              <p>Official downtown art walk with participating galleries and spaces</p>
+              <p>May 15 · 5:00 PM</p>
+              <small>State Street</small>
+            </div>
+          </a>
+          <a class="event-card photo-card solstice-card detail-link" href="./event-summer-solstice.html">
+            <div class="mini-badge">FEATURED</div>
+            <div class="event-info">
+              <h4>Summer Solstice Celebration</h4>
+              <p>Jun 20 · 6:00 PM</p>
+              <small>Santa Barbara</small>
             </div>
           </a>
         </div>
       </section>
-
-      <section class="section-block bottom-pad tight">
-        <div class="section-headline">
-          <h3>🌞 Seasonal Highlight</h3>
-          <a href="#">See All</a>
-        </div>
-        <a class="feature-banner solstice-banner detail-link" href="./event-summer-solstice.html">
-          <div class="feature-copy">
-            <h4>Summer Solstice Celebration</h4>
-            <p>One of Santa Barbara’s signature annual community celebrations.</p>
-          </div>
-        </a>
-      </section>
     </main>
 
-    <nav class="bottom-nav">
-      <a class="nav-item active" href="#"><span>☷</span><small>Calendar</small></a>
-      <a class="nav-item" href="#"><span>⌕</span><small>Explore</small></a>
+    <nav class="bottom-nav bottom-nav-home">
+      <a class="nav-item active" href="#"><span>☷</span><small>Discover</small></a>
       <a class="nav-item" href="#"><span>♡</span><small>For You</small></a>
+      <a class="nav-item" href="#"><span>⊕</span><small>Add Event</small></a>
       <a class="nav-item" href="#"><span>◌</span><small>Community</small></a>
       <a class="nav-item" href="#"><span>◠</span><small>Me</small></a>
     </nav>

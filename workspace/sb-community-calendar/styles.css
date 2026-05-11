@@ -181,3 +181,46 @@ body { min-height: 100vh; }
   .detail-copy h1 { font-size:4.5rem; }
   .gallery-strip img { width: 31%; max-width:none; }
 }
+
+.app-shell-home { max-width: 560px; }
+.hero-compact { min-height: 205px; border-bottom-left-radius: 28px; border-bottom-right-radius: 28px; }
+.hero-copy-compact { margin-top: 28px; }
+.hero-copy-compact h1 { font-size: 4.15rem; }
+.hero-copy-compact p { font-size: .76rem; letter-spacing: .34em; text-transform: uppercase; }
+.content-compact { padding: 0 12px 86px; }
+.view-switcher-compact { gap: 10px; margin-top: -14px; }
+.view-switcher-compact .view-pill { padding: 11px 16px; background: rgba(13,14,20,.98); }
+.filter-pill { width: 48px; justify-content: center; padding: 11px 0; }
+.calendar-card-home { margin-top: 10px; padding: 10px 10px 12px; min-height: unset; }
+.calendar-head-home h2 { font-size: 1.9rem; }
+.weekday-row-home { margin-bottom: 6px; }
+.home-grid .day { min-height: 56px; font-size: .96rem; }
+.home-grid .day-image .thumb { inset: 19px 4px 4px; border-radius: 8px; }
+.evening-thumb { background-image: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.34)), url('https://static.wixstatic.com/media/ece784_8e96dfaf690542eb89964c5faa9a07d0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,enc_avif,quality_auto/20250621-evokra-078.jpg'); }
+.food-thumb { background-image: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.34)), url('https://static.wixstatic.com/media/581d34_2fde8efd3b0248bc98d1c4aad684b53f~mv2.jpg/v1/fill/w_600,h_420,al_c,q_80,enc_avif,quality_auto/581d34_2fde8efd3b0248bc98d1c4aad684b53f~mv2.jpg'); }
+.sunset-thumb { background-image: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.34)), url('https://static.wixstatic.com/media/ece784_8e96dfaf690542eb89964c5faa9a07d0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,enc_avif,quality_auto/20250621-evokra-078.jpg'); }
+.section-home { margin-top: 14px; }
+.card-row-home { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; overflow: visible; }
+.card-row-home .event-card { min-width: 0; height: 175px; padding: 10px; border-radius: 18px; }
+.mini-badge { display:inline-flex; width:fit-content; padding: 6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.18); background: rgba(167,106,255,.18); color:#f0dcff; font-size:.62rem; letter-spacing:.08em; }
+.card-row-home .event-info h4 { font-size: 1.02rem; margin: 10px 0 6px; }
+.card-row-home .event-info p { font-size: .8rem; color:#dab9ff; max-width:none; margin-bottom: 4px; }
+.card-row-home .event-info small { color:#ddd4e2; font-size:.74rem; }
+.solstice-card { background-image: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.9)), url('https://static.wixstatic.com/media/ece784_8e96dfaf690542eb89964c5faa9a07d0~mv2.jpg/v1/fill/w_976,h_550,al_c,q_85,enc_avif,quality_auto/20250621-evokra-078.jpg'); }
+.bottom-nav-home { max-width: 560px; }
+.compact-stack { gap: 8px; }
+.compact-stack .today-feature { min-height: 92px; }
+.compact-stack .main-feature { min-height: 124px; }
+.week-grid-home .week-col { min-height: 170px; }
+@media (max-width: 560px) {
+  .hero-copy-compact h1 { font-size: 3.65rem; }
+  .card-row-home { grid-template-columns: 1fr 1fr 1fr; }
+  .card-row-home .event-card { height: 162px; }
+  .card-row-home .event-info h4 { font-size: .96rem; }
+}
+@media (min-width: 700px) {
+  .app-shell-home { max-width: 560px; }
+  .bottom-nav-home { max-width: 560px; }
+  .hero-compact { min-height: 245px; }
+  .home-grid .day { min-height: 64px; }
+}

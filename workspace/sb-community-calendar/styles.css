@@ -785,3 +785,316 @@ body { min-height: 100vh; }
   margin: auto;
   margin-top: 11px;
 }
+
+
+/* REPROFILE EXACT MOBILE REBUILD */
+.reprofile-page {
+  min-height: 100vh;
+  background: #f6f0ea;
+  color: #17131a;
+  padding-bottom: 102px;
+}
+.reprofile-hero {
+  height: 33vh;
+  min-height: 250px;
+  max-height: 330px;
+  padding: 18px 16px 0;
+  background:
+    linear-gradient(180deg, rgba(11,10,17,.10), rgba(11,10,17,.30) 45%, rgba(11,10,17,.72) 100%),
+    url('./assets/hero-sb-sunset-v2.jpg') center/cover no-repeat;
+}
+.reprofile-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.reprofile-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+.reprofile-palm {
+  width: 13px;
+  height: 18px;
+  display: inline-block;
+  background: white;
+  clip-path: polygon(46% 0%, 56% 0%, 57% 44%, 100% 18%, 100% 27%, 67% 43%, 100% 43%, 100% 52%, 66% 51%, 90% 72%, 82% 78%, 59% 55%, 58% 100%, 47% 100%, 46% 55%, 23% 78%, 15% 72%, 39% 51%, 0% 52%, 0% 43%, 33% 43%, 0% 27%, 0% 18%, 43% 44%);
+}
+.reprofile-brand-copy strong,
+.reprofile-brand-copy span {
+  display: block;
+  color: white;
+}
+.reprofile-brand-copy strong {
+  font-size: .82rem;
+  letter-spacing: .08em;
+}
+.reprofile-brand-copy span {
+  font-size: .62rem;
+  letter-spacing: .16em;
+}
+.reprofile-icons {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.reprofile-qr,
+.reprofile-menu {
+  display: inline-block;
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+.reprofile-qr::before,
+.reprofile-qr::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1.7px solid white;
+}
+.reprofile-qr::before { left: 1px; top: 1px; }
+.reprofile-qr::after { right: 1px; bottom: 1px; }
+.reprofile-menu::before,
+.reprofile-menu::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  height: 1.7px;
+  background: white;
+  border-radius: 999px;
+}
+.reprofile-menu::before { top: 7px; box-shadow: 0 6px 0 white; }
+.reprofile-menu::after { display:none; }
+.reprofile-sheet {
+  position: relative;
+  margin-top: 0;
+  background: #fffaf5;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 70px 18px 0;
+}
+.reprofile-avatar-wrap {
+  position: absolute;
+  top: -86px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 172px;
+  height: 172px;
+}
+.reprofile-avatar {
+  width: 172px;
+  height: 172px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fffaf5;
+}
+.reprofile-camera {
+  position: absolute;
+  right: 8px;
+  bottom: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.96);
+  background: #111018;
+  padding: 0;
+}
+.reprofile-camera span {
+  display:block;
+  width: 14px;
+  height: 14px;
+  border: 1.8px solid white;
+  border-radius: 50%;
+  margin: auto;
+}
+.reprofile-intro {
+  text-align: center;
+}
+.reprofile-intro h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.15rem;
+  line-height: .9;
+  font-weight: 500;
+}
+.reprofile-role {
+  margin: 10px 0 18px;
+  font-size: .74rem;
+  letter-spacing: .18em;
+  color: #7a727d;
+  text-transform: uppercase;
+}
+.reprofile-edit-btn {
+  width: 100%;
+  border: none;
+  background: #16141a;
+  color: white;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-size: .98rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+.reprofile-pencil {
+  width: 12px;
+  height: 12px;
+  border: 1.7px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+  display:inline-block;
+}
+.reprofile-section {
+  padding-top: 30px;
+}
+.reprofile-about-block {
+  padding-top: 34px;
+}
+.reprofile-section h2 {
+  margin: 0 0 14px;
+  font-size: .84rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.reprofile-section p {
+  margin: 0;
+}
+.reprofile-about-block p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #2c2730;
+}
+.reprofile-section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom: 14px;
+}
+.reprofile-section-head a {
+  color: #1f1a21;
+  text-decoration: none;
+  font-size: .88rem;
+}
+.stack-head p {
+  margin: 6px 0 0;
+  color: #7c7480;
+}
+.reprofile-detail-list,
+.reprofile-event-list {
+  display:grid;
+  gap:16px;
+}
+.reprofile-detail-item {
+  display:grid;
+  grid-template-columns: 24px 1fr;
+  gap:12px;
+  padding-top: 14px;
+}
+.reprofile-detail-icon {
+  color: #8a818d;
+  font-size: 1rem;
+}
+.reprofile-detail-item small {
+  display:block;
+  margin-bottom:6px;
+  font-size:.66rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#8a818d;
+}
+.reprofile-detail-item strong {
+  font-size:1rem;
+  font-weight:500;
+  color:#1f1a21;
+}
+.reprofile-chip-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+.reprofile-chip {
+  min-height: 46px;
+  border: 1px solid rgba(23,20,26,.10);
+  border-radius: 999px;
+  background: #fff;
+  padding: 12px 14px;
+  display:flex;
+  align-items:center;
+  font-size: .9rem;
+}
+.reprofile-event-list {
+  display:grid;
+  gap:16px;
+}
+.reprofile-event-row {
+  display:grid;
+  grid-template-columns: 86px 1fr;
+  gap:12px;
+  align-items:center;
+}
+.reprofile-event-row img {
+  width: 86px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.reprofile-event-copy small {
+  display:block;
+  margin-bottom:6px;
+  font-size:.62rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#8b8390;
+}
+.reprofile-event-copy h3 {
+  margin:0 0 4px;
+  font-size:1rem;
+  line-height:1.2;
+}
+.reprofile-event-copy p {
+  margin:0;
+  font-size:.88rem;
+  color:#746c78;
+}
+.reprofile-bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 82px;
+  background: #0f0f14;
+  border-top: 1px solid rgba(255,255,255,.06);
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 8px 8px 14px;
+  align-items:end;
+}
+.reprofile-nav-item {
+  color:#f1ede8;
+  text-decoration:none;
+  display:grid;
+  grid-template-rows: 24px 14px;
+  justify-items:center;
+  gap:6px;
+  font-size:1rem;
+}
+.reprofile-nav-item small { font-size:.66rem; line-height:1; }
+.reprofile-nav-item.active { color:#bb83ff; }
+.reprofile-nav-center span {
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:-22px;
+  background: linear-gradient(180deg, #f0b093, #bf6ef0);
+  color:#fff;
+  box-shadow:0 12px 24px rgba(191,110,240,.28);
+}

@@ -15,14 +15,4 @@ function syncSavedProfileEvents() {
   });
 }
 
-savedEventsList?.querySelectorAll('[data-heart-id]').forEach((button) => {
-  button.addEventListener('click', () => {
-    const id = button.dataset.heartId;
-    const saved = new Set(getSavedEvents());
-    if (saved.has(id)) saved.delete(id); else saved.add(id);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify([...saved]));
-    syncSavedProfileEvents();
-  });
-});
-
 syncSavedProfileEvents();

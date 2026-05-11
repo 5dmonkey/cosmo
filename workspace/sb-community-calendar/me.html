@@ -10,178 +10,118 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="px-account-page">
-    <section class="px-hero">
-      <div class="px-toprow">
-        <div class="px-brand-row">
-          <span class="px-brand-icon" aria-hidden="true"></span>
-          <div class="px-brand-text">
+  <div class="reprofile-page">
+    <header class="reprofile-hero">
+      <div class="reprofile-topbar">
+        <div class="reprofile-brand">
+          <span class="reprofile-palm" aria-hidden="true"></span>
+          <div class="reprofile-brand-copy">
             <strong>SANTA BARBARA</strong>
             <span>COMMUNITY CALENDAR</span>
           </div>
         </div>
-        <div class="px-top-icons">
-          <span class="px-qr" aria-hidden="true"></span>
-          <span class="px-menu" aria-hidden="true"></span>
+        <div class="reprofile-icons" aria-hidden="true">
+          <span class="reprofile-qr"></span>
+          <span class="reprofile-menu"></span>
         </div>
       </div>
+    </header>
 
-      <div class="px-avatar-wrap">
-        <img class="px-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80" alt="Profile photo of McCailey Contreras" />
-        <button class="px-camera" type="button" aria-label="Edit photo"></button>
+    <main class="reprofile-sheet">
+      <div class="reprofile-avatar-wrap">
+        <img class="reprofile-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="Portrait photo" />
+        <button class="reprofile-camera" type="button" aria-label="Edit photo"><span aria-hidden="true"></span></button>
       </div>
-    </section>
 
-    <main class="px-sheet">
-      <section class="px-name-block">
-        <h1>McCailey<br>Contreras</h1>
-        <p>FOUNDER, GROUNDS OF PLAY</p>
-        <button class="px-edit">✎&nbsp;&nbsp;Edit Profile</button>
+      <section class="reprofile-intro">
+        <h1>McCailey<br />Contreras</h1>
+        <p class="reprofile-role">FOUNDER, GROUNDS OF PLAY</p>
+        <button class="reprofile-edit-btn" type="button"><span class="reprofile-pencil" aria-hidden="true"></span>Edit Profile</button>
       </section>
 
-      <section class="px-section about">
-        <div class="px-section-title">ABOUT ME</div>
-        <p class="px-about-copy">I'm passionate about building community, creativity, and meaningful experiences that bring people together. Santa Barbara is home.</p>
+      <section class="reprofile-section reprofile-about-block">
+        <h2>ABOUT ME</h2>
+        <p>I’m passionate about building community, creativity, and meaningful experiences that bring people together. Santa Barbara is home.</p>
       </section>
 
-      <section class="px-section px-details-section">
-        <div class="px-detail-item first-row">
-          <span class="px-detail-icon">⌖</span>
-          <div>
-            <small>CURRENTLY LIVE</small>
-            <strong>Santa Barbara, California, USA</strong>
-          </div>
-        </div>
-        <div class="px-detail-item">
-          <span class="px-detail-icon">⌲</span>
-          <div>
-            <small>ORIGINALLY FROM</small>
-            <strong>Los Angeles, California, USA</strong>
-          </div>
-        </div>
-        <div class="px-detail-item">
-          <span class="px-detail-icon">◎</span>
-          <div>
-            <small>WEBSITE</small>
-            <strong>groundsofplay.com</strong>
-          </div>
-        </div>
-        <div class="px-detail-item last-row">
-          <span class="px-detail-icon">◌</span>
-          <div>
-            <small>SOCIALS</small>
-            <strong>◎</strong>
-          </div>
-        </div>
-      </section>
-
-      <section class="px-section">
-        <div class="px-header-row">
-          <div class="px-section-title">INTERESTS</div>
+      <section class="reprofile-section">
+        <div class="reprofile-section-head">
+          <h2>INTERESTS</h2>
           <a href="#">View All ›</a>
         </div>
-        <div class="px-chips">
-          <div class="px-chip">🍃&nbsp; Wellness</div>
-          <div class="px-chip">🪷&nbsp; Yoga</div>
-          <div class="px-chip">👥&nbsp; Community</div>
-          <div class="px-chip">💼&nbsp; Entrepreneurship</div>
-          <div class="px-chip">♫&nbsp; Live Music</div>
-          <div class="px-chip">◌&nbsp; Art</div>
-          <div class="px-chip">✈︎&nbsp; Travel</div>
-          <div class="px-chip">⌂&nbsp; Nature</div>
-          <div class="px-chip">☰&nbsp; Reading</div>
-          <div class="px-chip">☕︎&nbsp; Coffee</div>
+        <div class="reprofile-chip-grid">
+          <div class="reprofile-chip">Wellness</div>
+          <div class="reprofile-chip">Yoga</div>
+          <div class="reprofile-chip">Community</div>
+          <div class="reprofile-chip">Entrepreneurship</div>
+          <div class="reprofile-chip">Live Music</div>
+          <div class="reprofile-chip">Art</div>
         </div>
-        <button class="px-add-interest">＋&nbsp;&nbsp;Add Interest</button>
       </section>
 
-      <section class="px-section">
-        <div class="px-header-row stacked-gap">
+      <section class="reprofile-section">
+        <div class="reprofile-section-head stack-head">
           <div>
-            <div class="px-section-title">♡&nbsp;&nbsp;MY CALENDAR</div>
-            <p class="px-sub">Events you've saved</p>
+            <h2>MY CALENDAR</h2>
+            <p>Saved events</p>
           </div>
           <a href="#">View All ›</a>
         </div>
-        <div class="px-event-list" id="savedEventsList">
-          <article class="px-event-row" data-event-id="farmers-market">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Sunset Yoga at Leadbetter Beach">
-            <div class="px-event-copy">
+        <div class="reprofile-event-list" id="savedEventsList">
+          <article class="reprofile-event-row" data-event-id="farmers-market">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Sunset Yoga at Leadbetter Beach" />
+            <div class="reprofile-event-copy">
               <small>SAT, MAY 24</small>
-              <h3>Sunset Yoga at<br>Leadbetter Beach</h3>
+              <h3>Sunset Yoga at Leadbetter Beach</h3>
               <p>Leadbetter Beach</p>
             </div>
-            <button class="px-side-icon" type="button" data-heart-id="farmers-market">⌑</button>
           </article>
-          <article class="px-event-row" data-event-id="art-walk">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Community Dinner at Jeannine's">
-            <div class="px-event-copy">
+          <article class="reprofile-event-row" data-event-id="art-walk">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Community Dinner at Jeannine's" />
+            <div class="reprofile-event-copy">
               <small>FRI, MAY 30</small>
-              <h3>Community Dinner<br>at Jeannine's</h3>
+              <h3>Community Dinner at Jeannine's</h3>
               <p>Santa Barbara, CA</p>
             </div>
-            <button class="px-side-icon" type="button" data-heart-id="art-walk">⌑</button>
-          </article>
-          <article class="px-event-row" data-event-id="summer-solstice">
-            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80" alt="Santa Barbara Live Music Series">
-            <div class="px-event-copy">
-              <small>SAT, JUN 7</small>
-              <h3>Santa Barbara Live<br>Music Series</h3>
-              <p>The Granada Theatre</p>
-            </div>
-            <button class="px-side-icon" type="button" data-heart-id="summer-solstice">⌑</button>
           </article>
         </div>
-        <a class="px-footer-link" href="#">View All Saved Events ›</a>
       </section>
 
-      <section class="px-section last">
-        <div class="px-header-row stacked-gap">
+      <section class="reprofile-section last-section">
+        <div class="reprofile-section-head stack-head">
           <div>
-            <div class="px-section-title">⌂&nbsp;&nbsp;MY EVENTS</div>
-            <p class="px-sub">Events you're hosting</p>
+            <h2>MY EVENTS</h2>
+            <p>Events you're hosting</p>
           </div>
           <a href="#">View All ›</a>
         </div>
-        <div class="px-event-list">
-          <article class="px-event-row">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Sunrise Yoga Flow">
-            <div class="px-event-copy">
+        <div class="reprofile-event-list">
+          <article class="reprofile-event-row">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Sunrise Yoga Flow" />
+            <div class="reprofile-event-copy">
               <small>WED, MAY 22</small>
               <h3>Sunrise Yoga Flow</h3>
               <p>Shoreline Park</p>
             </div>
-            <button class="px-side-icon" type="button">⋮</button>
           </article>
-          <article class="px-event-row">
-            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="Community Dinner">
-            <div class="px-event-copy">
+          <article class="reprofile-event-row">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="Community Dinner" />
+            <div class="reprofile-event-copy">
               <small>SUN, JUN 1</small>
               <h3>Community Dinner</h3>
               <p>Santa Barbara, CA</p>
             </div>
-            <button class="px-side-icon" type="button">⋮</button>
-          </article>
-          <article class="px-event-row">
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Creative Circle Meetup">
-            <div class="px-event-copy">
-              <small>SAT, JUN 14</small>
-              <h3>Creative Circle Meetup</h3>
-              <p>Santa Barbara, CA</p>
-            </div>
-            <button class="px-side-icon" type="button">⋮</button>
           </article>
         </div>
-        <a class="px-footer-link" href="#">View All My Events ›</a>
       </section>
     </main>
 
-    <nav class="px-bottom-nav">
-      <a class="px-nav-item" href="./index.html"><span>◌</span><small>Discover</small></a>
-      <a class="px-nav-item" href="#"><span>☆</span><small>For You</small></a>
-      <a class="px-nav-item px-nav-center" href="#"><span>＋</span><small>Add Event</small></a>
-      <a class="px-nav-item" href="#"><span>⌂</span><small>Community</small></a>
-      <a class="px-nav-item active" href="./me.html"><span>◠</span><small>Account</small></a>
+    <nav class="reprofile-bottom-nav">
+      <a class="reprofile-nav-item" href="./index.html"><span>◌</span><small>Discover</small></a>
+      <a class="reprofile-nav-item" href="#"><span>☆</span><small>For You</small></a>
+      <a class="reprofile-nav-item reprofile-nav-center" href="#"><span>＋</span><small>Add Event</small></a>
+      <a class="reprofile-nav-item" href="#"><span>⌂</span><small>Community</small></a>
+      <a class="reprofile-nav-item active" href="./me.html"><span>◠</span><small>Account</small></a>
     </nav>
   </div>
 

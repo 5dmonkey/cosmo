@@ -15,15 +15,20 @@ body { min-height: 100vh; }
 .hero {
   position: relative; min-height: 214px; padding: 18px 18px 22px;
   background:
-    linear-gradient(180deg, rgba(7,7,12,0.25), rgba(9,9,13,0.9)),
-    radial-gradient(circle at 70% 36%, rgba(255,162,101,0.24), transparent 20%),
-    radial-gradient(circle at 30% 78%, rgba(144,108,255,0.18), transparent 26%),
-    linear-gradient(180deg, #171320 0%, #24172a 36%, #3f2530 62%, #120f14 100%);
+    linear-gradient(180deg, rgba(10,8,14,0.14), rgba(10,8,14,0.72) 56%, rgba(9,9,13,0.94) 100%),
+    radial-gradient(circle at 50% 36%, rgba(255,173,88,0.20), transparent 30%),
+    url('./assets/hero-sb-sunset.jpg') center/cover no-repeat;
   overflow: hidden;
 }
-.hero::before, .hero::after { content: ""; position: absolute; background: rgba(0,0,0,0.6); }
-.hero::before { width: 16px; height: 144px; right: 70px; bottom: 18px; border-radius: 999px; }
-.hero::after { width: 9px; height: 184px; right: 145px; bottom: 24px; border-radius: 999px; }
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(110,43,86,0.12), rgba(255,143,91,0.08) 34%, rgba(13,11,19,0.18) 70%, rgba(9,9,13,0.26));
+  mix-blend-mode: screen;
+}
+.hero::after {
+  content: ""; position: absolute; left:0; right:0; bottom:0; height:48%;
+  background: linear-gradient(180deg, rgba(9,9,13,0), rgba(9,9,13,0.88));
+}
 .topbar { display:flex; justify-content:space-between; align-items:center; position:relative; z-index:2; }
 .topbar-right { display:flex; align-items:center; gap:12px; }
 .icon-btn { width: 40px; height: 40px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); background: rgba(7,7,12,0.2); color: white; font-size: 22px; }
@@ -32,7 +37,7 @@ body { min-height: 100vh; }
   background: radial-gradient(circle at 50% 32%, #c09a82 10%, transparent 12%), radial-gradient(circle at 50% 62%, #7f5f49 16%, transparent 17%), linear-gradient(180deg, #5a4037 0%, #38252f 100%);
   border: 2px solid rgba(255,255,255,0.12); box-shadow: 0 0 0 3px rgba(184,109,255,0.22);
 }
-.hero-copy { position:relative; z-index:2; margin-top: 24px; }
+.hero-copy { position:relative; z-index:2; margin-top: 24px; text-shadow: 0 8px 28px rgba(0,0,0,.42); }
 .hero-copy h1 { font-family: "Cormorant Garamond", serif; font-size: 3.5rem; font-weight: 500; line-height: .92; margin: 0; }
 .hero-copy p { margin: 6px 0 0; color: #d8d0dc; letter-spacing: .28em; font-size: .84rem; }
 .content { padding: 0 14px 90px; }

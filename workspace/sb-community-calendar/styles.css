@@ -18,12 +18,12 @@ body { min-height: 100vh; }
   background:
     linear-gradient(180deg, rgba(10,8,14,0.14), rgba(10,8,14,0.72) 56%, rgba(9,9,13,0.94) 100%),
     radial-gradient(circle at 50% 36%, rgba(255,173,88,0.20), transparent 30%),
-    url('./assets/hero-sb-sunset.jpg') center/cover no-repeat;
+    url('./assets/hero-sb-sunset-v2.jpg') center 38%/cover no-repeat;
   overflow: hidden;
 }
 .hero::before {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(110,43,86,0.12), rgba(255,143,91,0.08) 34%, rgba(13,11,19,0.18) 70%, rgba(9,9,13,0.26));
+  background: linear-gradient(180deg, rgba(146,58,122,0.16), rgba(255,132,94,0.10) 34%, rgba(21,13,30,0.18) 70%, rgba(9,9,13,0.30));
   mix-blend-mode: screen;
 }
 .hero::after {

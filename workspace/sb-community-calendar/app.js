@@ -5,7 +5,7 @@ const prevBtn = document.getElementById('calendarPrev');
 const nextBtn = document.getElementById('calendarNext');
 
 const state = {
-  view: 'today',
+  view: 'month',
   dayOffset: 0,
   weekOffset: 0,
   monthOffset: 0,

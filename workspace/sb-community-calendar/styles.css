@@ -136,3 +136,48 @@ body { min-height: 100vh; }
   .solstice-banner { min-height: 220px; }
   .bottom-nav { max-width: 1180px; }
 }
+
+.detail-link { text-decoration: none; color: inherit; display: block; }
+.detail-shell { background: #09090d; }
+.detail-hero {
+  min-height: 340px; padding: 18px; display:flex; flex-direction:column; justify-content:space-between;
+  background-size: cover; background-position: center; position: relative;
+}
+.detail-hero::after {
+  content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(12,10,18,0.06), rgba(12,10,18,0.28) 42%, rgba(9,9,13,0.92));
+}
+.detail-topbar, .detail-copy { position:relative; z-index:2; }
+.back-link {
+  display:inline-flex; align-items:center; gap:6px; color:white; text-decoration:none;
+  padding:10px 14px; border-radius:999px; border:1px solid rgba(255,255,255,0.12); background:rgba(8,8,12,0.18);
+}
+.detail-kicker { font-size:.76rem; letter-spacing:.14em; text-transform:uppercase; color:#f2d7e4; margin-bottom:10px; }
+.detail-copy h1 { font-family:"Cormorant Garamond", serif; font-size:3.1rem; line-height:.94; margin:0; }
+.detail-copy p { margin:10px 0 0; max-width:22rem; color:#efe7f3; line-height:1.55; }
+.detail-content { padding-top: 18px; }
+.detail-meta {
+  display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;
+}
+.detail-meta div { background:#11121a; border:1px solid rgba(255,255,255,0.06); border-radius:18px; padding:14px; }
+.detail-meta strong { display:block; font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; color:#a59dae; margin-bottom:8px; }
+.detail-meta span { color:#f4edf7; line-height:1.45; }
+.gallery-strip {
+  display:flex; gap:10px; overflow-x:auto; padding-bottom:4px; margin-bottom:16px;
+}
+.gallery-strip::-webkit-scrollbar { display:none; }
+.gallery-strip img {
+  width: 78%; max-width: 310px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; border:1px solid rgba(255,255,255,0.06);
+}
+.detail-body {
+  background:#0f1015; border:1px solid rgba(255,255,255,0.06); border-radius:22px; padding:18px;
+}
+.detail-body p { margin:0 0 14px; color:#ddd4e2; line-height:1.7; }
+.primary-link-btn {
+  display:inline-flex; align-items:center; justify-content:center; padding:14px 18px; border-radius:999px;
+  background: linear-gradient(135deg, #ff9d67 0%, #ff6aaa 46%, #b04fff 100%); color:white; text-decoration:none; font-weight:500;
+}
+@media (min-width: 700px) {
+  .detail-hero { min-height: 420px; }
+  .detail-copy h1 { font-size:4.5rem; }
+  .gallery-strip img { width: 31%; max-width:none; }
+}

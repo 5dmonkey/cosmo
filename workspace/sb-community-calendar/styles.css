@@ -193,7 +193,6 @@ body { min-height: 100vh; }
 .content-compact { padding: 0 12px 86px; }
 .view-switcher-compact { gap: 10px; margin-top: -14px; }
 .view-switcher-compact .view-pill { padding: 11px 16px; background: rgba(13,14,20,.98); }
-.filter-pill { width: 48px; justify-content: center; padding: 11px 0; }
 .calendar-card-home { margin-top: 10px; padding: 10px 10px 12px; min-height: unset; }
 .calendar-head-home h2 { font-size: 1.9rem; }
 .weekday-row-home { margin-bottom: 6px; }

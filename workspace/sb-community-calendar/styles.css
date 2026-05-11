@@ -741,3 +741,47 @@ body { min-height: 100vh; }
   color:#fff;
   box-shadow:0 12px 24px rgba(191,110,240,.28);
 }
+
+.px-brand-icon {
+  width: 14px;
+  height: 18px;
+  display: inline-block;
+  background: white;
+  clip-path: polygon(46% 0%, 56% 0%, 57% 44%, 100% 18%, 100% 27%, 67% 43%, 100% 43%, 100% 52%, 66% 51%, 90% 72%, 82% 78%, 59% 55%, 58% 100%, 47% 100%, 46% 55%, 23% 78%, 15% 72%, 39% 51%, 0% 52%, 0% 43%, 33% 43%, 0% 27%, 0% 18%, 43% 44%);
+}
+.px-qr, .px-menu {
+  display:inline-block;
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+.px-qr::before, .px-qr::after {
+  content: "";
+  position: absolute;
+  border: 1.7px solid white;
+  width: 8px;
+  height: 8px;
+}
+.px-qr::before { left: 1px; top: 1px; }
+.px-qr::after { right: 1px; bottom: 1px; }
+.px-menu::before, .px-menu::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  height: 1.7px;
+  background: white;
+  border-radius: 999px;
+}
+.px-menu::before { top: 7px; box-shadow: 0 6px 0 white; }
+.px-menu::after { top: 13px; opacity: 0; }
+.px-camera::before {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 1.8px solid white;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 11px;
+}

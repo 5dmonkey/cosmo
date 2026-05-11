@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile — Santa Barbara Community Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="profile-app-shell">
+    <header class="profile-hero">
+      <div class="profile-topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark">✶</div>
+          <div>
+            <strong>SANTA BARBARA</strong>
+            <span>COMMUNITY CALENDAR</span>
+          </div>
+        </div>
+        <div class="profile-topbar-actions">
+          <button class="icon-btn" aria-label="QR">⌘</button>
+          <button class="icon-btn" aria-label="Menu">☰</button>
+        </div>
+      </div>
+
+      <div class="profile-hero-content">
+        <div class="profile-avatar-wrap">
+          <img class="profile-avatar" src="./assets/profile-mccailey.jpg" alt="Profile photo of McCailey" />
+          <button class="avatar-camera" type="button" aria-label="Edit photo">⌾</button>
+        </div>
+        <div class="profile-identity">
+          <h1>McCailey<br />Contreras</h1>
+          <p>Founder, Grounds of Play</p>
+          <button class="edit-profile-btn" type="button">✎ Edit Profile</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="profile-main">
+      <section class="profile-grid">
+        <section class="profile-panel about-panel">
+          <h2>About Me</h2>
+          <p class="about-copy">I’m passionate about building community, creativity, and meaningful experiences that bring people together. Santa Barbara is home.</p>
+
+          <div class="detail-list-grid">
+            <div class="detail-row">
+              <span class="detail-icon">⌖</span>
+              <div><small>Currently Live</small><strong>Santa Barbara, California, United States</strong></div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-icon">⌲</span>
+              <div><small>Originally From</small><strong>Los Angeles, California, United States</strong></div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-icon">◌</span>
+              <div><small>Website</small><strong>groundsofplay.com</strong></div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-icon">◎</span>
+              <div><small>Socials</small><strong>@groundsofplay</strong></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="profile-panel interests-panel">
+          <div class="panel-head">
+            <h2>Interests</h2>
+            <a href="#">View All</a>
+          </div>
+          <div class="interest-chip-grid">
+            <button class="interest-chip">Wellness</button>
+            <button class="interest-chip">Yoga</button>
+            <button class="interest-chip">Community</button>
+            <button class="interest-chip">Entrepreneurship</button>
+            <button class="interest-chip">Live Music</button>
+            <button class="interest-chip">Art</button>
+            <button class="interest-chip">Travel</button>
+            <button class="interest-chip">Nature</button>
+            <button class="interest-chip">Reading</button>
+            <button class="interest-chip">Coffee</button>
+          </div>
+          <button class="interest-add-btn" type="button">＋ Add Interest</button>
+        </section>
+      </section>
+
+      <section class="profile-events-grid">
+        <section class="profile-panel saved-panel">
+          <div class="panel-head">
+            <div>
+              <h2>♡ My Calendar</h2>
+              <p>Events you’ve saved</p>
+            </div>
+            <a href="#">View All</a>
+          </div>
+          <div class="saved-events-list" id="savedEventsList">
+            <article class="mini-event-card" data-event-id="farmers-market">
+              <img src="https://static.wixstatic.com/media/581d34_daf42ad540564be38357e99c4c120cf6~mv2.jpg/v1/fill/w_300,h_220,al_c,q_80,enc_avif,quality_auto/581d34_daf42ad540564be38357e99c4c120cf6~mv2.jpg" alt="Santa Barbara Farmers Market" />
+              <div class="mini-event-copy">
+                <small>Sat, May 3</small>
+                <h3>Santa Barbara Farmers Market</h3>
+                <p>Downtown Santa Barbara</p>
+              </div>
+              <button class="mini-save active" type="button" data-heart-id="farmers-market">♥</button>
+            </article>
+            <article class="mini-event-card" data-event-id="art-walk">
+              <img src="https://img.ctykit.com/cdn/ca-santa-barbara/images/tr:w-600/10-sbma-may-26-1t-featured-photo.jpg" alt="1st Thursday Art Walk" />
+              <div class="mini-event-copy">
+                <small>Thu, May 7</small>
+                <h3>1st Thursday Art Walk</h3>
+                <p>State Street</p>
+              </div>
+              <button class="mini-save active" type="button" data-heart-id="art-walk">♥</button>
+            </article>
+            <article class="mini-event-card" data-event-id="summer-solstice">
+              <img src="https://static.wixstatic.com/media/ece784_8e96dfaf690542eb89964c5faa9a07d0~mv2.jpg/v1/fill/w_300,h_220,al_c,q_80,enc_avif,quality_auto/20250621-evokra-078.jpg" alt="Summer Solstice Celebration" />
+              <div class="mini-event-copy">
+                <small>Thu, Jun 19</small>
+                <h3>Summer Solstice Celebration</h3>
+                <p>Santa Barbara</p>
+              </div>
+              <button class="mini-save active" type="button" data-heart-id="summer-solstice">♥</button>
+            </article>
+          </div>
+          <a class="panel-footer-link" href="#">View All Saved Events</a>
+        </section>
+
+        <section class="profile-panel hosted-panel">
+          <div class="panel-head">
+            <div>
+              <h2>⌂ My Events</h2>
+              <p>Events you’re hosting</p>
+            </div>
+            <a href="#">View All</a>
+          </div>
+          <div class="saved-events-list hosted-list">
+            <article class="mini-event-card hosting-card">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Sunrise Yoga Flow" />
+              <div class="mini-event-copy">
+                <small>Wed, May 22</small>
+                <h3>Sunrise Yoga Flow</h3>
+                <p>Shoreline Park</p>
+              </div>
+              <button class="mini-more" type="button">⋮</button>
+            </article>
+            <article class="mini-event-card hosting-card">
+              <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="Community Dinner" />
+              <div class="mini-event-copy">
+                <small>Sun, Jun 1</small>
+                <h3>Community Dinner</h3>
+                <p>Santa Barbara, CA</p>
+              </div>
+              <button class="mini-more" type="button">⋮</button>
+            </article>
+            <article class="mini-event-card hosting-card">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Creative Circle Meetup" />
+              <div class="mini-event-copy">
+                <small>Sat, Jun 14</small>
+                <h3>Creative Circle Meetup</h3>
+                <p>Santa Barbara, CA</p>
+              </div>
+              <button class="mini-more" type="button">⋮</button>
+            </article>
+          </div>
+          <a class="panel-footer-link" href="#">View All My Events</a>
+        </section>
+      </section>
+    </main>
+
+    <nav class="bottom-nav bottom-nav-home profile-bottom-nav">
+      <a class="nav-item" href="./index.html"><span>☷</span><small>Discover</small></a>
+      <a class="nav-item" href="#"><span>♡</span><small>For You</small></a>
+      <a class="nav-item add-event-nav" href="#"><span>＋</span><small>Add Event</small></a>
+      <a class="nav-item" href="#"><span>◌</span><small>Community</small></a>
+      <a class="nav-item active" href="./me.html"><span>◠</span><small>Account</small></a>
+    </nav>
+  </div>
+
+  <script src="./profile.js"></script>
+</body>
+</html>

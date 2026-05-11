@@ -1,4 +1,22 @@
 {
   "version": 1,
-  "jobs": []
+  "jobs": [
+    {
+      "id": "buggy-betty-sb-calendar",
+      "name": "Buggy Betty — SB Calendar QA",
+      "description": "Every 5 minutes, review the Santa Barbara Community Calendar prototype for broken UI or obvious polish issues. Fix only actual problems, keep the design in the same world, avoid inventing new features unless needed to resolve a bug or UX break, then commit and push any workspace changes.",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 300000
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Buggy Betty pass: inspect /data/.openclaw/workspace/sb-community-calendar/ on mobile-first terms. Check only for actually broken behavior, visual misalignment, confusing copy, data/date/link mistakes, and obvious UI polish opportunities. Do not add new product scope unless required to fix a bug. Keep changes small, elegant, and in the same cinematic design realm. If you change workspace files, commit and push with a clear message. If nothing needs changing, reply briefly that nothing needed fixing.",
+        "lightContext": true
+      }
+    }
+  ]
 }

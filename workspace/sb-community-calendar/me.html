@@ -6,182 +6,194 @@
   <title>Account — Santa Barbara Community Calendar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="mock-phone-page">
-    <section class="mock-hero">
-      <div class="mock-statusbar">
+  <div class="px-account-page">
+    <section class="px-hero">
+      <div class="px-statusbar">
         <span>9:41</span>
         <span>◔ ︴▂▃▅</span>
       </div>
-      <div class="mock-topbar-row">
-        <div class="mock-brand-row">
-          <span class="mock-palm">🌴</span>
-          <div class="mock-brand-text">
+      <div class="px-toprow">
+        <div class="px-brand">
+          <span class="px-brand-icon">🌴</span>
+          <div class="px-brand-copy">
             <strong>SANTA BARBARA</strong>
             <span>COMMUNITY CALENDAR</span>
           </div>
         </div>
-
+        <div class="px-actions">
+          <span class="px-qr">⌘</span>
+          <span class="px-menu">☰</span>
+        </div>
       </div>
-      <div class="mock-profile-wrap">
-        <img class="mock-profile-photo" src="./assets/profile-portrait-real.jpg" alt="McCailey profile photo" />
-        <button class="mock-photo-btn" type="button">⌾</button>
+
+      <div class="px-avatar-wrap">
+        <img class="px-avatar" src="./assets/profile-portrait-real.jpg" alt="Profile photo of McCailey Contreras" />
+        <button class="px-camera" type="button" aria-label="Edit photo">⌾</button>
       </div>
     </section>
 
-    <main class="mock-content">
-      <section class="mock-name-block">
-        <h1>McCailey<br />Contreras</h1>
+    <section class="px-sheet">
+      <div class="px-name-block">
+        <h1>McCailey<br>Contreras</h1>
         <p>FOUNDER, GROUNDS OF PLAY</p>
-        <button class="mock-edit-btn" type="button">✎&nbsp;&nbsp;Edit Profile</button>
-      </section>
+        <button class="px-edit">✎&nbsp;&nbsp;Edit Profile</button>
+      </div>
 
-      <section class="mock-section">
-        <div class="mock-section-title">ABOUT ME</div>
-        <p class="mock-about">I’m passionate about building community, creativity, and meaningful experiences that bring people together. Santa Barbara is home.</p>
-      </section>
+      <div class="px-section about">
+        <div class="px-section-title">ABOUT ME</div>
+        <p class="px-about-copy">I'm passionate about building community, creativity, and meaningful experiences that bring people together. Santa Barbara is home.</p>
+      </div>
 
-      <section class="mock-section mock-detail-section">
-        <div class="mock-detail-item">
-          <span class="mock-detail-icon">⌖</span>
+      <div class="px-divider"></div>
+
+      <div class="px-details">
+        <div class="px-detail-row">
+          <span class="px-detail-icon">⌖</span>
           <div>
             <small>CURRENTLY LIVE</small>
             <strong>Santa Barbara, California, USA</strong>
           </div>
         </div>
-        <div class="mock-detail-item">
-          <span class="mock-detail-icon">⌲</span>
+        <div class="px-detail-row">
+          <span class="px-detail-icon">⌲</span>
           <div>
             <small>ORIGINALLY FROM</small>
             <strong>Los Angeles, California, USA</strong>
           </div>
         </div>
-        <div class="mock-detail-item">
-          <span class="mock-detail-icon">◎</span>
+        <div class="px-detail-row">
+          <span class="px-detail-icon">◎</span>
           <div>
             <small>WEBSITE</small>
             <strong>groundsofplay.com</strong>
           </div>
         </div>
-        <div class="mock-detail-item">
-          <span class="mock-detail-icon">◌</span>
+        <div class="px-detail-row no-border">
+          <span class="px-detail-icon">◌</span>
           <div>
             <small>SOCIALS</small>
             <strong>◎</strong>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section class="mock-section">
-        <div class="mock-section-head">
-          <div class="mock-section-title">INTERESTS</div>
+      <div class="px-divider"></div>
+
+      <div class="px-section">
+        <div class="px-header-row">
+          <div class="px-section-title">INTERESTS</div>
           <a href="#">View All ›</a>
         </div>
-        <div class="mock-chip-grid">
-          <div class="mock-chip">🍃&nbsp; Wellness</div>
-          <div class="mock-chip">🪷&nbsp; Yoga</div>
-          <div class="mock-chip">👥&nbsp; Community</div>
-          <div class="mock-chip">💼&nbsp; Entrepreneurship</div>
-          <div class="mock-chip">♫&nbsp; Live Music</div>
-          <div class="mock-chip">◌&nbsp; Art</div>
-          <div class="mock-chip">✈︎&nbsp; Travel</div>
-          <div class="mock-chip">⌂&nbsp; Nature</div>
-          <div class="mock-chip">☰&nbsp; Reading</div>
-          <div class="mock-chip">☕︎&nbsp; Coffee</div>
+        <div class="px-chips">
+          <div class="px-chip">🍃&nbsp; Wellness</div>
+          <div class="px-chip">🪷&nbsp; Yoga</div>
+          <div class="px-chip">👥&nbsp; Community</div>
+          <div class="px-chip">💼&nbsp; Entrepreneurship</div>
+          <div class="px-chip">♫&nbsp; Live Music</div>
+          <div class="px-chip">◌&nbsp; Art</div>
+          <div class="px-chip">✈︎&nbsp; Travel</div>
+          <div class="px-chip">⌂&nbsp; Nature</div>
+          <div class="px-chip">☰&nbsp; Reading</div>
+          <div class="px-chip">☕︎&nbsp; Coffee</div>
         </div>
-        <button class="mock-add-interest" type="button">＋&nbsp;&nbsp;Add Interest</button>
-      </section>
+        <button class="px-add-interest">＋&nbsp;&nbsp;Add Interest</button>
+      </div>
 
-      <section class="mock-section">
-        <div class="mock-section-head larger-gap">
+      <div class="px-divider"></div>
+
+      <div class="px-section">
+        <div class="px-header-row stacked-gap">
           <div>
-            <div class="mock-section-title">♡&nbsp;&nbsp;MY CALENDAR</div>
-            <p class="mock-sub">Events you've saved</p>
+            <div class="px-section-title">♡&nbsp;&nbsp;MY CALENDAR</div>
+            <p class="px-sub">Events you've saved</p>
           </div>
           <a href="#">View All ›</a>
         </div>
-        <div class="mock-event-list" id="savedEventsList">
-          <article class="mock-event-row" data-event-id="farmers-market">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Sunset Yoga at Leadbetter Beach" />
-            <div class="mock-event-copy">
+        <div class="px-event-list" id="savedEventsList">
+          <article class="px-event-row" data-event-id="farmers-market">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Sunset Yoga at Leadbetter Beach">
+            <div class="px-event-copy">
               <small>SAT, MAY 24</small>
-              <h3>Sunset Yoga at<br />Leadbetter Beach</h3>
+              <h3>Sunset Yoga at<br>Leadbetter Beach</h3>
               <p>Leadbetter Beach</p>
             </div>
-            <button class="mock-bookmark" type="button" data-heart-id="farmers-market">⌑</button>
+            <button class="px-side-icon" type="button" data-heart-id="farmers-market">⌑</button>
           </article>
-          <article class="mock-event-row" data-event-id="art-walk">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Community Dinner at Jeannine's" />
-            <div class="mock-event-copy">
+          <article class="px-event-row" data-event-id="art-walk">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Community Dinner at Jeannine's">
+            <div class="px-event-copy">
               <small>FRI, MAY 30</small>
-              <h3>Community Dinner<br />at Jeannine's</h3>
+              <h3>Community Dinner<br>at Jeannine's</h3>
               <p>Santa Barbara, CA</p>
             </div>
-            <button class="mock-bookmark" type="button" data-heart-id="art-walk">⌑</button>
+            <button class="px-side-icon" type="button" data-heart-id="art-walk">⌑</button>
           </article>
-          <article class="mock-event-row" data-event-id="summer-solstice">
-            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80" alt="Santa Barbara Live Music Series" />
-            <div class="mock-event-copy">
+          <article class="px-event-row" data-event-id="summer-solstice">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80" alt="Santa Barbara Live Music Series">
+            <div class="px-event-copy">
               <small>SAT, JUN 7</small>
-              <h3>Santa Barbara Live<br />Music Series</h3>
+              <h3>Santa Barbara Live<br>Music Series</h3>
               <p>The Granada Theatre</p>
             </div>
-            <button class="mock-bookmark" type="button" data-heart-id="summer-solstice">⌑</button>
+            <button class="px-side-icon" type="button" data-heart-id="summer-solstice">⌑</button>
           </article>
         </div>
-        <a class="mock-footer-link" href="#">View All Saved Events ›</a>
-      </section>
+        <a class="px-footer-link" href="#">View All Saved Events ›</a>
+      </div>
 
-      <section class="mock-section last-mock-section">
-        <div class="mock-section-head larger-gap">
+      <div class="px-divider"></div>
+
+      <div class="px-section last">
+        <div class="px-header-row stacked-gap">
           <div>
-            <div class="mock-section-title">⌂&nbsp;&nbsp;MY EVENTS</div>
-            <p class="mock-sub">Events you're hosting</p>
+            <div class="px-section-title">⌂&nbsp;&nbsp;MY EVENTS</div>
+            <p class="px-sub">Events you're hosting</p>
           </div>
           <a href="#">View All ›</a>
         </div>
-        <div class="mock-event-list">
-          <article class="mock-event-row">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Sunrise Yoga Flow" />
-            <div class="mock-event-copy">
+        <div class="px-event-list">
+          <article class="px-event-row">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Sunrise Yoga Flow">
+            <div class="px-event-copy">
               <small>WED, MAY 22</small>
               <h3>Sunrise Yoga Flow</h3>
               <p>Shoreline Park</p>
             </div>
-            <button class="mock-more" type="button">⋮</button>
+            <button class="px-side-icon" type="button">⋮</button>
           </article>
-          <article class="mock-event-row">
-            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="Community Dinner" />
-            <div class="mock-event-copy">
+          <article class="px-event-row">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="Community Dinner">
+            <div class="px-event-copy">
               <small>SUN, JUN 1</small>
               <h3>Community Dinner</h3>
               <p>Santa Barbara, CA</p>
             </div>
-            <button class="mock-more" type="button">⋮</button>
+            <button class="px-side-icon" type="button">⋮</button>
           </article>
-          <article class="mock-event-row">
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Creative Circle Meetup" />
-            <div class="mock-event-copy">
+          <article class="px-event-row">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Creative Circle Meetup">
+            <div class="px-event-copy">
               <small>SAT, JUN 14</small>
               <h3>Creative Circle Meetup</h3>
               <p>Santa Barbara, CA</p>
             </div>
-            <button class="mock-more" type="button">⋮</button>
+            <button class="px-side-icon" type="button">⋮</button>
           </article>
         </div>
-        <a class="mock-footer-link" href="#">View All My Events ›</a>
-      </section>
-    </main>
+        <a class="px-footer-link" href="#">View All My Events ›</a>
+      </div>
+    </section>
 
-    <nav class="bottom-nav bottom-nav-home account-bottom-nav">
-      <a class="nav-item" href="./index.html"><span>◌</span><small>Discover</small></a>
-      <a class="nav-item" href="#"><span>☆</span><small>For You</small></a>
-      <a class="nav-item add-event-nav" href="#"><span>＋</span><small>Add Event</small></a>
-      <a class="nav-item" href="#"><span>⌂</span><small>Community</small></a>
-      <a class="nav-item active" href="./me.html"><span>◠</span><small>Account</small></a>
+    <nav class="px-bottom-nav">
+      <a class="px-nav-item" href="./index.html"><span>◌</span><small>Discover</small></a>
+      <a class="px-nav-item" href="#"><span>☆</span><small>For You</small></a>
+      <a class="px-nav-item px-nav-center" href="#"><span>＋</span><small>Add Event</small></a>
+      <a class="px-nav-item" href="#"><span>⌂</span><small>Community</small></a>
+      <a class="px-nav-item active" href="./me.html"><span>◠</span><small>Account</small></a>
     </nav>
   </div>
 

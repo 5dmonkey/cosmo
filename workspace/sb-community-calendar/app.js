@@ -83,3 +83,14 @@ weekDayButtons.forEach((button) => {
     setView('today');
   });
 });
+
+
+weekDayButtons.forEach((button) => {
+  button.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      button.click();
+    }
+  });
+  button.style.cursor = 'pointer';
+});

@@ -74,3 +74,12 @@ nextBtn?.addEventListener('click', () => {
 renderTitle();
 
 setView(state.view);
+
+
+const weekDayButtons = document.querySelectorAll('.week-day-button');
+weekDayButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    state.dayOffset = Number(button.dataset.dayNumber || 11) - 11;
+    setView('today');
+  });
+});

@@ -506,256 +506,106 @@ body { min-height: 100vh; }
 
 
 
-/* PROFILE FROM-SCRATCH REBUILD */
-.me-shell {
+
+
+/* ACCOUNT EXACT DESIGN MAP */
+.account-page {
   min-height: 100vh;
   background: #f7f2ec;
-  color: #19151c;
-  padding-bottom: 108px;
+  color: #17131a;
+  padding-bottom: 104px;
 }
-.me-hero {
+.account-hero {
   position: relative;
-  height: 320px;
+  height: 296px;
   padding: 18px 18px 0;
   background:
-    linear-gradient(180deg, rgba(13,10,19,.08), rgba(13,10,19,.42) 56%, rgba(13,10,19,.68) 100%),
+    linear-gradient(180deg, rgba(11,9,17,.10), rgba(11,9,17,.40) 54%, rgba(11,9,17,.72) 100%),
     url('./assets/hero-sb-sunset-v2.jpg') center/cover no-repeat;
 }
-.me-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  color: white;
+.account-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,132,94,.08), rgba(148,63,132,.08)); }
+.account-topbar {
+  position:relative; z-index:2; display:flex; justify-content:space-between; align-items:flex-start; color:white;
 }
-.me-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.account-brand { display:flex; align-items:center; gap:10px; }
+.account-brand-copy strong, .account-brand-copy span { display:block; color:white; }
+.account-brand-copy strong { font-size:.86rem; letter-spacing:.08em; }
+.account-brand-copy span { font-size:.68rem; letter-spacing:.14em; opacity:.92; }
+.account-actions { display:flex; gap:10px; }
+.account-icon-btn {
+  width:38px; height:38px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:rgba(8,8,12,.16); color:white;
 }
-.me-brand-copy strong,
-.me-brand-copy span {
-  display: block;
-  color: white;
+.account-avatar-wrap {
+  position:absolute; left:50%; bottom:-58px; transform:translateX(-50%); z-index:3; width:152px; height:152px;
 }
-.me-brand-copy strong {
-  font-size: .9rem;
-  letter-spacing: .08em;
+.account-avatar {
+  width:152px; height:152px; border-radius:50%; object-fit:cover; border:5px solid #fff9f4; box-shadow:0 18px 36px rgba(22,18,24,.18);
 }
-.me-brand-copy span {
-  font-size: .72rem;
-  letter-spacing: .14em;
-  opacity: .9;
+.account-camera-btn {
+  position:absolute; right:8px; bottom:8px; width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,.3); background:rgba(12,12,16,.76); color:white;
 }
-.me-top-actions { display: flex; gap: 10px; }
-.me-avatar-wrap {
-  position: absolute;
-  left: 50%;
-  bottom: -70px;
-  transform: translateX(-50%);
-  width: 152px;
-  height: 152px;
+.account-content { padding: 74px 16px 0; }
+.account-intro-block,
+.account-section {
+  background:#fffaf5; border:1px solid rgba(23,20,26,.08); border-radius:24px; box-shadow:0 10px 28px rgba(27,21,29,.05);
 }
-.me-avatar {
-  width: 152px;
-  height: 152px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #fff8f2;
-  box-shadow: 0 18px 36px rgba(22,18,24,.18);
+.account-intro-block {
+  padding: 24px 20px 20px; text-align:center;
 }
-.me-avatar-camera {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.25);
-  background: rgba(12,12,16,.74);
-  color: white;
+.account-intro-block h1 {
+  margin:0; font-family:"Cormorant Garamond", serif; font-size:3rem; line-height:.95; font-weight:500; color:#17131a;
 }
-.me-main {
-  padding: 92px 16px 0;
+.account-intro-block p {
+  margin:10px 0 18px; color:#756c79; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase;
 }
-.me-intro-card,
-.me-section-card {
-  background: #fffaf5;
-  border: 1px solid rgba(25,21,28,.08);
-  border-radius: 24px;
-  box-shadow: 0 10px 28px rgba(27,21,29,.05);
+.account-edit-btn {
+  width:100%; border:none; background:#16141a; color:white; border-radius:999px; padding:14px 20px; font-size:1rem;
 }
-.me-intro-card {
-  text-align: center;
-  padding: 26px 20px 22px;
+.account-section { margin-top: 14px; padding: 22px 18px; }
+.account-section.last-section { margin-bottom: 0; }
+.account-section h2 {
+  margin:0 0 16px; font-size:.84rem; letter-spacing:.15em; text-transform:uppercase; color:#1b171d;
 }
-.me-intro-card h1 {
-  margin: 0;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 3rem;
-  line-height: .95;
-  font-weight: 500;
-  color: #17131a;
+.account-about-copy { margin:0; font-size:1rem; line-height:1.85; color:#2d2730; }
+.detail-section { padding-top: 18px; }
+.account-detail-row {
+  display:grid; grid-template-columns: 26px 1fr; gap:12px; padding:14px 0; border-top:1px solid rgba(23,20,26,.08);
 }
-.me-intro-card p {
-  margin: 10px 0 18px;
-  color: #746b78;
-  font-size: .82rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
+.account-detail-row:first-child { border-top:none; padding-top:0; }
+.account-detail-icon { color:#7e7581; font-size:1rem; }
+.account-detail-row small {
+  display:block; margin-bottom:6px; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:#8a818d;
 }
-.me-edit-btn {
-  width: 100%;
-  border: 1px solid #141218;
-  background: #141218;
-  color: white;
-  border-radius: 999px;
-  padding: 14px 18px;
-  font-size: 1rem;
+.account-detail-row strong { font-size:1rem; font-weight:500; color:#211c23; }
+.account-section-head {
+  display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:16px;
 }
-.me-section-card {
-  margin-top: 14px;
-  padding: 22px 18px;
+.account-section-head a, .account-footer-link { color:#211c23; text-decoration:none; font-size:.9rem; }
+.account-section-head p { margin:6px 0 0; color:#7b7380; }
+.account-chip-grid {
+  display:grid; grid-template-columns: 1fr 1fr; gap:12px;
 }
-.me-section-card.last-card { margin-bottom: 0; }
-.me-section-card h2 {
-  margin: 0 0 16px;
-  font-size: .88rem;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  color: #1b171d;
+.account-chip,
+.account-add-chip {
+  border:1px solid rgba(23,20,26,.10); background:white; border-radius:999px; padding:14px 14px; font-size:.92rem; color:#241f28; text-align:left;
 }
-.me-body-copy {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #2d2730;
+.account-add-chip {
+  width:100%; margin-top:14px; text-align:center; background:transparent;
 }
-.me-detail-list {
-  display: grid;
-  gap: 14px;
+.account-event-list { display:grid; gap:14px; }
+.account-event-row {
+  display:grid; grid-template-columns: 92px 1fr 22px; gap:12px; align-items:center;
 }
-.me-detail-item {
-  padding-top: 14px;
-  border-top: 1px solid rgba(25,21,28,.08);
-}
-.me-detail-item:first-child { padding-top: 0; border-top: none; }
-.me-detail-label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: .72rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #857d8a;
-}
-.me-detail-item strong {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #231e25;
-}
-.me-section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-.me-section-head a {
-  color: #231e25;
-  text-decoration: none;
-  font-size: .92rem;
-}
-.me-section-sub {
-  margin: 6px 0 0;
-  color: #7b7380;
-}
-.me-chip-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.me-chip {
-  border: 1px solid rgba(25,21,28,.10);
-  background: #fff;
-  border-radius: 999px;
-  padding: 13px 16px;
-  font-size: .94rem;
-  color: #241f28;
-}
-.me-event-list {
-  display: grid;
-  gap: 14px;
-}
-.me-event-row {
-  display: grid;
-  grid-template-columns: 96px 1fr 24px;
-  gap: 14px;
-  align-items: center;
-}
-.me-event-row img {
-  width: 96px;
-  height: 72px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-.me-event-copy small {
-  display: block;
-  margin-bottom: 6px;
-  font-size: .75rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: #8c8491;
-}
-.me-event-copy h3 {
-  margin: 0 0 5px;
-  font-size: 1.1rem;
-  line-height: 1.16;
-  color: #1d1820;
-}
-.me-event-copy p {
-  margin: 0;
-  color: #6f6773;
-}
-.profile-bottom-nav { max-width: 100%; }
+.account-event-row img { width:92px; height:68px; border-radius:12px; object-fit:cover; }
+.account-event-copy small { display:block; margin-bottom:6px; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:#8b8390; }
+.account-event-copy h3 { margin:0 0 4px; font-size:1rem; line-height:1.18; color:#1b171d; }
+.account-event-copy p { margin:0; color:#6f6773; font-size:.92rem; }
+.bookmark-btn,
+.more-btn { border:none; background:none; color:#8a818d; font-size:1rem; justify-self:end; }
+.bookmark-btn.active { color:#8a818d; }
+.account-footer-link { display:inline-block; margin-top:18px; }
+.account-bottom-nav { max-width:100%; }
 
 @media (min-width: 980px) {
-  .me-shell {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding-bottom: 118px;
-  }
-  .me-hero {
-    height: 360px;
-    padding: 24px 32px 0;
-  }
-  .me-avatar-wrap {
-    left: 72px;
-    bottom: -78px;
-    transform: none;
-    width: 184px;
-    height: 184px;
-  }
-  .me-avatar {
-    width: 184px;
-    height: 184px;
-  }
-  .me-main {
-    padding: 106px 32px 0;
-  }
-  .me-intro-card {
-    text-align: left;
-    padding: 30px 32px 26px 252px;
-    border-radius: 0 0 30px 30px;
-  }
-  .me-intro-card h1 {
-    font-size: 4.9rem;
-  }
-  .me-edit-btn {
-    width: auto;
-    min-width: 180px;
-  }
-  .me-sections-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
+  .account-page { max-width: 420px; margin: 0 auto; }
 }

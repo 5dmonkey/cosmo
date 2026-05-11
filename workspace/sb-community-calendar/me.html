@@ -3,156 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Profile — Santa Barbara Community Calendar</title>
+  <title>Account — Santa Barbara Community Calendar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="me-shell">
-    <header class="me-hero">
-      <div class="me-topbar">
-        <div class="me-brand">
-          <div class="brand-mark">✶</div>
-          <div class="me-brand-copy">
+  <div class="account-page">
+    <section class="account-hero">
+      <div class="account-overlay"></div>
+      <div class="account-topbar">
+        <div class="account-brand">
+          <div class="palm-mark">✶</div>
+          <div class="account-brand-copy">
             <strong>SANTA BARBARA</strong>
             <span>COMMUNITY CALENDAR</span>
           </div>
         </div>
-        <div class="me-top-actions">
-          <button class="icon-btn" aria-label="QR">⌘</button>
-          <button class="icon-btn" aria-label="Menu">☰</button>
+        <div class="account-actions">
+          <button class="account-icon-btn" aria-label="QR">⌘</button>
+          <button class="account-icon-btn" aria-label="Menu">☰</button>
         </div>
       </div>
-      <div class="me-avatar-wrap">
-        <img class="me-avatar" src="./assets/profile-portrait-real.jpg" alt="Profile photo of McCailey" />
-        <button class="me-avatar-camera" type="button" aria-label="Edit profile photo">⌾</button>
+
+      <div class="account-avatar-wrap">
+        <img class="account-avatar" src="./assets/profile-portrait-real.jpg" alt="Portrait of McCailey Contreras" />
+        <button class="account-camera-btn" type="button" aria-label="Edit photo">⌾</button>
       </div>
-    </header>
+    </section>
 
-    <main class="me-main">
-      <section class="me-intro-card">
-        <h1>McCailey Contreras</h1>
-        <p>Founder, Grounds of Play</p>
-        <button class="me-edit-btn" type="button">Edit Profile</button>
+    <main class="account-content">
+      <section class="account-intro-block">
+        <h1>McCailey<br />Contreras</h1>
+        <p>FOUNDER, GROUNDS OF PLAY</p>
+        <button class="account-edit-btn" type="button">✎&nbsp;&nbsp;Edit Profile</button>
       </section>
 
-      <section class="me-section-card">
-        <h2>About Me</h2>
-        <p class="me-body-copy">I’m passionate about building community, creativity, and meaningful experiences that bring people together. Santa Barbara is home.</p>
+      <section class="account-section">
+        <h2>ABOUT ME</h2>
+        <p class="account-about-copy">I’m passionate about building community, creativity, and meaningful experiences that bring people together. Santa Barbara is home.</p>
       </section>
 
-      <section class="me-section-card">
-        <h2>Personal Details</h2>
-        <div class="me-detail-list">
-          <div class="me-detail-item">
-            <span class="me-detail-label">Currently Live</span>
-            <strong>Santa Barbara, California</strong>
+      <section class="account-section detail-section">
+        <div class="account-detail-row">
+          <span class="account-detail-icon">⌖</span>
+          <div>
+            <small>CURRENTLY LIVE</small>
+            <strong>Santa Barbara, California, USA</strong>
           </div>
-          <div class="me-detail-item">
-            <span class="me-detail-label">Originally From</span>
-            <strong>Los Angeles, California</strong>
+        </div>
+        <div class="account-detail-row">
+          <span class="account-detail-icon">⌲</span>
+          <div>
+            <small>ORIGINALLY FROM</small>
+            <strong>Los Angeles, California, USA</strong>
           </div>
-          <div class="me-detail-item">
-            <span class="me-detail-label">Website</span>
+        </div>
+        <div class="account-detail-row">
+          <span class="account-detail-icon">◌</span>
+          <div>
+            <small>WEBSITE</small>
             <strong>groundsofplay.com</strong>
           </div>
-          <div class="me-detail-item">
-            <span class="me-detail-label">Socials</span>
-            <strong>@groundsofplay</strong>
-          </div>
         </div>
-      </section>
-
-      <section class="me-section-card">
-        <div class="me-section-head">
-          <h2>Interests</h2>
-          <a href="#">View All</a>
-        </div>
-        <div class="me-chip-grid">
-          <button class="me-chip">Wellness</button>
-          <button class="me-chip">Yoga</button>
-          <button class="me-chip">Community</button>
-          <button class="me-chip">Entrepreneurship</button>
-          <button class="me-chip">Live Music</button>
-          <button class="me-chip">Art</button>
-          <button class="me-chip">Travel</button>
-          <button class="me-chip">Nature</button>
-        </div>
-      </section>
-
-      <section class="me-section-card">
-        <div class="me-section-head">
+        <div class="account-detail-row">
+          <span class="account-detail-icon">◎</span>
           <div>
-            <h2>My Calendar</h2>
-            <p class="me-section-sub">Saved events</p>
+            <small>SOCIALS</small>
+            <strong>instagram</strong>
           </div>
-          <a href="#">View All</a>
-        </div>
-        <div class="me-event-list" id="savedEventsList">
-          <article class="me-event-row" data-event-id="farmers-market">
-            <img src="https://static.wixstatic.com/media/581d34_daf42ad540564be38357e99c4c120cf6~mv2.jpg/v1/fill/w_300,h_220,al_c,q_80,enc_avif,quality_auto/581d34_daf42ad540564be38357e99c4c120cf6~mv2.jpg" alt="Santa Barbara Farmers Market" />
-            <div class="me-event-copy">
-              <small>Sat, May 3</small>
-              <h3>Santa Barbara Farmers Market</h3>
-              <p>Downtown Santa Barbara</p>
-            </div>
-            <button class="mini-save active" type="button" data-heart-id="farmers-market">♥</button>
-          </article>
-          <article class="me-event-row" data-event-id="art-walk">
-            <img src="https://img.ctykit.com/cdn/ca-santa-barbara/images/tr:w-600/10-sbma-may-26-1t-featured-photo.jpg" alt="1st Thursday Art Walk" />
-            <div class="me-event-copy">
-              <small>Thu, May 7</small>
-              <h3>1st Thursday Art Walk</h3>
-              <p>Downtown Santa Barbara</p>
-            </div>
-            <button class="mini-save active" type="button" data-heart-id="art-walk">♥</button>
-          </article>
-          <article class="me-event-row" data-event-id="summer-solstice">
-            <img src="https://static.wixstatic.com/media/ece784_8e96dfaf690542eb89964c5faa9a07d0~mv2.jpg/v1/fill/w_300,h_220,al_c,q_80,enc_avif,quality_auto/20250621-evokra-078.jpg" alt="Summer Solstice Celebration" />
-            <div class="me-event-copy">
-              <small>Thu, Jun 19</small>
-              <h3>Summer Solstice Celebration</h3>
-              <p>Santa Barbara</p>
-            </div>
-            <button class="mini-save active" type="button" data-heart-id="summer-solstice">♥</button>
-          </article>
         </div>
       </section>
 
-      <section class="me-section-card last-card">
-        <div class="me-section-head">
-          <div>
-            <h2>My Events</h2>
-            <p class="me-section-sub">Hosted events</p>
-          </div>
-          <a href="#">View All</a>
+      <section class="account-section">
+        <div class="account-section-head">
+          <h2>INTERESTS</h2>
+          <a href="#">View All ›</a>
         </div>
-        <div class="me-event-list">
-          <article class="me-event-row">
-            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="Sunrise Yoga Flow" />
-            <div class="me-event-copy">
-              <small>Wed, May 22</small>
+        <div class="account-chip-grid">
+          <button class="account-chip">🍃&nbsp; Wellness</button>
+          <button class="account-chip">🪷&nbsp; Yoga</button>
+          <button class="account-chip">👥&nbsp; Community</button>
+          <button class="account-chip">💼&nbsp; Entrepreneurship</button>
+          <button class="account-chip">♫&nbsp; Live Music</button>
+          <button class="account-chip">◌&nbsp; Art</button>
+          <button class="account-chip">✈︎&nbsp; Travel</button>
+          <button class="account-chip">⌂&nbsp; Nature</button>
+          <button class="account-chip">☰&nbsp; Reading</button>
+          <button class="account-chip">☕︎&nbsp; Coffee</button>
+        </div>
+        <button class="account-add-chip">＋&nbsp; Add Interest</button>
+      </section>
+
+      <section class="account-section">
+        <div class="account-section-head">
+          <div>
+            <h2>♡ MY CALENDAR</h2>
+            <p>Events you've saved</p>
+          </div>
+          <a href="#">View All ›</a>
+        </div>
+
+        <div class="account-event-list" id="savedEventsList">
+          <article class="account-event-row" data-event-id="farmers-market">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Sunset Yoga at Leadbetter Beach" />
+            <div class="account-event-copy">
+              <small>SAT, MAY 24</small>
+              <h3>Sunset Yoga at Leadbetter Beach</h3>
+              <p>Leadbetter Beach</p>
+            </div>
+            <button class="bookmark-btn active" type="button" data-heart-id="farmers-market">⌑</button>
+          </article>
+          <article class="account-event-row" data-event-id="art-walk">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="Community Dinner at Jeannine's" />
+            <div class="account-event-copy">
+              <small>FRI, MAY 30</small>
+              <h3>Community Dinner at Jeannine's</h3>
+              <p>Santa Barbara, CA</p>
+            </div>
+            <button class="bookmark-btn active" type="button" data-heart-id="art-walk">⌑</button>
+          </article>
+          <article class="account-event-row" data-event-id="summer-solstice">
+            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80" alt="Santa Barbara Live Music Series" />
+            <div class="account-event-copy">
+              <small>SAT, JUN 7</small>
+              <h3>Santa Barbara Live Music Series</h3>
+              <p>The Granada Theatre</p>
+            </div>
+            <button class="bookmark-btn active" type="button" data-heart-id="summer-solstice">⌑</button>
+          </article>
+        </div>
+
+        <a class="account-footer-link" href="#">View All Saved Events ›</a>
+      </section>
+
+      <section class="account-section last-section">
+        <div class="account-section-head">
+          <div>
+            <h2>⌂ MY EVENTS</h2>
+            <p>Events you're hosting</p>
+          </div>
+          <a href="#">View All ›</a>
+        </div>
+
+        <div class="account-event-list">
+          <article class="account-event-row">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Sunrise Yoga Flow" />
+            <div class="account-event-copy">
+              <small>WED, MAY 22</small>
               <h3>Sunrise Yoga Flow</h3>
               <p>Shoreline Park</p>
             </div>
-            <button class="mini-more" type="button">⋮</button>
+            <button class="more-btn" type="button">⋮</button>
           </article>
-          <article class="me-event-row">
+          <article class="account-event-row">
             <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="Community Dinner" />
-            <div class="me-event-copy">
-              <small>Sun, Jun 1</small>
+            <div class="account-event-copy">
+              <small>SUN, JUN 1</small>
               <h3>Community Dinner</h3>
               <p>Santa Barbara, CA</p>
             </div>
-            <button class="mini-more" type="button">⋮</button>
+            <button class="more-btn" type="button">⋮</button>
+          </article>
+          <article class="account-event-row">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Creative Circle Meetup" />
+            <div class="account-event-copy">
+              <small>SAT, JUN 14</small>
+              <h3>Creative Circle Meetup</h3>
+              <p>Santa Barbara, CA</p>
+            </div>
+            <button class="more-btn" type="button">⋮</button>
           </article>
         </div>
+
+        <a class="account-footer-link" href="#">View All My Events ›</a>
       </section>
     </main>
 
-    <nav class="bottom-nav bottom-nav-home profile-bottom-nav">
+    <nav class="bottom-nav bottom-nav-home account-bottom-nav">
       <a class="nav-item" href="./index.html"><span>☷</span><small>Discover</small></a>
       <a class="nav-item" href="#"><span>♡</span><small>For You</small></a>
       <a class="nav-item add-event-nav" href="#"><span>＋</span><small>Add Event</small></a>

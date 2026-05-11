@@ -8,14 +8,14 @@ function getSavedEvents() {
 function syncSavedProfileEvents() {
   if (!savedEventsList) return;
   const saved = new Set(getSavedEvents());
-  const cards = savedEventsList.querySelectorAll('.mini-event-card');
+  const cards = savedEventsList.querySelectorAll('[data-event-id]');
   cards.forEach((card) => {
     const id = card.dataset.eventId;
     card.style.display = saved.has(id) ? 'grid' : 'none';
   });
 }
 
-savedEventsList?.querySelectorAll('.mini-save').forEach((button) => {
+savedEventsList?.querySelectorAll('[data-heart-id]').forEach((button) => {
   button.addEventListener('click', () => {
     const id = button.dataset.heartId;
     const saved = new Set(getSavedEvents());

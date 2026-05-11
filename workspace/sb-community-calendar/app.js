@@ -94,3 +94,11 @@ weekDayButtons.forEach((button) => {
   });
   button.style.cursor = 'pointer';
 });
+
+
+window.setCalendarDay = function(dayNumber, dayName) {
+  state.dayOffset = Number(dayNumber) - 11;
+  setView('today');
+  if (title) title.textContent = dayName;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};

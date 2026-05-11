@@ -508,104 +508,119 @@ body { min-height: 100vh; }
 
 
 
+
+
 /* ACCOUNT EXACT DESIGN MAP */
-.account-page {
+.account-page, .mock-phone-page {
   min-height: 100vh;
-  background: #f7f2ec;
+  background: #f8f4ef;
   color: #17131a;
   padding-bottom: 104px;
 }
-.account-hero {
+.mock-hero {
   position: relative;
-  height: 296px;
-  padding: 18px 18px 0;
+  height: 328px;
+  padding: 14px 14px 0;
   background:
-    linear-gradient(180deg, rgba(11,9,17,.10), rgba(11,9,17,.40) 54%, rgba(11,9,17,.72) 100%),
+    linear-gradient(180deg, rgba(11,9,17,.08), rgba(11,9,17,.36) 52%, rgba(11,9,17,.72) 100%),
     url('./assets/hero-sb-sunset-v2.jpg') center/cover no-repeat;
 }
-.account-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,132,94,.08), rgba(148,63,132,.08)); }
-.account-topbar {
-  position:relative; z-index:2; display:flex; justify-content:space-between; align-items:flex-start; color:white;
+.mock-statusbar {
+  display:flex; justify-content:space-between; align-items:center; color:white; font-size:.8rem; padding: 0 4px 8px;
 }
-.account-brand { display:flex; align-items:center; gap:10px; }
-.account-brand-copy strong, .account-brand-copy span { display:block; color:white; }
-.account-brand-copy strong { font-size:.86rem; letter-spacing:.08em; }
-.account-brand-copy span { font-size:.68rem; letter-spacing:.14em; opacity:.92; }
-.account-actions { display:flex; gap:10px; }
-.account-icon-btn {
-  width:38px; height:38px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:rgba(8,8,12,.16); color:white;
+.mock-topbar-row {
+  display:flex; justify-content:space-between; align-items:flex-start; color:white;
 }
-.account-avatar-wrap {
-  position:absolute; left:50%; bottom:-58px; transform:translateX(-50%); z-index:3; width:152px; height:152px;
+.mock-brand-row { display:flex; gap:8px; align-items:flex-start; }
+.mock-brand-text strong, .mock-brand-text span { display:block; color:white; }
+.mock-brand-text strong { font-size:.82rem; letter-spacing:.08em; }
+.mock-brand-text span { font-size:.62rem; letter-spacing:.16em; opacity:.92; }
+.mock-top-icons { display:flex; gap:12px; align-items:center; font-size:1.35rem; }
+.mock-profile-wrap {
+  position:absolute; left:50%; bottom:-58px; transform:translateX(-50%); width:154px; height:154px;
 }
-.account-avatar {
-  width:152px; height:152px; border-radius:50%; object-fit:cover; border:5px solid #fff9f4; box-shadow:0 18px 36px rgba(22,18,24,.18);
+.mock-profile-photo {
+  width:154px; height:154px; border-radius:50%; object-fit:cover; border:5px solid #fffaf5; box-shadow:0 18px 36px rgba(22,18,24,.18);
 }
-.account-camera-btn {
-  position:absolute; right:8px; bottom:8px; width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,.3); background:rgba(12,12,16,.76); color:white;
+.mock-photo-btn {
+  position:absolute; right:6px; bottom:8px; width:40px; height:40px; border-radius:50%; border:2px solid rgba(255,255,255,.92); background:#111018; color:white;
 }
-.account-content { padding: 74px 16px 0; }
-.account-intro-block,
-.account-section {
-  background:#fffaf5; border:1px solid rgba(23,20,26,.08); border-radius:24px; box-shadow:0 10px 28px rgba(27,21,29,.05);
+.mock-content {
+  padding: 74px 16px 0;
 }
-.account-intro-block {
-  padding: 24px 20px 20px; text-align:center;
+.mock-name-block, .mock-section {
+  background:#fffaf5; border-left:1px solid rgba(23,20,26,.06); border-right:1px solid rgba(23,20,26,.06);
 }
-.account-intro-block h1 {
-  margin:0; font-family:"Cormorant Garamond", serif; font-size:3rem; line-height:.95; font-weight:500; color:#17131a;
+.mock-name-block {
+  text-align:center; padding: 22px 18px 18px; border-top-left-radius:26px; border-top-right-radius:26px;
 }
-.account-intro-block p {
-  margin:10px 0 18px; color:#756c79; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase;
+.mock-name-block h1 {
+  margin:0; font-family:"Cormorant Garamond", serif; font-size:3.1rem; line-height:.92; font-weight:500;
 }
-.account-edit-btn {
-  width:100%; border:none; background:#16141a; color:white; border-radius:999px; padding:14px 20px; font-size:1rem;
+.mock-name-block p {
+  margin:8px 0 16px; color:#7b717d; font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
 }
-.account-section { margin-top: 14px; padding: 22px 18px; }
-.account-section.last-section { margin-bottom: 0; }
-.account-section h2 {
-  margin:0 0 16px; font-size:.84rem; letter-spacing:.15em; text-transform:uppercase; color:#1b171d;
+.mock-edit-btn {
+  width:100%; border:none; background:#16141a; color:white; border-radius:999px; padding:14px 16px; font-size:.98rem;
 }
-.account-about-copy { margin:0; font-size:1rem; line-height:1.85; color:#2d2730; }
-.detail-section { padding-top: 18px; }
-.account-detail-row {
-  display:grid; grid-template-columns: 26px 1fr; gap:12px; padding:14px 0; border-top:1px solid rgba(23,20,26,.08);
+.mock-section {
+  padding: 18px 18px 0;
 }
-.account-detail-row:first-child { border-top:none; padding-top:0; }
-.account-detail-icon { color:#7e7581; font-size:1rem; }
-.account-detail-row small {
-  display:block; margin-bottom:6px; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:#8a818d;
+.mock-section:last-child { border-bottom-left-radius:26px; border-bottom-right-radius:26px; padding-bottom: 20px; }
+.mock-section-title {
+  font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600; margin-bottom:14px;
 }
-.account-detail-row strong { font-size:1rem; font-weight:500; color:#211c23; }
-.account-section-head {
-  display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:16px;
+.mock-about {
+  margin:0; font-size:1rem; line-height:1.75; color:#2d2730;
 }
-.account-section-head a, .account-footer-link { color:#211c23; text-decoration:none; font-size:.9rem; }
-.account-section-head p { margin:6px 0 0; color:#7b7380; }
-.account-chip-grid {
+.mock-detail-section { padding-top: 12px; }
+.mock-detail-item {
+  display:grid; grid-template-columns: 24px 1fr; gap:12px; padding:14px 0; border-top:1px solid rgba(23,20,26,.08);
+}
+.mock-detail-item:first-child { border-top:none; }
+.mock-detail-icon { color:#8a818d; font-size:1rem; }
+.mock-detail-item small {
+  display:block; margin-bottom:6px; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:#8a818d;
+}
+.mock-detail-item strong { font-size:1rem; font-weight:500; color:#211c23; }
+.mock-section-head {
+  display:flex; justify-content:space-between; align-items:flex-start; gap:14px; margin-bottom:14px;
+}
+.mock-section-head a, .mock-footer-link { color:#211c23; text-decoration:none; font-size:.88rem; }
+.mock-sub { margin:6px 0 0; color:#7c7480; }
+.mock-chip-grid {
   display:grid; grid-template-columns: 1fr 1fr; gap:12px;
 }
-.account-chip,
-.account-add-chip {
-  border:1px solid rgba(23,20,26,.10); background:white; border-radius:999px; padding:14px 14px; font-size:.92rem; color:#241f28; text-align:left;
+.mock-chip, .mock-add-interest {
+  border:1px solid rgba(23,20,26,.10); background:#fff; border-radius:999px; min-height:46px; padding:12px 14px; font-size:.9rem; color:#241f28; text-align:left; display:flex; align-items:center;
 }
-.account-add-chip {
-  width:100%; margin-top:14px; text-align:center; background:transparent;
+.mock-add-interest {
+  width:100%; justify-content:center; margin-top:14px; background:transparent;
 }
-.account-event-list { display:grid; gap:14px; }
-.account-event-row {
-  display:grid; grid-template-columns: 92px 1fr 22px; gap:12px; align-items:center;
+.mock-event-list {
+  display:grid; gap:16px;
 }
-.account-event-row img { width:92px; height:68px; border-radius:12px; object-fit:cover; }
-.account-event-copy small { display:block; margin-bottom:6px; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:#8b8390; }
-.account-event-copy h3 { margin:0 0 4px; font-size:1rem; line-height:1.18; color:#1b171d; }
-.account-event-copy p { margin:0; color:#6f6773; font-size:.92rem; }
-.bookmark-btn,
-.more-btn { border:none; background:none; color:#8a818d; font-size:1rem; justify-self:end; }
-.bookmark-btn.active { color:#8a818d; }
-.account-footer-link { display:inline-block; margin-top:18px; }
-.account-bottom-nav { max-width:100%; }
-
+.mock-event-row {
+  display:grid; grid-template-columns: 86px 1fr 18px; gap:12px; align-items:center;
+}
+.mock-event-row img {
+  width:86px; height:64px; border-radius:12px; object-fit:cover;
+}
+.mock-event-copy small {
+  display:block; margin-bottom:6px; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:#8b8390;
+}
+.mock-event-copy h3 {
+  margin:0 0 4px; font-size:1rem; line-height:1.2; color:#18141b;
+}
+.mock-event-copy p {
+  margin:0; color:#746c78; font-size:.88rem;
+}
+.mock-bookmark, .mock-more {
+  border:none; background:none; color:#8a818d; font-size:1rem; justify-self:end; padding:0;
+}
+.mock-footer-link { display:inline-block; margin-top:16px; padding-bottom: 2px; }
+.last-mock-section { padding-bottom: 18px; }
+.account-bottom-nav { max-width: 100%; }
 @media (min-width: 980px) {
-  .account-page { max-width: 420px; margin: 0 auto; }
+  .mock-phone-page { max-width: 390px; margin: 0 auto; }
 }

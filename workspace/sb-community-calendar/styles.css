@@ -504,173 +504,258 @@ body { min-height: 100vh; }
 }
 
 
-/* PROFILE MOBILE EXACT REBUILD */
-.profile-mobile-shell {
+
+
+/* PROFILE FROM-SCRATCH REBUILD */
+.me-shell {
   min-height: 100vh;
-  background: #f6f1ea;
-  color: #1b171d;
+  background: #f7f2ec;
+  color: #19151c;
   padding-bottom: 108px;
 }
-.profile-mobile-hero {
+.me-hero {
+  position: relative;
   height: 320px;
   padding: 18px 18px 0;
   background:
-    linear-gradient(180deg, rgba(12,9,18,.10), rgba(12,9,18,.46) 56%, rgba(12,9,18,.68) 100%),
+    linear-gradient(180deg, rgba(13,10,19,.08), rgba(13,10,19,.42) 56%, rgba(13,10,19,.68) 100%),
     url('./assets/hero-sb-sunset-v2.jpg') center/cover no-repeat;
-  position: relative;
 }
-.profile-mobile-topbar {
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  color:white;
-  position:relative;
-  z-index:2;
+.me-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
 }
-.mobile-brand strong, .mobile-brand span { color:white; }
-.profile-mobile-avatar-wrap {
-  position:absolute;
-  left:50%;
-  bottom:-62px;
-  transform:translateX(-50%);
-  width:148px;
-  height:148px;
-  z-index:3;
+.me-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.profile-mobile-avatar {
-  width:148px;
-  height:148px;
-  border-radius:50%;
-  object-fit:cover;
-  border:5px solid #fff7f0;
-  box-shadow:0 18px 32px rgba(24,18,26,.16);
+.me-brand-copy strong,
+.me-brand-copy span {
+  display: block;
+  color: white;
 }
-.mobile-camera {
-  right:8px;
-  bottom:8px;
-  width:42px;
-  height:42px;
+.me-brand-copy strong {
+  font-size: .9rem;
+  letter-spacing: .08em;
 }
-.profile-mobile-main {
-  padding: 82px 16px 0;
+.me-brand-copy span {
+  font-size: .72rem;
+  letter-spacing: .14em;
+  opacity: .9;
 }
-.profile-mobile-intro {
-  background:#fffaf5;
-  border-radius:28px;
+.me-top-actions { display: flex; gap: 10px; }
+.me-avatar-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: -70px;
+  transform: translateX(-50%);
+  width: 152px;
+  height: 152px;
+}
+.me-avatar {
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff8f2;
+  box-shadow: 0 18px 36px rgba(22,18,24,.18);
+}
+.me-avatar-camera {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(12,12,16,.74);
+  color: white;
+}
+.me-main {
+  padding: 92px 16px 0;
+}
+.me-intro-card,
+.me-section-card {
+  background: #fffaf5;
+  border: 1px solid rgba(25,21,28,.08);
+  border-radius: 24px;
+  box-shadow: 0 10px 28px rgba(27,21,29,.05);
+}
+.me-intro-card {
+  text-align: center;
   padding: 26px 20px 22px;
-  text-align:center;
-  box-shadow: 0 10px 28px rgba(31,24,28,.06);
 }
-.profile-mobile-intro h1 {
-  margin:0;
-  color:#17131a;
-  font-family:"Cormorant Garamond", serif;
-  font-size:3rem;
-  line-height:.95;
-  font-weight:500;
+.me-intro-card h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  line-height: .95;
+  font-weight: 500;
+  color: #17131a;
 }
-.profile-mobile-tagline {
-  margin:10px 0 18px;
-  color:#756c79;
-  font-size:.82rem;
-  text-transform:uppercase;
-  letter-spacing:.16em;
+.me-intro-card p {
+  margin: 10px 0 18px;
+  color: #746b78;
+  font-size: .82rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
 }
-.mobile-edit-btn {
-  background:#16141a;
-  color:white;
-  border-color:#16141a;
-  width:100%;
-  justify-content:center;
+.me-edit-btn {
+  width: 100%;
+  border: 1px solid #141218;
+  background: #141218;
+  color: white;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-size: 1rem;
 }
-.profile-mobile-sections {
-  display:grid;
-  gap:14px;
-  margin-top:14px;
+.me-section-card {
+  margin-top: 14px;
+  padding: 22px 18px;
 }
-.profile-mobile-card {
-  background:#fffaf5;
-  border:1px solid rgba(27,23,29,.08);
-  border-radius:24px;
-  padding:22px 18px;
+.me-section-card.last-card { margin-bottom: 0; }
+.me-section-card h2 {
+  margin: 0 0 16px;
+  font-size: .88rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #1b171d;
 }
-.profile-mobile-card h2 {
-  margin:0 0 16px;
-  color:#1b171d;
-  font-size:.88rem;
-  text-transform:uppercase;
-  letter-spacing:.14em;
+.me-body-copy {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #2d2730;
 }
-.mobile-about {
-  color:#2d2730;
-  font-size:1rem;
-  line-height:1.8;
-  margin:0;
+.me-detail-list {
+  display: grid;
+  gap: 14px;
 }
-.mobile-detail-grid .detail-row {
-  padding-top:14px;
+.me-detail-item {
+  padding-top: 14px;
+  border-top: 1px solid rgba(25,21,28,.08);
 }
-.mobile-panel-head {
-  margin-bottom:16px;
+.me-detail-item:first-child { padding-top: 0; border-top: none; }
+.me-detail-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #857d8a;
 }
-.mobile-panel-head p {
-  margin:6px 0 0;
-  color:#7a7280;
+.me-detail-item strong {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #231e25;
 }
-.mobile-chip-grid { gap:12px; }
-.profile-bottom-nav { max-width:100%; }
+.me-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.me-section-head a {
+  color: #231e25;
+  text-decoration: none;
+  font-size: .92rem;
+}
+.me-section-sub {
+  margin: 6px 0 0;
+  color: #7b7380;
+}
+.me-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.me-chip {
+  border: 1px solid rgba(25,21,28,.10);
+  background: #fff;
+  border-radius: 999px;
+  padding: 13px 16px;
+  font-size: .94rem;
+  color: #241f28;
+}
+.me-event-list {
+  display: grid;
+  gap: 14px;
+}
+.me-event-row {
+  display: grid;
+  grid-template-columns: 96px 1fr 24px;
+  gap: 14px;
+  align-items: center;
+}
+.me-event-row img {
+  width: 96px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.me-event-copy small {
+  display: block;
+  margin-bottom: 6px;
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #8c8491;
+}
+.me-event-copy h3 {
+  margin: 0 0 5px;
+  font-size: 1.1rem;
+  line-height: 1.16;
+  color: #1d1820;
+}
+.me-event-copy p {
+  margin: 0;
+  color: #6f6773;
+}
+.profile-bottom-nav { max-width: 100%; }
 
 @media (min-width: 980px) {
-  .profile-mobile-shell {
+  .me-shell {
     max-width: 1440px;
     margin: 0 auto;
-    padding-bottom: 120px;
+    padding-bottom: 118px;
   }
-  .profile-mobile-hero {
+  .me-hero {
     height: 360px;
     padding: 24px 32px 0;
   }
-  .profile-mobile-avatar-wrap {
-    left:84px;
-    bottom:-70px;
-    transform:none;
-    width:176px;
-    height:176px;
+  .me-avatar-wrap {
+    left: 72px;
+    bottom: -78px;
+    transform: none;
+    width: 184px;
+    height: 184px;
   }
-  .profile-mobile-avatar {
-    width:176px;
-    height:176px;
+  .me-avatar {
+    width: 184px;
+    height: 184px;
   }
-  .profile-mobile-main {
-    padding: 96px 32px 0;
+  .me-main {
+    padding: 106px 32px 0;
   }
-  .profile-mobile-intro {
-    text-align:left;
-    padding: 30px 32px 26px 242px;
-    border-radius:0 0 30px 30px;
+  .me-intro-card {
+    text-align: left;
+    padding: 30px 32px 26px 252px;
+    border-radius: 0 0 30px 30px;
   }
-  .profile-mobile-intro h1 {
-    font-size:4.8rem;
+  .me-intro-card h1 {
+    font-size: 4.9rem;
   }
-  .mobile-edit-btn {
-    width:auto;
-    min-width:180px;
+  .me-edit-btn {
+    width: auto;
+    min-width: 180px;
   }
-  .profile-mobile-sections {
-    display:grid;
+  .me-sections-grid {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap:0;
-    margin-top:22px;
-    border-top:1px solid rgba(27,23,29,.08);
-    border-left:1px solid rgba(27,23,29,.08);
+    gap: 0;
   }
-  .profile-mobile-card {
-    border-radius:0;
-    border-top:none;
-    border-left:none;
-    border-right:1px solid rgba(27,23,29,.08);
-    border-bottom:1px solid rgba(27,23,29,.08);
-    padding:30px 32px;
-  }
-  .profile-mobile-sections .profile-mobile-card:nth-child(3) { grid-column: 1 / span 2; }
 }

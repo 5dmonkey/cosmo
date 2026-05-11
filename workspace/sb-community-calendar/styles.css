@@ -227,3 +227,5 @@ body { min-height: 100vh; }
   .hero-compact { min-height: 245px; }
   .home-grid .day { min-height: 64px; }
 }
+
+.compact-stack.one-up .main-feature { min-height: 170px; }

@@ -72,3 +72,5 @@ nextBtn?.addEventListener('click', () => {
 });
 
 renderTitle();
+
+setView(state.view);

@@ -12,7 +12,6 @@
 <body>
   <div class="app-shell">
     <header class="hero">
-      <div class="hero-overlay"></div>
       <div class="topbar">
         <button class="icon-btn" aria-label="Menu">☰</button>
         <div class="topbar-right">
@@ -30,103 +29,97 @@
       <section class="filters">
         <button class="chip chip-active">Today</button>
         <button class="chip">This Week</button>
-        <button class="chip">This Month</button>
+        <button class="chip">Featured</button>
         <button class="chip chip-icon">⎚</button>
       </section>
 
       <section class="calendar-card">
         <div class="calendar-head">
           <button class="nav-arrow">‹</button>
-          <h2>May 2025</h2>
+          <h2>May 2026</h2>
           <button class="nav-arrow">›</button>
         </div>
         <div class="weekday-row">
           <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
         </div>
-        <div class="calendar-grid">
+        <div class="calendar-grid compact">
+          <div class="day muted">26</div>
           <div class="day muted">27</div>
           <div class="day muted">28</div>
           <div class="day muted">29</div>
           <div class="day muted">30</div>
           <div class="day">1</div>
-          <div class="day">2</div>
-          <div class="day day-image"><span>3</span><div class="thumb glow-purple"></div></div>
+          <div class="day day-image"><span>2</span><div class="thumb farmers-thumb"></div></div>
 
-          <div class="day event-dot">4</div>
-          <div class="day day-image"><span>5</span><div class="thumb glow-red"></div></div>
-          <div class="day day-image"><span>6</span><div class="thumb glow-purple"></div></div>
+          <div class="day day-image"><span>3</span><div class="thumb art-thumb"></div></div>
+          <div class="day">4</div>
+          <div class="day">5</div>
+          <div class="day">6</div>
           <div class="day">7</div>
           <div class="day">8</div>
           <div class="day">9</div>
-          <div class="day day-image"><span>10</span><div class="thumb glow-blue"></div></div>
 
+          <div class="day">10</div>
           <div class="day is-today">11</div>
           <div class="day">12</div>
           <div class="day">13</div>
           <div class="day">14</div>
-          <div class="day day-image"><span>15</span><div class="thumb glow-gold"></div></div>
-          <div class="day">16</div>
-          <div class="day day-image"><span>17</span><div class="thumb glow-sunset"></div></div>
+          <div class="day">15</div>
+          <div class="day day-image"><span>16</span><div class="thumb solstice-thumb"></div></div>
 
-          <div class="day day-image"><span>18</span><div class="thumb glow-gray"></div></div>
+          <div class="day">17</div>
+          <div class="day">18</div>
           <div class="day">19</div>
           <div class="day">20</div>
           <div class="day">21</div>
           <div class="day">22</div>
           <div class="day">23</div>
-          <div class="day">24</div>
 
+          <div class="day">24</div>
           <div class="day">25</div>
-          <div class="day day-image"><span>26</span><div class="thumb glow-ocean"></div></div>
+          <div class="day">26</div>
           <div class="day">27</div>
-          <div class="day day-image"><span>28</span><div class="thumb glow-orange"></div></div>
+          <div class="day">28</div>
           <div class="day">29</div>
           <div class="day">30</div>
-          <div class="day day-image"><span>31</span><div class="thumb glow-pink"></div></div>
         </div>
       </section>
 
-      <section class="section-block">
+      <section class="section-block tight">
         <div class="section-headline">
-          <h3>✨ Featured This Month</h3>
+          <h3>✨ Confirmed Local Events</h3>
           <a href="#">View All</a>
         </div>
-        <div class="card-row">
-          <article class="event-card card-solstice">
-            <span class="badge gold">FEATURED</span>
+        <div class="card-row card-row-2">
+          <article class="event-card photo-card farmers-card">
+            <span class="badge gold">CONFIRMED</span>
             <div class="event-info">
-              <h4>The Summer Solstice Festival</h4>
-              <p>May 20–22 · Lake Cachuma</p>
+              <h4>Santa Barbara Farmers Market</h4>
+              <p>Official weekly markets in Downtown SB, Old Town, Montecito + more</p>
             </div>
           </article>
-          <article class="event-card card-xavier">
-            <span class="badge purple">FEATURED</span>
+          <article class="event-card photo-card artwalk-card">
+            <span class="badge purple">CONFIRMED</span>
             <div class="event-info">
-              <h4>Xavier Rudd Live</h4>
-              <p>May 28 · SOhO</p>
-            </div>
-          </article>
-          <article class="event-card card-beach">
-            <span class="badge gold">FEATURED</span>
-            <div class="event-info">
-              <h4>Beach Yoga &amp; Brunch</h4>
-              <p>May 17 · Leadbetter Beach</p>
+              <h4>1st Thursday Art Walk</h4>
+              <p>Official downtown art walk with participating galleries and spaces</p>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section-block bottom-pad">
+      <section class="section-block bottom-pad tight">
         <div class="section-headline">
-          <h3>🔥 Recommended For You</h3>
+          <h3>🌞 Seasonal Highlight</h3>
           <a href="#">See All</a>
         </div>
-        <div class="mini-grid">
-          <article class="mini-card"><strong>Art Walk</strong><span>Funk Zone · Tonight</span></article>
-          <article class="mini-card"><strong>Sound Bath</strong><span>Montecito · Wed</span></article>
-          <article class="mini-card"><strong>Farmers Market</strong><span>Downtown · Sat</span></article>
-          <article class="mini-card"><strong>Open Mic</strong><span>Upper State · Thu</span></article>
-        </div>
+        <article class="feature-banner solstice-banner">
+          <div class="feature-copy">
+            <span class="badge gold">CONFIRMED</span>
+            <h4>Summer Solstice Celebration</h4>
+            <p>One of Santa Barbara’s signature annual community celebrations.</p>
+          </div>
+        </article>
       </section>
     </main>
 

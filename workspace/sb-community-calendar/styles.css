@@ -7,6 +7,7 @@
   --purple: #b86dff;
   --pink: #ff66c4;
   --gold: #d8a55a;
+  --sunset: linear-gradient(135deg, #ff9d67 0%, #ff6aaa 46%, #b04fff 100%);
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, sans-serif; }
@@ -41,18 +42,53 @@ body { min-height: 100vh; }
 .hero-copy h1 { font-family: "Cormorant Garamond", serif; font-size: 3.5rem; font-weight: 500; line-height: .92; margin: 0; }
 .hero-copy p { margin: 6px 0 0; color: #d8d0dc; letter-spacing: .28em; font-size: .84rem; }
 .content { padding: 0 14px 90px; }
-.filters { display:flex; gap:8px; margin-top:-16px; position:relative; z-index:3; overflow-x:auto; padding-bottom:4px; }
-.filters::-webkit-scrollbar, .card-row::-webkit-scrollbar { display:none; }
-.chip { white-space: nowrap; border:1px solid rgba(255,255,255,0.08); color:#f2edf8; background:#12131a; border-radius: 16px; padding: 11px 16px; font-size: .92rem; }
-.chip-active { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 0 0 2px rgba(184,109,255,0.34); color:#ffddff; }
-.chip-icon { padding-inline: 14px; }
-.calendar-card, .mini-card, .feature-banner { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; }
-.calendar-card { margin-top: 12px; padding: 14px 12px 12px; }
+.view-switcher { display:flex; gap:8px; margin-top:-18px; position:relative; z-index:3; }
+.view-pill {
+  border: 1px solid rgba(255,255,255,0.08); background:#12131a; color:#f2edf8; border-radius: 999px;
+  padding: 12px 16px; font-size: .94rem; display:inline-flex; align-items:center; gap:8px;
+}
+.view-pill.is-active {
+  background: var(--sunset);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 10px 24px rgba(227,101,173,.28);
+}
+.calendar-card, .feature-banner { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; }
+.calendar-card { margin-top: 12px; padding: 14px 12px 12px; min-height: 388px; }
 .calendar-head { display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px; }
 .calendar-head h2 { font-family:"Cormorant Garamond", serif; font-size: 1.8rem; font-weight:500; margin:0; }
 .nav-arrow { background:none; border:none; color:#e8e0ee; font-size:1.8rem; padding:0 8px; }
-.weekday-row, .calendar-grid { display:grid; grid-template-columns:repeat(7,1fr); }
-.weekday-row { color:#746d7b; font-size:.66rem; margin-bottom:8px; text-align:center; }
+.calendar-panel { display:none; }
+.calendar-panel.is-visible { display:block; }
+.today-stack { display:grid; gap:10px; }
+.today-feature {
+  border-radius: 20px; min-height: 88px; padding: 14px; display:flex; flex-direction:column; justify-content:flex-end;
+  background-size: cover; background-position:center; border:1px solid rgba(255,255,255,0.05);
+}
+.main-feature { min-height: 154px; background-image: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.78)), url('https://static.wixstatic.com/media/581d34_daf42ad540564be38357e99c4c120cf6~mv2.jpg/v1/fill/w_900,h_600,al_c,q_80,enc_avif,quality_auto/581d34_daf42ad540564be38357e99c4c120cf6~mv2.jpg'); }
+.soft-feature { background-image: linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.82)), url('https://img.ctykit.com/cdn/ca-santa-barbara/images/tr:w-600/10-sbma-may-26-1t-featured-photo.jpg'); }
+.glow-feature { background-image: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.84)), url('https://static.wixstatic.com/media/ece784_8e96dfaf690542eb89964c5faa9a07d0~mv2.jpg/v1/fill/w_976,h_550,al_c,q_85,enc_avif,quality_auto/20250621-evokra-078.jpg'); }
+.today-time { font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; color:#f0d7e5; margin-bottom:8px; }
+.today-copy h3 { margin:0 0 6px; font-size:1.25rem; text-shadow:0 2px 10px rgba(0,0,0,.45); }
+.today-copy p { margin:0; color:#efe6f2; font-size:.86rem; line-height:1.4; max-width:24ch; text-shadow:0 2px 10px rgba(0,0,0,.55); }
+.week-header, .weekday-row, .calendar-grid { display:grid; grid-template-columns:repeat(7,1fr); }
+.week-header, .weekday-row { color:#746d7b; font-size:.66rem; margin-bottom:8px; text-align:center; }
+.week-grid {
+  display:grid; grid-template-columns: repeat(7, minmax(92px, 1fr)); gap:8px; overflow-x:auto; padding-bottom:4px;
+}
+.week-grid::-webkit-scrollbar { display:none; }
+.week-col {
+  min-height: 260px; border-radius: 18px; border:1px solid rgba(255,255,255,0.05); background:#11121a; padding:10px; display:flex; flex-direction:column; gap:8px;
+}
+.is-today-col { box-shadow: inset 0 0 0 2px rgba(255,102,196,0.88); }
+.week-date { font-size:.92rem; color:#e8dff0; }
+.week-event {
+  border-radius: 14px; padding: 10px 8px; font-size: .74rem; line-height:1.25; color:white;
+}
+.week-event.orange { background: linear-gradient(135deg, #ff9f67, #ff6a92); }
+.week-event.lavender { background: linear-gradient(135deg, #7d67ff, #cb78ff); }
+.week-event.rose { background: linear-gradient(135deg, #ff7e93, #b94bff); }
+.week-event.gold { background: linear-gradient(135deg, #e0a04c, #ff7e67); }
 .calendar-grid { border-top:1px solid rgba(255,255,255,0.04); border-left:1px solid rgba(255,255,255,0.04); }
 .day { min-height: 52px; border-right:1px solid rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.04); padding: 6px 5px; color:#f0e8f3; position:relative; font-size: .92rem; }
 .day.muted { color:#4f4a56; }
@@ -69,8 +105,9 @@ body { min-height: 100vh; }
 .section-headline h3 { margin:0; font-size: 1.02rem; font-weight: 500; }
 .section-headline a { color: #b88dff; text-decoration:none; font-size: .88rem; }
 .card-row { display:flex; gap:10px; overflow-x:auto; padding-bottom: 2px; }
+.card-row::-webkit-scrollbar { display:none; }
 .card-row-2 .event-card { min-width: calc(50% - 5px); }
-.event-card { height: 176px; border-radius: 20px; padding: 10px; border: 1px solid rgba(255,255,255,0.08); display:flex; flex-direction:column; justify-content:space-between; background-size: cover; background-position:center; }
+.event-card { height: 176px; border-radius: 20px; padding: 10px; border: 1px solid rgba(255,255,255,0.08); display:flex; flex-direction:column; justify-content:flex-end; background-size: cover; background-position:center; }
 .photo-card { background-blend-mode: overlay, normal; }
 .farmers-card { background-image: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.88)), url('https://static.wixstatic.com/media/581d34_daf42ad540564be38357e99c4c120cf6~mv2.jpg/v1/fill/w_600,h_500,al_c,q_80,enc_avif,quality_auto/581d34_daf42ad540564be38357e99c4c120cf6~mv2.jpg'); }
 .artwalk-card { background-image: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.9)), url('https://img.ctykit.com/cdn/ca-santa-barbara/images/tr:w-600/10-sbma-may-26-1t-featured-photo.jpg'); }
@@ -78,9 +115,6 @@ body { min-height: 100vh; }
 .feature-copy { padding: 14px; }
 .feature-copy h4, .event-info h4 { margin:8px 0 6px; font-size: 1.28rem; line-height:1.06; text-shadow: 0 2px 10px rgba(0,0,0,.45); }
 .feature-copy p, .event-info p { margin:0; color:#f1eaf4; font-size:.86rem; line-height:1.42; max-width: 15ch; text-shadow: 0 2px 10px rgba(0,0,0,.55); }
-.badge { width: fit-content; font-size: .68rem; letter-spacing: .08em; padding: 7px 10px; border-radius: 999px; border:1px solid rgba(255,255,255,0.16); }
-.badge.gold { background: rgba(216,165,90,0.18); color: #ffd58e; }
-.badge.purple { background: rgba(184,109,255,0.18); color: #efccff; }
 .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 430px; background: rgba(10,10,14,0.96); backdrop-filter: blur(16px); border-top: 1px solid rgba(255,255,255,0.07); display:grid; grid-template-columns:repeat(5,1fr); padding: 10px 8px 16px; }
 .nav-item { color:#938b9e; text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:6px; font-size:1.2rem; }
 .nav-item small { font-size:.74rem; }
@@ -91,6 +125,10 @@ body { min-height: 100vh; }
   .hero { min-height: 250px; border-bottom-left-radius: 28px; border-bottom-right-radius: 28px; }
   .content { padding: 0 24px 120px; }
   .hero-copy h1 { font-size: 5rem; }
+  .calendar-card { min-height: 480px; }
+  .today-stack { grid-template-columns: 1.25fr .8fr .8fr; align-items:stretch; }
+  .main-feature { min-height: 248px; }
+  .soft-feature, .glow-feature { min-height: 248px; }
   .day { min-height: 82px; font-size: 1rem; }
   .card-row { overflow:visible; }
   .card-row-2 { display:grid; grid-template-columns: 1fr 1fr; }

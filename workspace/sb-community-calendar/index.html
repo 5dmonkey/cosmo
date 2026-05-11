@@ -26,62 +26,101 @@
     </header>
 
     <main class="content">
-      <section class="filters">
-        <button class="chip chip-active">Today</button>
-        <button class="chip">This Week</button>
-        <button class="chip">Featured</button>
-        <button class="chip chip-icon">⎚</button>
+      <section class="view-switcher" aria-label="Calendar view switcher">
+        <button class="view-pill is-active" data-view-target="today"><span>☼</span>Today</button>
+        <button class="view-pill" data-view-target="week"><span>◫</span>Week</button>
+        <button class="view-pill" data-view-target="month"><span>◻</span>Month</button>
       </section>
 
       <section class="calendar-card">
         <div class="calendar-head">
           <button class="nav-arrow">‹</button>
-          <h2>May 2026</h2>
+          <h2 id="calendarTitle">Today</h2>
           <button class="nav-arrow">›</button>
         </div>
-        <div class="weekday-row">
-          <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+
+        <div class="calendar-panel is-visible" data-view="today">
+          <div class="today-stack">
+            <article class="today-feature main-feature">
+              <div class="today-time">This Morning</div>
+              <div class="today-copy">
+                <h3>Santa Barbara Farmers Market</h3>
+                <p>Old Town · seasonal produce, flowers, pastries, local makers</p>
+              </div>
+            </article>
+            <article class="today-feature soft-feature">
+              <div class="today-time">Tonight</div>
+              <div class="today-copy">
+                <h3>1st Thursday Art Walk</h3>
+                <p>Downtown · galleries, music, open doors, evening culture</p>
+              </div>
+            </article>
+            <article class="today-feature glow-feature">
+              <div class="today-time">Coming Up</div>
+              <div class="today-copy">
+                <h3>Summer Solstice Celebration</h3>
+                <p>Parade week energy building across Santa Barbara</p>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="calendar-grid compact">
-          <div class="day muted">26</div>
-          <div class="day muted">27</div>
-          <div class="day muted">28</div>
-          <div class="day muted">29</div>
-          <div class="day muted">30</div>
-          <div class="day">1</div>
-          <div class="day day-image"><span>2</span><div class="thumb farmers-thumb"></div></div>
 
-          <div class="day day-image"><span>3</span><div class="thumb art-thumb"></div></div>
-          <div class="day">4</div>
-          <div class="day">5</div>
-          <div class="day">6</div>
-          <div class="day">7</div>
-          <div class="day">8</div>
-          <div class="day">9</div>
+        <div class="calendar-panel" data-view="week">
+          <div class="week-header">
+            <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+          </div>
+          <div class="week-grid">
+            <div class="week-col"><div class="week-date">10</div></div>
+            <div class="week-col is-today-col"><div class="week-date">11</div><div class="week-event lavender">Silent morning by the water</div></div>
+            <div class="week-col"><div class="week-date">12</div><div class="week-event orange">SB Farmers Market</div></div>
+            <div class="week-col"><div class="week-date">13</div></div>
+            <div class="week-col"><div class="week-date">14</div></div>
+            <div class="week-col"><div class="week-date">15</div><div class="week-event rose">1st Thursday Art Walk</div></div>
+            <div class="week-col"><div class="week-date">16</div><div class="week-event gold">Solstice Workshop Opening</div></div>
+          </div>
+        </div>
 
-          <div class="day">10</div>
-          <div class="day is-today">11</div>
-          <div class="day">12</div>
-          <div class="day">13</div>
-          <div class="day">14</div>
-          <div class="day">15</div>
-          <div class="day day-image"><span>16</span><div class="thumb solstice-thumb"></div></div>
-
-          <div class="day">17</div>
-          <div class="day">18</div>
-          <div class="day">19</div>
-          <div class="day">20</div>
-          <div class="day">21</div>
-          <div class="day">22</div>
-          <div class="day">23</div>
-
-          <div class="day">24</div>
-          <div class="day">25</div>
-          <div class="day">26</div>
-          <div class="day">27</div>
-          <div class="day">28</div>
-          <div class="day">29</div>
-          <div class="day">30</div>
+        <div class="calendar-panel" data-view="month">
+          <div class="weekday-row">
+            <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+          </div>
+          <div class="calendar-grid compact">
+            <div class="day muted">26</div>
+            <div class="day muted">27</div>
+            <div class="day muted">28</div>
+            <div class="day muted">29</div>
+            <div class="day muted">30</div>
+            <div class="day">1</div>
+            <div class="day day-image"><span>2</span><div class="thumb farmers-thumb"></div></div>
+            <div class="day day-image"><span>3</span><div class="thumb art-thumb"></div></div>
+            <div class="day">4</div>
+            <div class="day">5</div>
+            <div class="day">6</div>
+            <div class="day">7</div>
+            <div class="day">8</div>
+            <div class="day">9</div>
+            <div class="day">10</div>
+            <div class="day is-today">11</div>
+            <div class="day">12</div>
+            <div class="day">13</div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day day-image"><span>16</span><div class="thumb solstice-thumb"></div></div>
+            <div class="day">17</div>
+            <div class="day">18</div>
+            <div class="day">19</div>
+            <div class="day">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+            <div class="day">26</div>
+            <div class="day">27</div>
+            <div class="day">28</div>
+            <div class="day">29</div>
+            <div class="day">30</div>
+          </div>
         </div>
       </section>
 
@@ -92,13 +131,13 @@
         </div>
         <div class="card-row card-row-2">
           <article class="event-card photo-card farmers-card">
-                        <div class="event-info">
+            <div class="event-info">
               <h4>Santa Barbara Farmers Market</h4>
               <p>Official weekly markets in Downtown SB, Old Town, Montecito + more</p>
             </div>
           </article>
           <article class="event-card photo-card artwalk-card">
-                        <div class="event-info">
+            <div class="event-info">
               <h4>1st Thursday Art Walk</h4>
               <p>Official downtown art walk with participating galleries and spaces</p>
             </div>
@@ -113,7 +152,7 @@
         </div>
         <article class="feature-banner solstice-banner">
           <div class="feature-copy">
-                        <h4>Summer Solstice Celebration</h4>
+            <h4>Summer Solstice Celebration</h4>
             <p>One of Santa Barbara’s signature annual community celebrations.</p>
           </div>
         </article>
@@ -128,5 +167,7 @@
       <a class="nav-item" href="#"><span>◠</span><small>Me</small></a>
     </nav>
   </div>
+
+  <script src="./app.js"></script>
 </body>
 </html>

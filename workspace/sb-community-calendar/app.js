@@ -102,3 +102,33 @@ window.setCalendarDay = function(dayNumber, dayName) {
   if (title) title.textContent = dayName;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+
+const STORAGE_KEY = 'sb-calendar-saved-events';
+function getSavedEvents() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch { return []; }
+}
+function setSavedEvents(ids) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+}
+const heartButtons = document.querySelectorAll('.heart-btn');
+function syncHearts() {
+  const saved = new Set(getSavedEvents());
+  heartButtons.forEach((btn) => {
+    const active = saved.has(btn.dataset.heartId);
+    btn.classList.toggle('is-saved', active);
+    btn.textContent = active ? '♥' : '♡';
+  });
+}
+heartButtons.forEach((btn) => {
+  btn.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const saved = new Set(getSavedEvents());
+    const id = btn.dataset.heartId;
+    if (saved.has(id)) saved.delete(id); else saved.add(id);
+    setSavedEvents([...saved]);
+    syncHearts();
+  });
+});
+syncHearts();

@@ -357,3 +357,148 @@ body { min-height: 100vh; }
   .profile-events-grid { margin-top:16px; }
   .profile-bottom-nav { max-width: 100%; }
 }
+
+.profile-redo-shell {
+  background: #f7f3ee;
+  color: #1d1820;
+  padding-bottom: 110px;
+}
+.profile-hero-redo {
+  min-height: 250px;
+  padding: 18px 18px 0;
+  background:
+    linear-gradient(180deg, rgba(12,9,18,.16), rgba(12,9,18,.58) 62%, rgba(12,9,18,.82) 100%),
+    url('./assets/hero-sb-sunset-v2.jpg') center/cover no-repeat;
+  position: relative;
+}
+.profile-topbar-redo {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  position:relative;
+  z-index:2;
+  color:white;
+}
+.redo-brand strong, .redo-brand span { color:white; }
+.profile-avatar-stage {
+  display:flex;
+  justify-content:center;
+  margin-top: 46px;
+  position: relative;
+  z-index: 2;
+}
+.redo-avatar-wrap { width: 152px; }
+.redo-avatar {
+  width: 152px;
+  height: 152px;
+  border: 5px solid rgba(255,255,255,.9);
+}
+.profile-redo-main {
+  margin-top: -8px;
+  padding: 0 16px;
+}
+.profile-intro-card {
+  background: #fbf8f4;
+  border-radius: 28px 28px 24px 24px;
+  padding: 24px 20px 20px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(33,25,29,.06);
+}
+.profile-intro-card h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.9rem;
+  line-height: .96;
+  font-weight: 500;
+}
+.profile-title-redo {
+  margin: 10px 0 18px;
+  color: #6f6773;
+  font-size: .9rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.dark-edit {
+  background: #16141a;
+  color: white;
+  border-color: #16141a;
+}
+.profile-section-stack {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+.clean-panel {
+  background: #fbf8f4;
+  border: 1px solid rgba(23,20,26,.08);
+  border-radius: 24px;
+  padding: 22px 20px;
+}
+.clean-panel h2 {
+  margin: 0 0 16px;
+  font-size: .9rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+.profile-bottom-nav {
+  max-width: 100%;
+}
+
+@media (min-width: 980px) {
+  .profile-redo-shell {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-bottom: 120px;
+  }
+  .profile-hero-redo {
+    min-height: 360px;
+    padding: 26px 34px 0;
+  }
+  .profile-avatar-stage {
+    justify-content: flex-start;
+    margin-top: 86px;
+    margin-left: 10px;
+  }
+  .redo-avatar-wrap { width: 186px; }
+  .redo-avatar { width: 186px; height: 186px; }
+  .profile-redo-main {
+    padding: 0 34px;
+    margin-top: 0;
+  }
+  .profile-intro-card {
+    text-align: left;
+    border-radius: 0 0 28px 28px;
+    padding: 28px 28px 24px 242px;
+    margin-top: -46px;
+    position: relative;
+    min-height: 160px;
+  }
+  .profile-intro-card h1 {
+    font-size: 4.8rem;
+  }
+  .profile-title-redo {
+    font-size: .82rem;
+  }
+  .profile-section-stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 20px;
+    border-top: 1px solid rgba(23,20,26,.08);
+    border-left: 1px solid rgba(23,20,26,.08);
+  }
+  .clean-panel {
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: 1px solid rgba(23,20,26,.08);
+    border-bottom: 1px solid rgba(23,20,26,.08);
+    padding: 30px 32px;
+  }
+  .profile-section-stack .clean-panel:nth-child(1) { grid-column: 1 / span 1; }
+  .profile-section-stack .clean-panel:nth-child(2) { grid-column: 2 / span 1; }
+  .profile-section-stack .clean-panel:nth-child(3) { grid-column: 1 / span 2; }
+  .profile-section-stack .clean-panel:nth-child(4) { grid-column: 1 / span 1; }
+  .profile-section-stack .clean-panel:nth-child(5) { grid-column: 2 / span 1; }
+  .profile-bottom-nav { max-width: 1440px; }
+}

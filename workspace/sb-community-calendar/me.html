@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="profile-app-shell">
-    <header class="profile-hero">
-      <div class="profile-topbar">
-        <div class="brand-lockup">
+  <div class="profile-app-shell profile-redo-shell">
+    <header class="profile-hero-redo">
+      <div class="profile-topbar-redo">
+        <div class="brand-lockup redo-brand">
           <div class="brand-mark">✶</div>
           <div>
             <strong>SANTA BARBARA</strong>
@@ -25,34 +25,37 @@
           <button class="icon-btn" aria-label="Menu">☰</button>
         </div>
       </div>
-
-      <div class="profile-hero-content">
-        <div class="profile-avatar-wrap">
-          <img class="profile-avatar" src="./assets/profile-mccailey.jpg" alt="Profile photo of McCailey" />
+      <div class="profile-avatar-stage">
+        <div class="profile-avatar-wrap redo-avatar-wrap">
+          <img class="profile-avatar redo-avatar" src="./assets/profile-portrait-real.jpg" alt="Profile photo of McCailey" />
           <button class="avatar-camera" type="button" aria-label="Edit photo">⌾</button>
-        </div>
-        <div class="profile-identity">
-          <h1>McCailey<br />Contreras</h1>
-          <p>Founder, Grounds of Play</p>
-          <button class="edit-profile-btn" type="button">✎ Edit Profile</button>
         </div>
       </div>
     </header>
 
-    <main class="profile-main">
-      <section class="profile-grid">
-        <section class="profile-panel about-panel">
+    <main class="profile-redo-main">
+      <section class="profile-intro-card">
+        <h1>McCailey Contreras</h1>
+        <p class="profile-title-redo">Founder, Grounds of Play</p>
+        <button class="edit-profile-btn dark-edit" type="button">Edit Profile</button>
+      </section>
+
+      <section class="profile-section-stack">
+        <section class="profile-panel clean-panel">
           <h2>About Me</h2>
           <p class="about-copy">I’m passionate about building community, creativity, and meaningful experiences that bring people together. Santa Barbara is home.</p>
+        </section>
 
+        <section class="profile-panel clean-panel">
+          <h2>Personal Details</h2>
           <div class="detail-list-grid">
             <div class="detail-row">
               <span class="detail-icon">⌖</span>
-              <div><small>Currently Live</small><strong>Santa Barbara, California, United States</strong></div>
+              <div><small>Currently Live</small><strong>Santa Barbara, California</strong></div>
             </div>
             <div class="detail-row">
               <span class="detail-icon">⌲</span>
-              <div><small>Originally From</small><strong>Los Angeles, California, United States</strong></div>
+              <div><small>Originally From</small><strong>Los Angeles, California</strong></div>
             </div>
             <div class="detail-row">
               <span class="detail-icon">◌</span>
@@ -65,7 +68,7 @@
           </div>
         </section>
 
-        <section class="profile-panel interests-panel">
+        <section class="profile-panel clean-panel">
           <div class="panel-head">
             <h2>Interests</h2>
             <a href="#">View All</a>
@@ -79,19 +82,14 @@
             <button class="interest-chip">Art</button>
             <button class="interest-chip">Travel</button>
             <button class="interest-chip">Nature</button>
-            <button class="interest-chip">Reading</button>
-            <button class="interest-chip">Coffee</button>
           </div>
-          <button class="interest-add-btn" type="button">＋ Add Interest</button>
         </section>
-      </section>
 
-      <section class="profile-events-grid">
-        <section class="profile-panel saved-panel">
+        <section class="profile-panel clean-panel">
           <div class="panel-head">
             <div>
-              <h2>♡ My Calendar</h2>
-              <p>Events you’ve saved</p>
+              <h2>My Calendar</h2>
+              <p>Saved events</p>
             </div>
             <a href="#">View All</a>
           </div>
@@ -110,7 +108,7 @@
               <div class="mini-event-copy">
                 <small>Thu, May 7</small>
                 <h3>1st Thursday Art Walk</h3>
-                <p>State Street</p>
+                <p>Downtown Santa Barbara</p>
               </div>
               <button class="mini-save active" type="button" data-heart-id="art-walk">♥</button>
             </article>
@@ -124,14 +122,13 @@
               <button class="mini-save active" type="button" data-heart-id="summer-solstice">♥</button>
             </article>
           </div>
-          <a class="panel-footer-link" href="#">View All Saved Events</a>
         </section>
 
-        <section class="profile-panel hosted-panel">
+        <section class="profile-panel clean-panel">
           <div class="panel-head">
             <div>
-              <h2>⌂ My Events</h2>
-              <p>Events you’re hosting</p>
+              <h2>My Events</h2>
+              <p>Hosted events</p>
             </div>
             <a href="#">View All</a>
           </div>
@@ -154,17 +151,7 @@
               </div>
               <button class="mini-more" type="button">⋮</button>
             </article>
-            <article class="mini-event-card hosting-card">
-              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Creative Circle Meetup" />
-              <div class="mini-event-copy">
-                <small>Sat, Jun 14</small>
-                <h3>Creative Circle Meetup</h3>
-                <p>Santa Barbara, CA</p>
-              </div>
-              <button class="mini-more" type="button">⋮</button>
-            </article>
           </div>
-          <a class="panel-footer-link" href="#">View All My Events</a>
         </section>
       </section>
     </main>

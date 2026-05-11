@@ -624,3 +624,7 @@ body { min-height: 100vh; }
 @media (min-width: 980px) {
   .mock-phone-page { max-width: 390px; margin: 0 auto; }
 }
+
+.mock-palm { color: white; font-size: 1rem; line-height: 1; }
+.mock-topbar-row { justify-content: flex-start; }
+.mock-brand-row { gap: 10px; }

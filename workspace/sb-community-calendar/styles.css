@@ -542,7 +542,7 @@ body { min-height: 100vh; }
 .px-brand-text span { font-size:.62rem; letter-spacing:.16em; opacity:.92; }
 .px-top-icons { display:flex; gap:14px; align-items:center; color:#fff; font-size:1.35rem; line-height:1; }
 .px-avatar-wrap {
-  position:absolute; left:50%; bottom:-60px; transform:translateX(-50%); width:150px; height:150px;
+  position:absolute; left:50%; bottom:-44px; transform:translateX(-50%); width:150px; height:150px;
 }
 .px-avatar {
   width:150px; height:150px; border-radius:50%; object-fit:cover; border:5px solid #fffaf5; box-shadow:0 18px 34px rgba(20,16,24,.18);

@@ -1098,3 +1098,41 @@ body { min-height: 100vh; }
   color:#fff;
   box-shadow:0 12px 24px rgba(191,110,240,.28);
 }
+
+.reprofile-camera {
+  background: #ffffff;
+  border: 1px solid rgba(17,16,24,.16);
+  box-shadow: 0 8px 18px rgba(17,16,24,.16);
+}
+.reprofile-camera-icon {
+  display:block;
+  width:18px;
+  height:12px;
+  margin:auto;
+  margin-top:13px;
+  border:1.8px solid #15131a;
+  border-radius:4px;
+  position:relative;
+}
+.reprofile-camera-icon::before {
+  content:"";
+  position:absolute;
+  width:5px;
+  height:5px;
+  border:1.6px solid #15131a;
+  border-radius:50%;
+  top:2px;
+  left:5px;
+}
+.reprofile-camera-icon::after {
+  content:"";
+  position:absolute;
+  width:6px;
+  height:3px;
+  border:1.6px solid #15131a;
+  border-bottom:none;
+  border-radius:3px 3px 0 0;
+  top:-4px;
+  left:3px;
+  background:#fff;
+}

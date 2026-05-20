@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Incoming First Grade Family Campout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f8f2e8;
+      --paper-2: #fffaf4;
+      --ink: #2f291f;
+      --muted: #726859;
+      --line: rgba(98, 78, 52, 0.14);
+      --accent: #c48f5a;
+      --accent-soft: rgba(196, 143, 90, 0.12);
+      --sage: #7d9077;
+      --blush: #d8c1ac;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: #efe7db; color: var(--ink); }
+    body { font-family: Inter, sans-serif; line-height: 1.65; }
+
+    .page {
+      max-width: 940px;
+      margin: 32px auto;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(58, 42, 24, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      padding: 72px 56px 52px;
+      background:
+        linear-gradient(180deg, rgba(53,41,24,0.12), rgba(53,41,24,0.18)),
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.26), transparent 20%),
+        linear-gradient(135deg, #dcc6a6 0%, #d9a976 36%, #c98b61 58%, #a66f58 100%);
+      color: #fffaf5;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(255,255,255,0.16), transparent 12%),
+        linear-gradient(0deg, rgba(63,45,29,0.16), rgba(63,45,29,0));
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 720px; }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.92;
+      margin-bottom: 16px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 66px;
+      line-height: 0.95;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+    .subtitle {
+      margin: 18px 0 0;
+      max-width: 36rem;
+      font-size: 20px;
+      line-height: 1.55;
+      color: rgba(255,250,245,0.92);
+    }
+
+    .content {
+      padding: 48px 56px 60px;
+      background:
+        radial-gradient(circle at top right, rgba(216,193,172,0.12), transparent 18%),
+        var(--paper-2);
+    }
+
+    .intro-note,
+    .detail-card,
+    .support-box,
+    .feedback-box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .intro-note {
+      padding: 28px 28px 26px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 36px;
+      line-height: 1;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .detail-card {
+      padding: 22px 22px 20px;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .detail-value {
+      font-size: 17px;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .small-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .schedule-day {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .schedule-day:first-of-type {
+      margin-top: 10px;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    h3 {
+      margin: 0 0 4px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .day-sub {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 15px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .moment {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(98, 78, 52, 0.08);
+    }
+
+    .moment:last-child { border-bottom: none; }
+    .time {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 600;
+      padding-top: 2px;
+    }
+    .moment-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .moment-copy {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .sponsor-chip {
+      background: #fffdf9;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .support-box,
+    .feedback-box {
+      padding: 24px 24px 22px;
+      margin-top: 22px;
+    }
+
+    ul {
+      margin: 12px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    li { margin: 8px 0; }
+
+    .footer-note {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; border-radius: 0; }
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding: 52px 24px 40px; }
+      h1 { font-size: 46px; }
+      .subtitle { font-size: 17px; }
+      .content { padding: 28px 18px 40px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .moment { grid-template-columns: 1fr; gap: 6px; }
+      .sponsor-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Family Proposal</div>
+        <h1>Incoming First Grade Family Campout</h1>
+        <p class="subtitle">A playful weekend to help kids and families connect at the beginning of the school year.</p>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="intro-note">
+        <h2>A warm note from a few incoming first grade families</h2>
+        <p>We’ve been talking about how meaningful it could be for families to have a chance to connect before the school year really gets going — in a way that feels easy, low-pressure, and genuinely enjoyable for both kids and parents.</p>
+        <p>Our hope is to create a simple weekend in nature where children can begin forming friendships early, and where parents can start building a sense of connection and support too. We imagine something playful, relaxed, and thoughtfully organized — not overly produced, just warm and welcoming.</p>
+        <p>This is meant to be a starting point, not a fixed plan. We’d love ideas, feedback, and collaboration from other families so the weekend can feel as comfortable, accessible, and community-oriented as possible.</p>
+      </section>
+
+      <section class="section">
+        <h2>Event Details</h2>
+        <div class="grid-2">
+          <div class="detail-card">
+            <span class="label">Tentative Date</span>
+            <div class="detail-value">September 18–20, 2026</div>
+          </div>
+          <div class="detail-card">
+            <span class="label">Potential Location</span>
+            <div class="detail-value">Lake Cachuma (Dakota Plains campsite) or a nearby Ojai campground</div>
+          </div>
+          <div class="detail-card">
+            <span class="label">Estimated Size</span>
+            <div class="detail-value">About 10 families</div>
+          </div>
+          <div class="detail-card">
+            <span class="label">Approximate Cost</span>
+            <div class="detail-value">About $175 per family</div>
+          </div>
+        </div>
+        <p class="small-note">This estimate is intended simply to cover shared costs — including campsite reservation, a few shared meals, and a handful of activities — while helping create a comfortable, welcoming experience for families.</p>
+      </section>
+
+      <section class="section">
+        <h2>Weekend Schedule</h2>
+
+        <div class="schedule-day">
+          <h3>Friday</h3>
+          <p class="day-sub">Arrival + Connection</p>
+
+          <div class="moment">
+            <div class="time">3:00–5:00 PM</div>
+            <div>
+              <div class="moment-title">Families arrive and settle into camp</div>
+              <div class="moment-copy">A gentle arrival window so everyone has time to get set up, orient themselves, and ease into the weekend.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">5:00 PM</div>
+            <div>
+              <div class="moment-title">Opening Gathering + Welcome Game</div>
+              <div class="moment-copy">A playful group activity for both kids and parents to begin getting to know one another.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">5:45 PM</div>
+            <div>
+              <div class="moment-title">Kids Field Games + Parent Mingle</div>
+              <div class="moment-copy">Facilitators lead games for the children nearby while parents have a chance to connect. Strong parent community can make a real difference in helping both families and children feel supported throughout the school year.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">6:30 PM</div>
+            <div>
+              <div class="moment-title">Community Dinner</div>
+              <div class="moment-copy">Shared hamburgers, hot dogs, and simple family-style food.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">7:30 PM</div>
+            <div>
+              <div class="moment-title">Bedtime Story Experience</div>
+              <div class="moment-copy">A cozy storytelling and music moment for the children before bedtime.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">8:30 PM onward</div>
+            <div>
+              <div class="moment-title">Parent Campfire Hangout</div>
+              <div class="moment-copy">Relaxed adult time around the fire while designated babysitters keep an eye on sleeping tents and remain available by phone or walkie-talkie if needed.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h3>Saturday</h3>
+          <p class="day-sub">Play + Rest</p>
+
+          <div class="moment">
+            <div class="time">Morning</div>
+            <div>
+              <div class="moment-title">Slow morning + breakfast at camp</div>
+              <div class="moment-copy">Families ease into the day at their own pace.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">Late Morning / Early Afternoon</div>
+            <div>
+              <div class="moment-title">Family Field Day</div>
+              <div class="moment-copy">Playful outdoor games and activities for both kids and adults.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">Afternoon</div>
+            <div>
+              <div class="moment-title">Kids Adventure Session + Parent Rest Time</div>
+              <div class="moment-copy">Facilitators lead children in games and activities while parents have time to relax, recharge, nap, read, or connect.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">Evening</div>
+            <div>
+              <div class="moment-title">Community Gathering</div>
+              <div class="moment-copy">Simple stories, music, performances, or shared activities together.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">Dinner</div>
+            <div>
+              <div class="moment-title">Flexible Family Dinner</div>
+              <div class="moment-copy">Families can cook at camp or bring dinner into the communal area while music plays and children roam and play.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">Night</div>
+            <div>
+              <div class="moment-title">Community S’mores Night</div>
+              <div class="moment-copy">A relaxed, cozy close to the day around the fire.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h3>Sunday</h3>
+          <p class="day-sub">Closing Morning</p>
+
+          <div class="moment">
+            <div class="time">Morning</div>
+            <div>
+              <div class="moment-title">Community Breakfast</div>
+              <div class="moment-copy">One final easy shared meal before the weekend winds down.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">Late Morning</div>
+            <div>
+              <div class="moment-title">Closing Play + Pack Up</div>
+              <div class="moment-copy">Children continue playing together while families slowly pack up camp.</div>
+            </div>
+          </div>
+
+          <div class="moment">
+            <div class="time">Before Departure</div>
+            <div>
+              <div class="moment-title">Final Goodbye Gathering</div>
+              <div class="moment-copy">A simple closing moment to wrap the weekend and head home feeling more connected.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Help Add a Little Extra Magic</h2>
+        <p>Families who would like to contribute additional shared experiences are warmly welcome to sponsor small moments throughout the weekend. The spirit here is generous and community-minded — simply a way to help make the weekend feel a little extra special for everyone.</p>
+        <div class="sponsor-grid">
+          <div class="sponsor-chip">S’mores Sponsor</div>
+          <div class="sponsor-chip">Pancake Breakfast Sponsor</div>
+          <div class="sponsor-chip">Bedtime Story Sponsor</div>
+          <div class="sponsor-chip">Live Music Sponsor</div>
+          <div class="sponsor-chip">Community Dinner Sponsor</div>
+          <div class="sponsor-chip">Scholarship Family Sponsor</div>
+          <div class="sponsor-chip">Craft Table Sponsor</div>
+        </div>
+      </section>
+
+      <section class="support-box">
+        <h2>Camping Support</h2>
+        <p>We know families will have different levels of camping experience and gear. Some may already have extras to share, and some may need a little support. We’ll do our best to help connect families directly where possible so the weekend can feel easier and more accessible.</p>
+      </section>
+
+      <section class="feedback-box">
+        <h2>Co-Host Feedback + Collaboration</h2>
+        <p>We’d love thoughts, ideas, and collaboration as this takes shape. A few helpful questions:</p>
+        <ul>
+          <li>What feels exciting?</li>
+          <li>What would help this feel easiest for families?</li>
+          <li>Any ideas for activities or shared moments?</li>
+          <li>Any accessibility or support needs we should consider?</li>
+        </ul>
+      </section>
+
+      <div class="footer-note">
+        This weekend is intended to feel warm, safe, simple, and easy to say yes to — a thoughtful beginning-of-year gathering rooted in connection, nature, and community care.
+      </div>
+    </main>
+  </article>
+</body>
+</html>

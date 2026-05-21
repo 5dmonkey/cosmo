@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IG Grid Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-preview">
+      <div class="phone-topbar">
+        <div class="avatar-ring"></div>
+        <div>
+          <h1>@yourgrid</h1>
+          <p>Grid preview</p>
+        </div>
+      </div>
+      <div class="grid-stats">
+        <div><strong id="postCount">0</strong><span>planned posts</span></div>
+        <div><strong>3</strong><span>columns</span></div>
+        <div><strong>drag</strong><span>to reorder</span></div>
+      </div>
+      <div id="gridPreview" class="grid-preview empty"></div>
+      <p id="emptyState" class="empty-copy">Upload a few images and they’ll appear here like your next Instagram grid.</p>
+    </section>
+
+    <section class="control-panel">
+      <div class="panel-head">
+        <div>
+          <h2>Upload next posts</h2>
+          <p>Fast, simple, visual.</p>
+        </div>
+        <label class="upload-btn">
+          <input id="fileInput" type="file" accept="image/*" multiple />
+          Upload photos
+        </label>
+      </div>
+
+      <div class="tips-row">
+        <span>Tap upload</span>
+        <span>Drag to reorder</span>
+        <span>Remove anything</span>
+      </div>
+
+      <div id="listView" class="list-view"></div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben Style Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f5f0e8;--card:#fffaf4;--ink:#241d18;--muted:#6e6258;--line:rgba(62,47,32,.12);
+      --olive:#7f8364;--sand:#d8c2a2;--tobacco:#8c5f45;--char:#2c2a28;--stone:#bbb5ae;
+    }
+    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif}
+    .page{max-width:1150px;margin:0 auto;padding:28px 18px 44px}
+    .hero{display:grid;gap:14px;margin-bottom:24px}
+    .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+    h1{margin:0;font-family:"Cormorant Garamond",serif;font-size:68px;line-height:.92;font-weight:600}
+    .sub{max-width:44rem;color:var(--muted);font-size:18px;line-height:1.7}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:26px;overflow:hidden}
+    .swatch{height:150px;display:grid;place-items:end start;padding:16px;color:white;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+    .body{padding:20px 20px 18px}.num{font-size:12px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
+    h2{margin:0 0 10px;font-family:"Cormorant Garamond",serif;font-size:34px;line-height:1}
+    p{margin:0;color:var(--muted);line-height:1.65;font-size:15px}.items{margin-top:14px;display:grid;gap:8px}
+    .items div{font-size:14px;color:var(--ink)}
+    .footer{margin-top:24px;padding:22px;background:var(--card);border:1px solid var(--line);border-radius:24px;color:var(--muted);line-height:1.7}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}h1{font-size:48px}.sub{font-size:16px}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Tan-France-inspired direction</div>
+      <h1>Ben in 10 outfits</h1>
+      <div class="sub">The brief: <strong>masculine, warm, welcoming, grounded, cool.</strong> Less gimmick, less overdone bomber, no flowery flat-brim. More texture, better jackets, stronger trousers, and a quieter kind of sex appeal.</div>
+    </section>
+
+    <section class="grid">
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,var(--char),#54514d);">Look 01</div><div class="body"><div class="num">Everyday hero</div><h2>The Better Black Uniform</h2><p>Clean, fitted, masculine, and easy. This is how he looks sharper without looking like he tried too hard.</p><div class="items"><div>• washed black tee</div><div>• cropped charcoal trouser</div><div>• black suede jacket</div><div>• clean leather sneaker or loafer</div></div></div></article>
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,var(--olive),#a2a37b);">Look 02</div><div class="body"><div class="num">Grounded outdoorsy</div><h2>The Grown-Up Field Jacket</h2><p>Same grounded energy as the green bomber, but cooler and more intentional.</p><div class="items"><div>• cream tee</div><div>• olive field jacket</div><div>• tobacco straight pant</div><div>• dark brown boot</div></div></div></article>
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,var(--sand),#efe0cc);color:#5d4e40">Look 03</div><div class="body"><div class="num">Warm and quietly sexy</div><h2>The Knit Polo Moment</h2><p>This is where softness and confidence meet. Very Tan. Very handsome.</p><div class="items"><div>• open-neck knit polo in oat</div><div>• pleated stone trouser</div><div>• woven belt</div><div>• suede loafer</div></div></div></article>
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,var(--tobacco),#c18861);">Look 04</div><div class="body"><div class="num">Artist, refined</div><h2>The Tobacco Overshirt</h2><p>Still creative, still relaxed, but miles better than novelty pieces.</p><div class="items"><div>• soft white tank or tee</div><div>• tobacco overshirt</div><div>• vintage wash denim</div><div>• sleek trainer</div></div></div></article>
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,#d7d1cb,#92867c);color:#4c433c">Look 05</div><div class="body"><div class="num">Date night</div><h2>The Soft Grey Suit Separate</h2><p>Not too formal — just enough polish to make him feel deliciously adult.</p><div class="items"><div>• soft grey blazer</div><div>• white rib tee</div><div>• matching grey trouser</div><div>• black loafer or boot</div></div></div></article>
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,#734f37,#2f2a28);">Look 06</div><div class="body"><div class="num">Weekend cool</div><h2>The Leather Jacket Swap</h2><p>If he wants edge, give him edge that actually elevates him.</p><div class="items"><div>• faded white tee</div><div>• dark brown leather jacket</div><div>• black jeans</div><div>• Chelsea boot</div></div></div></article>
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,#a59980,#ebe1d1);color:#5c5146">Look 07</div><div class="body"><div class="num">California polished</div><h2>The Linen Shirt Look</h2><p>Warm, welcoming, beach-adjacent without screaming vacation dad.</p><div class="items"><div>• bone linen shirt, open collar</div><div>• relaxed taupe trouser</div><div>• leather sandal or slip-on</div><div>• simple chain if he wears jewelry</div></div></div></article>
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,#3d4a53,#a4b1b8);">Look 08</div><div class="body"><div class="num">Cool weather</div><h2>The Navy Work Coat</h2><p>A much stronger jacket category for him: masculine, useful, elegant.</p><div class="items"><div>• navy work coat</div><div>• heather grey crewneck</div><div>• off-black trouser</div><div>• sturdy boot</div></div></div></article>
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,#5f4336,#b09b8d);">Look 09</div><div class="body"><div class="num">The hat fix</div><h2>What replaces the flowery flat brim</h2><p>Cleaner headwear instantly changes the tone. Less costume, more man.</p><div class="items"><div>• solid wool cap or simple vintage baseball cap</div><div>• no floral print</div><div>• no oversized logos</div><div>• stick to olive, black, espresso, stone</div></div></div></article>
+      <article class="card"><div class="swatch" style="background:linear-gradient(135deg,#d58254,#e9be99);color:#4f3528">Look 10</div><div class="body"><div class="num">Glasses upgrade</div><h2>The Better Orange Glasses</h2><p>Keep the warmth, refine the shape. He wants smarter lines.</p><div class="items"><div>• softer amber or tobacco acetate</div><div>• slightly slimmer frame</div><div>• less novelty, more intention</div><div>• think architectural, not quirky</div></div></div></article>
+    </section>
+
+    <section class="footer">
+      <strong>Tan’s blunt summary:</strong> Ben doesn’t need louder clothes — he needs <em>better</em> clothes. Better fabric, better jacket shapes, cleaner hats, richer neutrals, and fewer pieces that wear him instead of the other way around.
+    </section>
+  </main>
+</body>
+</html>
